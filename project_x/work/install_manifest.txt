@@ -1,2 +1,0 @@
-D:/Projects/Godot2/godot-native-example/work/../app/addons/example/./gdnative-example.lib
-D:/Projects/Godot2/godot-native-example/work/../app/addons/example/./gdnative-example.dll
