@@ -1,0 +1,10 @@
+^D:\PROJECTS\GODOT2\GODOT-NATIVE-EXAMPLE\CMAKELISTS.TXT
+setlocal
+D:\Soft\CMake\bin\cmake.exe -SD:/Projects/Godot2/godot-native-example -BD:/Projects/Godot2/godot-native-example/work --check-stamp-file D:/Projects/Godot2/godot-native-example/work/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
