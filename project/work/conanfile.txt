@@ -1,0 +1,4 @@
+[requires]
+godot-cpp/3.3@local/stable
+[generators]
+cmake_find_package
