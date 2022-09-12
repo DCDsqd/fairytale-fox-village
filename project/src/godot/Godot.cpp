@@ -6,6 +6,7 @@
 
 namespace godot 
 {
+
 class Example : public Node
 {
     GODOT_CLASS(Example, Node)
@@ -42,4 +43,5 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void *handle)
     godot::register_class<godot::Example>();
     godot::register_class<godot::My_Module>();
 }
+
 } //namespace godot
