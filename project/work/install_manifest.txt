@@ -1,0 +1,2 @@
+D:/Projects/fairytale-fox-village-4/project/work/../app/addons/example/./gdnative-example.lib
+D:/Projects/fairytale-fox-village-4/project/work/../app/addons/example/./gdnative-example.dll

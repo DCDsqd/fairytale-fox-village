@@ -1,0 +1,10 @@
+^D:\PROJECTS\FAIRYTALE-FOX-VILLAGE\PROJECT\WORK\CMAKEFILES\9BCE07597255E1E3C91D6CA34903D069\GENERATE.STAMP.RULE
+setlocal
+D:\Soft\CMake\bin\cmake.exe -SD:/Projects/fairytale-fox-village/project -BD:/Projects/fairytale-fox-village/project/work --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/Projects/fairytale-fox-village/project/work/gdnative-example.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
