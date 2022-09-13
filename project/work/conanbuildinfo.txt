@@ -1,8 +1,8 @@
 [includedirs]
-C:/Users/Yurik/.conan/data/godot-cpp/3.3/local/stable/package/d057732059ea44a47760900cb5e4855d2bea8714/include
+C:/Users/dns/.conan/data/godot-cpp/3.3/local/stable/package/164640aad040835ac89882393a96d89200694f04/include
 
 [libdirs]
-C:/Users/Yurik/.conan/data/godot-cpp/3.3/local/stable/package/d057732059ea44a47760900cb5e4855d2bea8714/lib
+C:/Users/dns/.conan/data/godot-cpp/3.3/local/stable/package/164640aad040835ac89882393a96d89200694f04/lib
 
 [bindirs]
 
@@ -11,7 +11,7 @@ C:/Users/Yurik/.conan/data/godot-cpp/3.3/local/stable/package/d057732059ea44a477
 
 
 [builddirs]
-C:/Users/Yurik/.conan/data/godot-cpp/3.3/local/stable/package/d057732059ea44a47760900cb5e4855d2bea8714/
+C:/Users/dns/.conan/data/godot-cpp/3.3/local/stable/package/164640aad040835ac89882393a96d89200694f04/
 
 [libs]
 godot-cpp.windows.debug.64
@@ -48,10 +48,10 @@ godot-cpp.windows.debug.64
 
 
 [includedirs_godot-cpp]
-C:/Users/Yurik/.conan/data/godot-cpp/3.3/local/stable/package/d057732059ea44a47760900cb5e4855d2bea8714/include
+C:/Users/dns/.conan/data/godot-cpp/3.3/local/stable/package/164640aad040835ac89882393a96d89200694f04/include
 
 [libdirs_godot-cpp]
-C:/Users/Yurik/.conan/data/godot-cpp/3.3/local/stable/package/d057732059ea44a47760900cb5e4855d2bea8714/lib
+C:/Users/dns/.conan/data/godot-cpp/3.3/local/stable/package/164640aad040835ac89882393a96d89200694f04/lib
 
 [bindirs_godot-cpp]
 
@@ -60,7 +60,7 @@ C:/Users/Yurik/.conan/data/godot-cpp/3.3/local/stable/package/d057732059ea44a477
 
 
 [builddirs_godot-cpp]
-C:/Users/Yurik/.conan/data/godot-cpp/3.3/local/stable/package/d057732059ea44a47760900cb5e4855d2bea8714/
+C:/Users/dns/.conan/data/godot-cpp/3.3/local/stable/package/164640aad040835ac89882393a96d89200694f04/
 
 [libs_godot-cpp]
 godot-cpp.windows.debug.64
@@ -96,7 +96,7 @@ godot-cpp.windows.debug.64
 
 
 [rootpath_godot-cpp]
-C:/Users/Yurik/.conan/data/godot-cpp/3.3/local/stable/package/d057732059ea44a47760900cb5e4855d2bea8714
+C:/Users/dns/.conan/data/godot-cpp/3.3/local/stable/package/164640aad040835ac89882393a96d89200694f04
 
 [name_godot-cpp]
 godot-cpp

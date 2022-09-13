@@ -2,16 +2,17 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>D:\Projects\fairytale-fox-village\project\work\x64\Debug\ZERO_CHECK</FullPath>
+      <FullPath>D:\Doc\fairytale-fox-village\project\work\Debug\gdnative-example.dll</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>D:\Projects\fairytale-fox-village\project\work\Debug\gdnative-example.dll</FullPath>
-    </ProjectOutput>
-    <ProjectOutput>
-      <FullPath>D:\Projects\fairytale-fox-village\project\work\x64\Debug\ALL_BUILD</FullPath>
+      <FullPath>D:\Doc\fairytale-fox-village\project\work\x64\Debug\ALL_BUILD</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
   <SatelliteDlls />
-  <NonRecipeFileRefs />
+  <NonRecipeFileRefs>
+    <NonRecipeFileRef>
+      <FullPath>D:\Doc\fairytale-fox-village\project\work\ZERO_CHECK.proj</FullPath>
+    </NonRecipeFileRef>
+  </NonRecipeFileRefs>
 </Project>

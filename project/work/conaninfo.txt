@@ -3,7 +3,7 @@
     build_type=Debug
     compiler=Visual Studio
     compiler.runtime=MDd
-    compiler.version=16
+    compiler.version=17
     os=Windows
 
 [requires]
@@ -18,12 +18,12 @@
     build_type=Debug
     compiler=Visual Studio
     compiler.runtime=MDd
-    compiler.version=16
+    compiler.version=17
     os=Windows
     os_build=Windows
 
 [full_requires]
-    godot-cpp/3.3@local/stable:d057732059ea44a47760900cb5e4855d2bea8714
+    godot-cpp/3.3@local/stable:164640aad040835ac89882393a96d89200694f04
 
 [full_options]
 
