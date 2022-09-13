@@ -1,0 +1,10 @@
+^D:\PROJECTS\GODOT2\GODOT-NATIVE-EXAMPLE\WORK\CMAKEFILES\2E45F500F06564F795FE6644D2D749AD\GENERATE.STAMP.RULE
+setlocal
+D:\Soft\CMake\bin\cmake.exe -SD:/Projects/Godot2/godot-native-example -BD:/Projects/Godot2/godot-native-example/work --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/Projects/Godot2/godot-native-example/work/gdnative-example.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

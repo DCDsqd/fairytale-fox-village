@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Projects\Godot2\godot-native-example\work\CMakeFiles\2e45f500f06564f795fe6644d2d749ad\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{C23D17B6-62AF-3120-864F-A736CA7C96CE}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
