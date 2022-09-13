@@ -1,4 +1,9 @@
-work
+work/Debug
+work/CMakeFiles
+work/*.dir
+work/x64
+work/*vcxproj.user
+work/.vs
 *.dylib
 *.so
 *.dll
