@@ -2,7 +2,10 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>D:\Doc\fairytale-fox-village\project\work\Debug\gdnative-example.dll</FullPath>
+      <FullPath>D:\Projects\fairytale-fox-village\project\work\x64\Debug\ZERO_CHECK</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>D:\Projects\fairytale-fox-village\project\work\Debug\gdnative-example.dll</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

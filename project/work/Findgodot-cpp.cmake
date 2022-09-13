@@ -80,9 +80,9 @@ find_package_handle_standard_args(godot-cpp REQUIRED_VARS
 mark_as_advanced(godot-cpp_FOUND godot-cpp_VERSION)
 
 
-set(godot-cpp_INCLUDE_DIRS "C:/Users/dns/.conan/data/godot-cpp/3.3/local/stable/package/164640aad040835ac89882393a96d89200694f04/include")
-set(godot-cpp_INCLUDE_DIR "C:/Users/dns/.conan/data/godot-cpp/3.3/local/stable/package/164640aad040835ac89882393a96d89200694f04/include")
-set(godot-cpp_INCLUDES "C:/Users/dns/.conan/data/godot-cpp/3.3/local/stable/package/164640aad040835ac89882393a96d89200694f04/include")
+set(godot-cpp_INCLUDE_DIRS "C:/Users/Yurik/.conan/data/godot-cpp/3.3/local/stable/package/d057732059ea44a47760900cb5e4855d2bea8714/include")
+set(godot-cpp_INCLUDE_DIR "C:/Users/Yurik/.conan/data/godot-cpp/3.3/local/stable/package/d057732059ea44a47760900cb5e4855d2bea8714/include")
+set(godot-cpp_INCLUDES "C:/Users/Yurik/.conan/data/godot-cpp/3.3/local/stable/package/d057732059ea44a47760900cb5e4855d2bea8714/include")
 set(godot-cpp_RES_DIRS )
 set(godot-cpp_DEFINITIONS )
 set(godot-cpp_LINKER_FLAGS_LIST
@@ -118,7 +118,7 @@ mark_as_advanced(godot-cpp_INCLUDE_DIRS
 
 # Find the real .lib/.a and add them to godot-cpp_LIBS and godot-cpp_LIBRARY_LIST
 set(godot-cpp_LIBRARY_LIST godot-cpp.windows.debug.64)
-set(godot-cpp_LIB_DIRS "C:/Users/dns/.conan/data/godot-cpp/3.3/local/stable/package/164640aad040835ac89882393a96d89200694f04/lib")
+set(godot-cpp_LIB_DIRS "C:/Users/Yurik/.conan/data/godot-cpp/3.3/local/stable/package/d057732059ea44a47760900cb5e4855d2bea8714/lib")
 
 # Gather all the libraries that should be linked to the targets (do not touch existing variables):
 set(_godot-cpp_DEPENDENCIES "${godot-cpp_FRAMEWORKS_FOUND} ${godot-cpp_SYSTEM_LIBS} ")
@@ -147,8 +147,8 @@ endforeach()
 set(godot-cpp_LIBRARIES_TARGETS "${godot-cpp_LIBRARIES_TARGETS};")
 set(godot-cpp_LIBRARIES "${godot-cpp_LIBRARIES};")
 
-set(CMAKE_MODULE_PATH "C:/Users/dns/.conan/data/godot-cpp/3.3/local/stable/package/164640aad040835ac89882393a96d89200694f04/" ${CMAKE_MODULE_PATH})
-set(CMAKE_PREFIX_PATH "C:/Users/dns/.conan/data/godot-cpp/3.3/local/stable/package/164640aad040835ac89882393a96d89200694f04/" ${CMAKE_PREFIX_PATH})
+set(CMAKE_MODULE_PATH "C:/Users/Yurik/.conan/data/godot-cpp/3.3/local/stable/package/d057732059ea44a47760900cb5e4855d2bea8714/" ${CMAKE_MODULE_PATH})
+set(CMAKE_PREFIX_PATH "C:/Users/Yurik/.conan/data/godot-cpp/3.3/local/stable/package/d057732059ea44a47760900cb5e4855d2bea8714/" ${CMAKE_PREFIX_PATH})
 
 if(NOT ${CMAKE_VERSION} VERSION_LESS "3.0")
     # Target approach
