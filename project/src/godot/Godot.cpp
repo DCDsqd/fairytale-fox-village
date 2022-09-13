@@ -2,7 +2,6 @@
 #include <Node.hpp>
 #include <memory>
 #include <set>
-#include "../My_Module.hpp"
 
 namespace godot 
 {
@@ -40,6 +39,5 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void *handle)
 {
     godot::Godot::nativescript_init(handle);
     godot::register_class<godot::Example>();
-    godot::register_class<godot::My_Module>();
 }
 } //namespace godot

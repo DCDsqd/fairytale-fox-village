@@ -13,15 +13,9 @@ _global_script_classes=[ {
 "class": "Example",
 "language": "NativeScript",
 "path": "res://addons/example/example.gdns"
-}, {
-"base": "",
-"class": "My_Module",
-"language": "NativeScript",
-"path": "res://addons/example/my_module.gdns"
 } ]
 _global_script_class_icons={
-"Example": "",
-"My_Module": ""
+"Example": ""
 }
 
 [application]
