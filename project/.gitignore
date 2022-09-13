@@ -1,5 +1,6 @@
-work
 *.dylib
 *.so
 *.dll
 *.lib
+work/.vs
+work/CMakeFiles
