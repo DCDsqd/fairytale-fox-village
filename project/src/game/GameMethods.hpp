@@ -1,11 +1,8 @@
-#include <Godot.hpp>
-#include <Node.hpp>
-#include <memory>
-#include <set>
+#pragma once
 
-#include   "../game/Game.hpp"
+#include "Game.hpp"
 
-namespace godot
+namespace godot 
 {
 
     extern "C" void GDN_EXPORT godot_gdnative_init(godot_gdnative_init_options * o)

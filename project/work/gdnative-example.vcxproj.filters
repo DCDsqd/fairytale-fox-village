@@ -15,12 +15,12 @@
     <ClCompile Include="..\src\game\Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\godot\Godot.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\game\Game.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\game\GameMethods.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\game\GodotOutputTest.hpp">

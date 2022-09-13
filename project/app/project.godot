@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "",
 "class": "Game",
 "language": "NativeScript",
-"path": "res://addons/example/game.gdns"
+"path": "res://addons/example/Game.gdns"
 } ]
 _global_script_class_icons={
 "Game": ""

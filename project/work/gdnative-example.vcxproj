@@ -326,11 +326,11 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\game\Game.hpp" />
+    <ClInclude Include="..\src\game\GameMethods.hpp" />
     <ClInclude Include="..\src\game\GodotOutputTest.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\game\Game.cpp" />
-    <ClCompile Include="..\src\godot\Godot.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
