@@ -1,4 +1,8 @@
 work/Debug
 work/*.dir
+work/*vcxproj.user
 work/.vs
+*.dylib
 *.so
+*.dll
+*.lib
