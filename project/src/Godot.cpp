@@ -12,16 +12,16 @@ class Example : public Node
 public:
     static void _register_methods()
     {
-        register_method("greatings_func", &Example::greatings_func);
+        register_method("some_optimized_func", &Example::some_optimized_func);
     }
 
     void _init()
     {
     }
 
-    String greatings_func()
+    String some_optimized_func()
     {
-        return "ciao world";
+        return "ciao";
     }
 };
 
@@ -40,4 +40,4 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void *handle)
     godot::Godot::nativescript_init(handle);
     godot::register_class<godot::Example>();
 }
-} //namespace godot
+}
