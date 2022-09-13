@@ -9,6 +9,7 @@ data_*/
 project/work/CMakeCache.txt
 project/work/conanbuildinfo.txt
 project/work/install_manifest.txt
+project/work/CMakeFiles
 *.recipe
 *.lastbuildstate
 *.tlog
