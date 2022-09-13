@@ -1,9 +1,4 @@
-work/Debug
-work/CMakeFiles
-work/*.dir
-work/x64
-work/*vcxproj.user
-work/.vs
+work
 *.dylib
 *.so
 *.dll
