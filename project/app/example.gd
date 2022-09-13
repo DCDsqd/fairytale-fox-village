@@ -1,5 +1,6 @@
 extends Node2D
 
 func _ready():
-	var _game := Game.new()
-	print(_game.test_godot_output())
+	var example := Example.new()
+	var mdl := My_Module.new()
+	print(example.greatings_func())

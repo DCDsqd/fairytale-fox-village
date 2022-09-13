@@ -3,8 +3,8 @@
 [ext_resource path="res://addons/example/example.gdnlib" type="GDNativeLibrary" id=1]
 
 [resource]
-resource_name = "game"
-class_name = "Game"
+resource_name = "example"
+class_name = "Example"
 library = ExtResource( 1 )
-script_class_name = "Game"
+script_class_name = "Example"
 

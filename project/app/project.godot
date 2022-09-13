@@ -10,12 +10,18 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "",
-"class": "Game",
+"class": "Example",
 "language": "NativeScript",
-"path": "res://addons/example/game.gdns"
+"path": "res://addons/example/example.gdns"
+}, {
+"base": "",
+"class": "My_Module",
+"language": "NativeScript",
+"path": "res://addons/example/my_module.gdns"
 } ]
 _global_script_class_icons={
-"Game": ""
+"Example": "",
+"My_Module": ""
 }
 
 [application]
