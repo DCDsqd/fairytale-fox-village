@@ -10,3 +10,7 @@ project/work/cmake_install.cmake
 project/work/CMakeCache.txt
 project/work/conanbuildinfo.txt
 project/work/install_manifest.txt
+*.recipe
+*.lastbuildstate
+*.tlog
+*.log
