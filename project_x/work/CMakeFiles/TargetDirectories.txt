@@ -1,4 +1,0 @@
-D:/Projects/Godot2/godot-native-example/work/CMakeFiles/gdnative-example.dir
-D:/Projects/Godot2/godot-native-example/work/CMakeFiles/INSTALL.dir
-D:/Projects/Godot2/godot-native-example/work/CMakeFiles/ALL_BUILD.dir
-D:/Projects/Godot2/godot-native-example/work/CMakeFiles/ZERO_CHECK.dir
