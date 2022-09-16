@@ -11,7 +11,22 @@ func setup_db() -> void:
 	db.path = db_path
 	
 func open_db() -> void:
-	db.open_db()
+	var err = db.open_db()
+	if !err:
+		print("ERROR in database.gd::open_db(): ", err)
 	
 func close_db() -> void:
-	db.close_db()
+	var err = db.close_db()
+	if !err:
+		print("ERROR in database.gd::close_db(): ", err)
+
+func test_select() -> int:
+	var table_name = "TEST_TABLE"
+	var err = db.query("SELECT * FROM " + table_name + ";")
+	# print(err)
+	if !err:
+		print("ERROR in database.gd::test_select(): ", err, db.error_message)
+	# for i in range(0, db.query_result.size()):
+	# print(db.query_result.size())
+	# print(db.query_result[0]["id"])
+	return db.query_result[0]["id"]

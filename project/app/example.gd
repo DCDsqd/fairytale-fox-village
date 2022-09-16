@@ -8,12 +8,14 @@ var player # Main player object
 func _ready():
 	# Setub db connection
 	setup_db()
+	db_script.open_db()
+	print(db_script.test_select())
 	
 	# Game object
 	game = Game.new()
 	
 	# Test stuff
-	print(game.test_godot_output())
+	# print(game.test_godot_output())
 	print("Starting time: ", str(game.current_time()) + ":00", ", starting day: ", str(game.current_day()))
 	_setup_time_control()
 	
