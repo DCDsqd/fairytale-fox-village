@@ -4,4 +4,4 @@ work
 *.dylib
 *.so
 *.dll
-*.lib
+*.*lib
