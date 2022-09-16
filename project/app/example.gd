@@ -1,23 +1,27 @@
 extends Node2D
 
 func _ready():
-	#Game object
+	# Game object
 	var game := Game.new()
 	
-	#Test stuff
+	# Test stuff
 	print(game.test_godot_output())
 	print("Starting time: ", str(game.current_time()) + ":00", ", starting day: ", str(game.current_day()))
 	_setup_time_control(game)
 	
-	#Player object
+	# Player object
 	var player := Player.new()
 	
-	#Initialize game and player objects only after both of them are created
-	#since they rely on each other
+	# Initialize game and player objects only after both of them are created
+	# since they rely on each other
 	player.init(game)
 	game.init(player)
+	
+	# Test
+	# var g = player.get_game()
+	# print(g.current_day())
 
-#Starts the timer for updating game time during the game
+# Starts the timer for updating game time during the game
 func _setup_time_control(game:Game) -> void:
 	# Timer node
 	var timer := Timer.new()
@@ -35,10 +39,10 @@ func _setup_time_control(game:Game) -> void:
 	# Add to the tree as child of the current node
 	add_child(timer)
 	
-	#Start the timer
+	# Start the timer
 	timer.start()
 
-#Adds an hour to C++ game class time property and prints updated time
+# Adds an hour to C++ game class time property and prints updated time
 func add_hour(game:Game) -> void:
 	game.add_hour()
 	print("Time has been updated! New time: ", str(game.current_time()) + ":00", ", day: ", str(game.current_day()))
