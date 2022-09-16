@@ -69,4 +69,3 @@ if(APPLE)
 endif()
 
 install(TARGETS gdnative-example DESTINATION .)
-
