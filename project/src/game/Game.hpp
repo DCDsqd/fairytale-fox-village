@@ -38,6 +38,7 @@ public:
         register_method("last_day", &Game::last_day);
         register_method("current_day", &Game::current_day);
         register_method("add_hour", &Game::add_hour);
+        register_method("is_correct", &Game::is_correct);
         //register_method("", &Game);
     }
 
