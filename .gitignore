@@ -10,3 +10,4 @@ exportpresets.cfg
 .mono/
 data*/
 project/CMakeLists.txt
+project/CMakeLists.txt

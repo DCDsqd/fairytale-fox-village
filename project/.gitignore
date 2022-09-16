@@ -1,7 +1,5 @@
-app/addons/godot-sqlite/bin
-app/addons/godot-sqlite/LICENSE*
 work
 *.dylib
 *.so
 *.dll
-*.*lib
+*.lib
