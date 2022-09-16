@@ -44,6 +44,7 @@ public:
     void _init() {};
     void additional_init(Player* _player);
 
+    inline bool is_correct() const noexcept { return correct; }
     inline int day_start_time() noexcept { return DAY_START_TIME; }
     inline int day_end_time() noexcept { return DAY_END_TIME; }
     inline int first_day() noexcept { return FIRST_DAY; }
