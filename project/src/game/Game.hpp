@@ -16,6 +16,8 @@
 namespace godot
 {
 
+class Player;
+
 class Game : public Node
 {
 	GODOT_CLASS(Game, Node)
@@ -26,6 +28,7 @@ public:
 
     static void _register_methods()
     {
+        register_method("init", &Game::additional_init);
         register_method("test_godot_output", &Game::test_godot_output);
         register_method("current_time_str", &Game::current_time_str);
         register_method("current_time", &Game::current_time);
@@ -39,6 +42,7 @@ public:
     }
 
     void _init() {};
+    void additional_init(Player* _player);
 
     inline int day_start_time() noexcept { return DAY_START_TIME; }
     inline int day_end_time() noexcept { return DAY_END_TIME; }
@@ -56,6 +60,8 @@ public:
     bool add_hour();
 
 private:
+    bool correct = false;
+    Player* player = nullptr;
     int time = DAY_START_TIME;
     int day = FIRST_DAY;
 };

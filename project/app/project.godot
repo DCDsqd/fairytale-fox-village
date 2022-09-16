@@ -18,10 +18,16 @@ _global_script_classes=[ {
 "class": "Game",
 "language": "NativeScript",
 "path": "res://addons/example/game.gdns"
+}, {
+"base": "",
+"class": "Player",
+"language": "NativeScript",
+"path": "res://addons/example/player.gdns"
 } ]
 _global_script_class_icons={
 "Example": "",
-"Game": ""
+"Game": "",
+"Player": ""
 }
 
 [application]

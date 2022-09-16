@@ -3,7 +3,8 @@
 #include <memory>
 #include <set>
 
-#include   "../game/Game.hpp"
+#include "../game/Game.hpp"
+#include "../game/Player.hpp"
 
 namespace godot
 {
@@ -22,6 +23,7 @@ namespace godot
     {
         godot::Godot::nativescript_init(handle);
         godot::register_class<godot::Game>();
+        godot::register_class<godot::Player>();
     }
 
 } //namespace godot

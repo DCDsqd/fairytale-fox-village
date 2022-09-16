@@ -1,4 +1,11 @@
 #include "Game.hpp"
+#include "Player.hpp"
+
+void godot::Game::additional_init(Player* _player)
+{
+	player = _player;
+	correct = true;
+}
 
 godot::String godot::Game::current_time_str() const noexcept
 {
