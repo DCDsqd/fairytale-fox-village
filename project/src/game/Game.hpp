@@ -43,7 +43,7 @@ public:
         register_method("is_correct", &Game::is_correct);
         //register_method("", &Game);
     }
-
+    
     void _init() {};
     void additional_init(Player* _player);
 

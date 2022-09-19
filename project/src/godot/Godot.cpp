@@ -5,6 +5,7 @@
 
 #include "../game/Game.hpp"
 #include "../game/Player.hpp"
+#include "../game/Centrifuge.hpp"
 
 namespace godot
 {
@@ -24,6 +25,7 @@ namespace godot
         godot::Godot::nativescript_init(handle);
         godot::register_class<godot::Game>();
         godot::register_class<godot::Player>();
+        godot::register_class<godot::Centrifuge>();
     }
 
 } //namespace godot

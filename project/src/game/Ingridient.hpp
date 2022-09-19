@@ -1,8 +1,24 @@
+#pragma once
+
+#include <set>
+#include <memory>
+
 #include <Godot.hpp>
+#include <Node.hpp>
 
 namespace godot{
 
-class Ingridient{
+class Ingridient : public Node {
+	
+	GODOT_CLASS(Ingridient, Node);
+
+public:
+	static void _register_methods()
+	{
+		//register_method("", &Centrifuge);
+	}
+
+	void _init() {};
 
 private:
 	int id;

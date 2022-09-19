@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "",
+"class": "Centrifuge",
+"language": "NativeScript",
+"path": "res://addons/example/centrifuge.gdns"
+}, {
+"base": "",
 "class": "Example",
 "language": "NativeScript",
 "path": "res://addons/example/example.gdns"
@@ -25,6 +30,7 @@ _global_script_classes=[ {
 "path": "res://addons/example/player.gdns"
 } ]
 _global_script_class_icons={
+"Centrifuge": "",
 "Example": "",
 "Game": "",
 "Player": ""
