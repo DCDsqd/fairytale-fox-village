@@ -1,6 +1,6 @@
 extends Node2D
 
-var db_script = load("res://database.gd").new()
+var db_script = load("res://scripts/database.gd").new()
 var db # Database object that is going to be valid after setup_db() is called
 var game # Main game object
 var player # Main player object

@@ -2,11 +2,13 @@
 
 #include <memory>
 #include <set>
+#include <vector>
 
 #include <Godot.hpp>
 #include <Node.hpp>
 
 #include "GodotOutputTest.hpp"
+#include "Quest.hpp"
 
 #define DAY_START_TIME 8
 #define DAY_END_TIME 22
@@ -66,6 +68,8 @@ private:
     Player* player = nullptr;
     int time = DAY_START_TIME;
     int day = FIRST_DAY;
+    std::vector<Quest*> active_quests;
+    std::vector<Quest*> all_quests;
 };
 
 } //namespace godot
