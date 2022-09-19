@@ -1,24 +1,22 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://sprite/workplace/sp_centrifuge.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://sprite/workplace/sp_candy_shape.tres" type="SpriteFrames" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 39, 21 )
+extents = Vector2( 25.5, 13.5 )
 
-[node name="ob_centrifuge" type="Node2D"]
+[node name="ob_candy_shape" type="Node2D"]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
 animation = "idle"
-playing = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="AnimatedSprite"]
 frames = ExtResource( 1 )
 animation = "comp"
-playing = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 0, 9 )
+position = Vector2( -1.5, 16.5 )
 shape = SubResource( 1 )
