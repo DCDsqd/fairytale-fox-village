@@ -9,5 +9,5 @@ exportpresets.cfg
 # Mono-specific ignores
 .mono/
 data*/
-project/CMakeLists.txt
+
 project/CMakeLists.txt
