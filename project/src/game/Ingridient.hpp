@@ -15,7 +15,7 @@ class Ingridient : public Node {
 public:
 	static void _register_methods()
 	{
-		//register_method("", &Centrifuge);
+		//register_method("", &Ingridient);
 	}
 
 	void _init() {};

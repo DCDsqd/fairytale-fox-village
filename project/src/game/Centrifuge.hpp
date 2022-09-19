@@ -18,7 +18,7 @@ class Centrifuge : public Node {
 public:
 	static void _register_methods()
 	{
-		//register_method("", &Centrifuge);
+		register_method("get_ingridient", &Centrifuge::get_ingridient);
 	}
 
 	void _init() {};
@@ -26,10 +26,10 @@ public:
 	Centrifuge() = default;
 	~Centrifuge() = default;
 
-	
+	const Ingridient* get_ingridient(const Ingridient* from);
 
 private:
-	std::map<Ingridient, Ingridient> ingridient_map;
+	std::map<const Ingridient*, const Ingridient*> ingridient_map;
 };
 
 } //namespace godot
