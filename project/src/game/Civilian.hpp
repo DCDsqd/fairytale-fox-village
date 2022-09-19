@@ -2,7 +2,10 @@
 
 #include <Godot.hpp>
 
+
 namespace godot {
+
+class Quest;
 
 class Civilian {
 
