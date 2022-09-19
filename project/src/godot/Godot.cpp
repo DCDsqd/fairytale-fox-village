@@ -28,6 +28,7 @@ namespace godot
         godot::register_class<godot::Player>();
         godot::register_class<godot::Centrifuge>();
         godot::register_class<godot::Ingridient>();
+        godot::register_class<godot::Food>();
     }
 
 } //namespace godot
