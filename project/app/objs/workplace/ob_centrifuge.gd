@@ -10,7 +10,7 @@ onready var sp_comp = get_node("sp_work/sp_comp")
 onready var sp_timer = get_node("sp_work/sp_timer")
 
 func _ready() -> void:
-	pass
+	z_index = position.y/5
 
 
 

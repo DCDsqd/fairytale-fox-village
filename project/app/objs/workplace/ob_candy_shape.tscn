@@ -20,6 +20,8 @@ animation = "comp"
 
 [node name="sp_timer" type="AnimatedSprite" parent="sp_work"]
 position = Vector2( 0, -37 )
+z_index = 1000
+z_as_relative = false
 frames = ExtResource( 2 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
