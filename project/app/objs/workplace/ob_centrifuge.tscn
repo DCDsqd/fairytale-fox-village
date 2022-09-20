@@ -2,7 +2,7 @@
 
 [ext_resource path="res://sprite/workplace/sp_centrifuge.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://sprite/ui/sp_timer.tres" type="SpriteFrames" id=2]
-[ext_resource path="res://scripts/ob_centrifuge.gd" type="Script" id=3]
+[ext_resource path="res://objs/workplace/ob_centrifuge.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 39, 21 )
@@ -13,16 +13,16 @@ script = ExtResource( 3 )
 [node name="sp_work" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
 animation = "idle"
-frame = 2
+frame = 6
 playing = true
 
 [node name="sp_comp" type="AnimatedSprite" parent="sp_work"]
 frames = ExtResource( 1 )
 animation = "comp"
-frame = 2
+frame = 6
 playing = true
 
-[node name="sp_timer" type="AnimatedSprite" parent="sp_work/sp_comp"]
+[node name="sp_timer" type="AnimatedSprite" parent="sp_work"]
 position = Vector2( 0, -37 )
 frames = ExtResource( 2 )
 

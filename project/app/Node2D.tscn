@@ -3,11 +3,11 @@
 [ext_resource path="res://scripts/example.gd" type="Script" id=1]
 [ext_resource path="res://objs/ob_hero.tscn" type="PackedScene" id=2]
 [ext_resource path="res://sprite/tilemap/tilemap.tres" type="TileSet" id=4]
-[ext_resource path="res://objs/ob_centrifuge.tscn" type="PackedScene" id=5]
-[ext_resource path="res://objs/ob_chocolate_shape.tscn" type="PackedScene" id=7]
-[ext_resource path="res://objs/ob_lollipop_shape.tscn" type="PackedScene" id=8]
-[ext_resource path="res://objs/ob_candy_shape.tscn" type="PackedScene" id=9]
-[ext_resource path="res://objs/ob_marmalade_shape.tscn" type="PackedScene" id=10]
+[ext_resource path="res://objs/workplace/ob_centrifuge.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objs/workplace/ob_chocolate_shape.tscn" type="PackedScene" id=7]
+[ext_resource path="res://objs/workplace/ob_lollipop_shape.tscn" type="PackedScene" id=8]
+[ext_resource path="res://objs/workplace/ob_candy_shape.tscn" type="PackedScene" id=9]
+[ext_resource path="res://objs/workplace/ob_marmalade_shape.tscn" type="PackedScene" id=10]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -17,19 +17,19 @@ tile_set = ExtResource( 4 )
 format = 1
 
 [node name="ob_centrifuge" parent="." instance=ExtResource( 5 )]
-position = Vector2( 415, 159 )
-
-[node name="ob_hero" parent="." instance=ExtResource( 2 )]
-position = Vector2( 406, 254 )
+position = Vector2( 250, 134 )
 
 [node name="ob_candy_shape" parent="." instance=ExtResource( 9 )]
 position = Vector2( 93, 136 )
 
 [node name="ob_chocolate_shape" parent="." instance=ExtResource( 7 )]
-position = Vector2( 246, 144 )
+position = Vector2( 167, 136 )
 
 [node name="ob_lollipop_shape" parent="." instance=ExtResource( 8 )]
-position = Vector2( 611, 172 )
+position = Vector2( 348, 133 )
 
 [node name="ob_marmalade_shape" parent="." instance=ExtResource( 10 )]
-position = Vector2( 423, 346 )
+position = Vector2( 466, 126 )
+
+[node name="ob_hero" parent="." instance=ExtResource( 2 )]
+position = Vector2( 270, 217 )
