@@ -30,7 +30,7 @@ func animat() -> void:
 
 func _process(delta) -> void:
 	z_index = position.y/5
-	print(z_index)
+	# print(z_index)
 	animat()
 	_x = int(Input.is_action_pressed("mv_right")) - int(Input.is_action_pressed("mv_left"))
 	_y = int(Input.is_action_pressed("mv_down")) - int(Input.is_action_pressed("mv_top"))

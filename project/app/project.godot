@@ -9,10 +9,15 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node",
+"base": "",
 "class": "Centrifuge",
 "language": "NativeScript",
 "path": "res://addons/example/centrifuge.gdns"
+}, {
+"base": "",
+"class": "Civilian",
+"language": "NativeScript",
+"path": "res://addons/example/civilian.gdns"
 }, {
 "base": "",
 "class": "Example",
@@ -23,6 +28,16 @@ _global_script_classes=[ {
 "class": "Game",
 "language": "NativeScript",
 "path": "res://addons/example/game.gdns"
+}, {
+"base": "",
+"class": "GameData",
+"language": "NativeScript",
+"path": "res://addons/example/gamedata.gdns"
+}, {
+"base": "",
+"class": "Ingridient",
+"language": "NativeScript",
+"path": "res://addons/example/ingridient.gdns"
 }, {
 "base": "",
 "class": "Player",
@@ -36,8 +51,11 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Centrifuge": "",
+"Civilian": "",
 "Example": "",
 "Game": "",
+"GameData": "",
+"Ingridient": "",
 "Player": "",
 "workspace": ""
 }

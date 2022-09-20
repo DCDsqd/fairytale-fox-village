@@ -11,6 +11,10 @@ func _ready():
 	db_script.open_db()
 	print(db_script.test_select())
 	
+	# Init game_data object
+	db_script.init_game_data_obj()
+	db_script.load_all_data()
+	
 	# Game object
 	game = Game.new()
 	

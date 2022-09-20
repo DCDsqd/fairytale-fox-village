@@ -7,6 +7,8 @@
 #include "../game/Player.hpp"
 #include "../game/Centrifuge.hpp"
 #include "../game/Ingridient.hpp"
+#include "../game/Civilian.hpp"
+#include "../game/GameData.hpp"
 
 namespace godot
 {
@@ -28,6 +30,8 @@ namespace godot
         godot::register_class<godot::Player>();
         godot::register_class<godot::Centrifuge>();
         godot::register_class<godot::Ingridient>();
+        godot::register_class<godot::GameData>();
+        godot::register_class<godot::Civilian>();
     }
 
 } //namespace godot
