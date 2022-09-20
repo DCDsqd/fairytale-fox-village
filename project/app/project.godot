@@ -25,6 +25,11 @@ _global_script_classes=[ {
 "path": "res://addons/example/example.gdns"
 }, {
 "base": "",
+"class": "Food",
+"language": "NativeScript",
+"path": "res://addons/example/food.gdns"
+}, {
+"base": "",
 "class": "Game",
 "language": "NativeScript",
 "path": "res://addons/example/game.gdns"
@@ -53,6 +58,7 @@ _global_script_class_icons={
 "Centrifuge": "",
 "Civilian": "",
 "Example": "",
+"Food": "",
 "Game": "",
 "GameData": "",
 "Ingridient": "",
