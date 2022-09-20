@@ -15,6 +15,9 @@ func _ready():
 	db_script.init_game_data_obj()
 	db_script.load_all_data()
 	
+	# Close db
+	db_script.close_db()
+	
 	# Game object
 	game = Game.new()
 	

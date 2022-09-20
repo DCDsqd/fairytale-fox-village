@@ -8,6 +8,7 @@
 #include "../game/Centrifuge.hpp"
 #include "../game/Ingridient.hpp"
 #include "../game/Civilian.hpp"
+#include "../game/Food.hpp"
 #include "../game/GameData.hpp"
 
 namespace godot
@@ -32,6 +33,7 @@ namespace godot
         godot::register_class<godot::Ingridient>();
         godot::register_class<godot::GameData>();
         godot::register_class<godot::Civilian>();
+        godot::register_class<godot::Food>();
     }
 
 } //namespace godot

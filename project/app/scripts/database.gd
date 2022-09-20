@@ -40,6 +40,7 @@ func init_game_data_obj() -> void:
 func load_all_data() -> void:
 	load_civilians()
 	load_ingridients()
+	load_food()
 	
 func load_civilians() -> void:
 	var table_name = "CIVILIANS"
@@ -69,3 +70,30 @@ func load_ingridients() -> void:
 		game_data.add_ingridient(ingr)
 		# var df = game_data.get_ingridient(i)
 		# print(df.get_name())
+
+func load_food() -> void:
+	var table_name = "FOOD"
+	var err = db.query("SELECT id, name, type FROM " + table_name + ";")
+	if !err:
+		print("ERROR in database.gd::load_food(): ", err, db.error_message)
+	for i in range(0, db.query_result.size()):
+		var food_id = db.query_result[i]["id"]
+		var food_name = db.query_result[i]["name"]
+		var food_type = db.query_result[i]["type"]
+		var ingr_reqs_ids : Array = select_food_reqs(food_id)
+		var ingr_reqs : Array = game_data.get_ingridient_mult(ingr_reqs_ids)
+		var food = Food.new()
+		food.bind_values(food_id, food_name, ingr_reqs, food_type)
+		game_data.add_food(food)
+		var act_ingr : Array = game_data.get_food(0).get_ingridients()
+		print(act_ingr[0].get_name())
+		
+func select_food_reqs(food_id : int) -> Array:
+	var req_arr : Array = []
+	var table_name = "FOOD_REQS"
+	var err = db.query("SELECT ingr_id FROM " + table_name + " WHERE food_id = " + str(food_id) + ";")
+	if !err:
+		print("ERROR in database.gd::select_food_reqs(): ", err, db.error_message)
+	for i in range(0, db.query_result.size()):
+		req_arr.append(db.query_result[i]["ingr_id"])
+	return req_arr
