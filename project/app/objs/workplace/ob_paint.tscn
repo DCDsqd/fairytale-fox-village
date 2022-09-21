@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://sprite/workplace/sp_paint.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://objs/workplace/ob_paint.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 37.5, 7.5 )
+
+[node name="ob_paint" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="sp_work" type="AnimatedSprite" parent="."]
+frames = ExtResource( 1 )
+animation = "idle"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 1.5, 22.5 )
+shape = SubResource( 1 )

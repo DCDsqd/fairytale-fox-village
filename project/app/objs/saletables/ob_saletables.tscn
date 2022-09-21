@@ -1,0 +1,130 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://sprite/saletables/sp_saletable_f.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://sprite/saletables/sp_salecloset.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://sprite/saletables/sp_saletable_b.tres" type="SpriteFrames" id=3]
+[ext_resource path="res://sprite/saletables/sp_saletables_l.tres" type="SpriteFrames" id=4]
+[ext_resource path="res://sprite/saletables/sp_saletables_r.tres" type="SpriteFrames" id=5]
+[ext_resource path="res://scripts/saletable.gd" type="Script" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 24, 9 )
+
+[node name="ob_saletables" type="Node2D"]
+
+[node name="sp_table_1" type="AnimatedSprite" parent="."]
+position = Vector2( 72, 24 )
+z_as_relative = false
+frames = ExtResource( 2 )
+animation = "idle"
+script = ExtResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="sp_table_1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sp_table_1/StaticBody2D"]
+position = Vector2( 0, 15 )
+shape = SubResource( 1 )
+
+[node name="sp_table_2" type="AnimatedSprite" parent="."]
+position = Vector2( 81, 132 )
+z_as_relative = false
+frames = ExtResource( 1 )
+animation = "idle"
+script = ExtResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="sp_table_2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sp_table_2/StaticBody2D"]
+position = Vector2( 0, 15 )
+shape = SubResource( 1 )
+
+[node name="sp_table_3" type="AnimatedSprite" parent="."]
+position = Vector2( 201, 87 )
+z_as_relative = false
+frames = ExtResource( 1 )
+animation = "idle"
+script = ExtResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="sp_table_3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sp_table_3/StaticBody2D"]
+position = Vector2( 0, 15 )
+shape = SubResource( 1 )
+
+[node name="sp_table_5" type="AnimatedSprite" parent="."]
+position = Vector2( 504, 96 )
+z_as_relative = false
+frames = ExtResource( 3 )
+animation = "idle"
+script = ExtResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="sp_table_5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sp_table_5/StaticBody2D"]
+position = Vector2( 0, 15 )
+shape = SubResource( 1 )
+
+[node name="sp_table_4" type="AnimatedSprite" parent="."]
+position = Vector2( 552, 96 )
+z_as_relative = false
+frames = ExtResource( 5 )
+animation = "idle"
+script = ExtResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="sp_table_4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sp_table_4/StaticBody2D"]
+position = Vector2( 0, 15 )
+shape = SubResource( 1 )
+
+[node name="sp_table_6" type="AnimatedSprite" parent="."]
+position = Vector2( 456, 96 )
+z_as_relative = false
+frames = ExtResource( 4 )
+animation = "idle"
+script = ExtResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="sp_table_6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sp_table_6/StaticBody2D"]
+position = Vector2( 0, 15 )
+shape = SubResource( 1 )
+
+[node name="sp_table_7" type="AnimatedSprite" parent="."]
+position = Vector2( 336, 96 )
+z_as_relative = false
+frames = ExtResource( 1 )
+animation = "idle"
+script = ExtResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="sp_table_7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sp_table_7/StaticBody2D"]
+position = Vector2( 0, 15 )
+shape = SubResource( 1 )
+
+[node name="sp_table_8" type="AnimatedSprite" parent="."]
+position = Vector2( 120, 24 )
+z_as_relative = false
+frames = ExtResource( 2 )
+animation = "idle"
+script = ExtResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="sp_table_8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sp_table_8/StaticBody2D"]
+position = Vector2( 0, 15 )
+shape = SubResource( 1 )
+
+[node name="sp_table_9" type="AnimatedSprite" parent="."]
+position = Vector2( 192, 24 )
+z_as_relative = false
+frames = ExtResource( 2 )
+animation = "idle"
+script = ExtResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="sp_table_9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sp_table_9/StaticBody2D"]
+position = Vector2( 0, 15 )
+shape = SubResource( 1 )

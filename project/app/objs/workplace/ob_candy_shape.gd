@@ -15,7 +15,7 @@ func _ready() -> void:
 
 func _process(delta) -> void:
 	if Input.is_action_just_released("inter"):
-		if position.distance_to(hero.position) < 30:
+		if position.distance_to(hero.position) < 50:
 			var clr = Color(0.75, 0.55, 0.55)
 			print(_main.inter(sp_comp, clr))
 	_main.timer(sp_timer, sp_comp, delta)
