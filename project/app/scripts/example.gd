@@ -70,3 +70,6 @@ func add_hour() -> void:
 func setup_db() -> void:
 	db_script.setup_db()
 	db = db_script.db
+
+func get_game() -> Game:
+	return game

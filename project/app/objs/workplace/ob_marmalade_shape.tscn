@@ -13,11 +13,13 @@ script = ExtResource( 3 )
 [node name="sp_work" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
 animation = "idle"
+frame = 2
 playing = true
 
 [node name="sp_comp" type="AnimatedSprite" parent="sp_work"]
 frames = ExtResource( 1 )
 animation = "comp"
+frame = 2
 playing = true
 
 [node name="sp_timer" type="AnimatedSprite" parent="sp_work"]

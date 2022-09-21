@@ -4,25 +4,39 @@ extends Node2D
 class_name workspace
 
 var timer: float = 0.0;
-var cook: bool = false;
+var state = 'noth';
+var type;
 
-func inter(sp_comp, clr) -> String:
-	if cook == false:
+func set_type(_type):
+	type = _type
+
+func inter(sp_comp, clr, craft_ui : HBoxContainer) -> String:
+	if state == 'noth':
 		sp_comp.modulate = clr
-		cook = true
+		state = 'wait'
+		craft_ui.set_wrk(self)
+		craft_ui.turner(true)
 		timer = 20
 		return 'start'
-	else:
+	elif state == 'coock':
 		if timer <= 0:
-			cook = false
+			state = 'noth'
 			timer = 0
 			return 'compl'
 		else:
 			return 'process'
+	return 'noth'
 
 func timer(sp_timer, sp_comp, delta):
 	if timer > 0:
 		sp_timer.frame = (1-timer/20)*11
 		timer -= delta
-	sp_timer.visible = cook
-	sp_comp.visible = cook
+	if state == 'coock':
+		sp_timer.visible = true
+		sp_comp.visible = true
+	else:
+		sp_timer.visible = false
+		sp_comp.visible = false
+
+func coock(type):
+	state = "coock"
