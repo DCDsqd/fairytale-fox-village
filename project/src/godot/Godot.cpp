@@ -11,6 +11,7 @@
 #include "../game/Food.hpp"
 #include "../game/GameData.hpp"
 #include "../game/Quest.hpp"
+#include "../game/Dialog.hpp"
 
 namespace godot
 {
@@ -36,6 +37,7 @@ namespace godot
         godot::register_class<godot::Civilian>();
         godot::register_class<godot::Food>();
         godot::register_class<godot::Quest>();
+        godot::register_class<godot::Dialog>();
     }
 
 } //namespace godot
