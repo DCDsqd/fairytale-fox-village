@@ -118,7 +118,13 @@ func select_food_reqs(food_id : int) -> Array:
 	return req_arr
 	
 func load_dialogs() -> void:
-	var table_name = "DIALOGS"	
+	var table_name = "DIALOGS"
+	var diag_idx_arr : Array = []
+	var err = db.query("SELECT id FROM " + table_name + ";")
+	if !err:
+		print("ERROR in database.gd::load_dialogs(): ", err, db.error_message)
+	for i in range(0, db.query_result.size()):
+		diag_idx_arr.append(db.query_result[i]["id"])
 	
 func load_quests() -> void:
 	var table_name = "QUESTS"
