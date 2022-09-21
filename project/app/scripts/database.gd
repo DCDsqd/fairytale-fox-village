@@ -51,6 +51,7 @@ func load_all_data() -> void:
 	load_civilians()
 	load_ingredients()
 	load_food()
+	load_dialogs()
 	
 func load_civilians() -> void:
 	var table_name = "CIVILIANS"
@@ -125,6 +126,28 @@ func load_dialogs() -> void:
 		print("ERROR in database.gd::load_dialogs(): ", err, db.error_message)
 	for i in range(0, db.query_result.size()):
 		diag_idx_arr.append(db.query_result[i]["id"])
+	for i in range(0, diag_idx_arr.size()):
+		var select_matrix : Array = select_dialog(diag_idx_arr[i])
+		var new_dialog = Dialog.new()
+		new_dialog.set_dialog_id(diag_idx_arr[i])
+		for j in range(0, select_matrix.size()):
+			var speaker_id = select_matrix[j][0]
+			var text = select_matrix[j][1]
+			var index = select_matrix[j][2]
+			var speaker_ptr : Civilian = game_data.get_civilian(speaker_id)
+			new_dialog.add_phrase_to_conv(speaker_ptr, text, index)
+		
+func select_dialog(diag_id : int) -> Array:
+	var table_name = "DIALOG_TEXTS"
+	var err = db.query("SELECT dialog_id, speaker, text, _index FROM " + table_name + " WHERE dialog_id = " + str(diag_id) + ";")
+	if !err:
+		print("ERROR in database.gd::select_dialog(): ", err, db.error_message)
+	var matrix : Array = create_2d_array(db.query_result.size(), 3)
+	for i in range(0, db.query_result.size()):
+		matrix[i][0] = db.query_result[i]["speaker"]
+		matrix[i][1] = db.query_result[i]["text"]
+		matrix[i][2] = db.query_result[i]["_index"]
+	return matrix
 	
 func load_quests() -> void:
 	var table_name = "QUESTS"
