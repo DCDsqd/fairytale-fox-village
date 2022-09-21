@@ -52,6 +52,7 @@ func load_all_data() -> void:
 	load_ingredients()
 	load_food()
 	load_dialogs()
+	load_quests()
 	
 func load_civilians() -> void:
 	var table_name = "CIVILIANS"
@@ -160,7 +161,7 @@ func load_quests() -> void:
 		matrix[i][0] = db.query_result[i]["id"]
 		matrix[i][1] = db.query_result[i]["name"]
 		matrix[i][2] = db.query_result[i]["descr"]
-		matrix[i][3] = db.query_result[i]["askr_id"]
+		matrix[i][3] = db.query_result[i]["asker_id"]
 		matrix[i][4] = db.query_result[i]["receiver_id"]
 		matrix[i][5] = db.query_result[i]["start_dialog_id"]
 		matrix[i][6] = db.query_result[i]["end_dialog_id"]
@@ -192,7 +193,7 @@ func load_quests() -> void:
 func select_quest_targets(quest_id : int) -> Array:
 	var arr : Array
 	var table_name = "QUESTS_TARGETS"
-	var err = db.query("SELECT food_id FROM " + table_name + " WHERE quest_id =" + quest_id + ";")
+	var err = db.query("SELECT food_id FROM " + table_name + " WHERE quest_id =" + str(quest_id) + ";")
 	if !err:
 		print("ERROR in database.gd::select_quest_targets(): ", err, db.error_message)
 	for i in range(0, db.query_result.size()):
