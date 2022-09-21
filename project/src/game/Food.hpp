@@ -7,7 +7,7 @@
 #include <Godot.hpp>
 #include "Node.hpp"
 
-#include "Ingridient.hpp"
+#include "Ingredient.hpp"
 
 namespace godot {
 
@@ -40,7 +40,7 @@ private:
 	godot::String name;
 	int id;
 	godot::String type;
-	std::vector<Ingridient*> ingridients;
+	std::vector<Ingredient*> ingridients;
 	int cost;
 };
 

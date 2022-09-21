@@ -33,13 +33,23 @@ func test_select() -> int:
 	# print(db.query_result.size())
 	# print(db.query_result[0]["id"])
 	return db.query_result[0]["id"]
+	
+func create_2d_array(w, h):
+	var map = []
+
+	for x in range(w):
+		var col = []
+		col.resize(h)
+		map.append(col)
+
+	return map
 
 func init_game_data_obj() -> void:
 	game_data = GameData.new()
 
 func load_all_data() -> void:
 	load_civilians()
-	load_ingridients()
+	load_ingredients()
 	load_food()
 	
 func load_civilians() -> void:
@@ -58,17 +68,17 @@ func load_civilians() -> void:
 		# var _civ = game_data.get_civilian(i)
 		# print(civ.get_name(), " : ", _civ.get_name())
 
-func load_ingridients() -> void:
-	var table_name = "INGRIDIENTS"
+func load_ingredients() -> void:
+	var table_name = "INGREDIENTS"
 	var err = db.query("SELECT id, name, type_id, is_default, cost FROM " + table_name + ";")
 	if !err:
-		print("ERROR in database.gd::load_ingridients(): ", err, db.error_message)
+		print("ERROR in database.gd::load_ingredients(): ", err, db.error_message)
 	for i in range(0, db.query_result.size()):
 		# print("i = ", i)
-		var ingr = Ingridient.new()
+		var ingr = Ingredient.new()
 		ingr.bind_values(db.query_result[i]["id"], db.query_result[i]["name"], db.query_result[i]["type_id"], db.query_result[i]["is_default"], db.query_result[i]["cost"])
-		game_data.add_ingridient(ingr)
-		# var df = game_data.get_ingridient(i)
+		game_data.add_ingredient(ingr)
+		# var df = game_data.get_ingredient(i)
 		# print(df.get_name())
 
 func load_food() -> void:
@@ -87,12 +97,12 @@ func load_food() -> void:
 		query_matrix[i][2] = db.query_result[i]["type"]
 		query_matrix[i][3] = db.query_result[i]["cost"]
 		
-		# var act_ingr : Array = game_data.get_food(0).get_ingridients()
+		# var act_ingr : Array = game_data.get_food(0).get_ingredients()
 		# print(act_ingr[0].get_name())
 		
 	for i in range(0, n):
 		var ingr_reqs_ids : Array = select_food_reqs(query_matrix[i][0])
-		var ingr_reqs : Array = game_data.get_ingridient_mult(ingr_reqs_ids)
+		var ingr_reqs : Array = game_data.get_ingredient_mult(ingr_reqs_ids)
 		var food = Food.new()
 		food.bind_values(query_matrix[i][0], query_matrix[i][1], ingr_reqs, query_matrix[i][2], query_matrix[i][3])
 		game_data.add_food(food)
@@ -106,13 +116,14 @@ func select_food_reqs(food_id : int) -> Array:
 	for i in range(0, db.query_result.size()):
 		req_arr.append(db.query_result[i]["ingr_id"])
 	return req_arr
-
-func create_2d_array(w, h):
-	var map = []
-
-	for x in range(w):
-		var col = []
-		col.resize(h)
-		map.append(col)
-
-	return map
+	
+func load_dialogs() -> void:
+	var table_name = "DIALOGS"	
+	
+func load_quests() -> void:
+	var table_name = "QUESTS"
+	var err = db.query("SELECT id, name, descr, asker_id, receiver_id, start_dialog_id, end_dialog_id FROM " + table_name + ";")
+	if !err:
+		print("ERROR in database.gd::load_quests(): ", err, db.error_message)
+	# TO DO: finish func
+	pass

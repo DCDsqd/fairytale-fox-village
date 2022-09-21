@@ -6,7 +6,7 @@
 #include "../game/Game.hpp"
 #include "../game/Player.hpp"
 #include "../game/Centrifuge.hpp"
-#include "../game/Ingridient.hpp"
+#include "../game/Ingredient.hpp"
 #include "../game/Civilian.hpp"
 #include "../game/Food.hpp"
 #include "../game/GameData.hpp"
@@ -30,7 +30,7 @@ namespace godot
         godot::register_class<godot::Game>();
         godot::register_class<godot::Player>();
         godot::register_class<godot::Centrifuge>();
-        godot::register_class<godot::Ingridient>();
+        godot::register_class<godot::Ingredient>();
         godot::register_class<godot::GameData>();
         godot::register_class<godot::Civilian>();
         godot::register_class<godot::Food>();

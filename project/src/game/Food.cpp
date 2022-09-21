@@ -5,7 +5,7 @@ void godot::Food::bind_values(int _id, godot::String _name, godot::Array ingr_re
 	id = _id;
 	name = _name;
 	for (int i = 0; i < ingr_reqs.size(); ++i) {
-		ingridients.push_back(static_cast<Ingridient*>(ingr_reqs[i]));
+		ingridients.push_back(static_cast<Ingredient*>(ingr_reqs[i]));
 	}
 	type = _type;
 	cost = _cost;

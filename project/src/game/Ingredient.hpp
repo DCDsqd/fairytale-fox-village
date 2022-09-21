@@ -8,20 +8,20 @@
 
 namespace godot{
 
-class Ingridient : public Node {
+class Ingredient : public Node {
 	
-	GODOT_CLASS(Ingridient, Node);
+	GODOT_CLASS(Ingredient, Node);
 
 public:
 	static void _register_methods()
 	{
 		//register_method("", &Ingridient);
-		register_method("bind_values", &Ingridient::bind_values);
-		register_method("get_const", &Ingridient::get_cost);
-		register_method("get_type", &Ingridient::get_type);
-		register_method("get_id", &Ingridient::get_id);
-		register_method("get_name", &Ingridient::get_name);
-		register_method("is_available", &Ingridient::is_available);
+		register_method("bind_values", &Ingredient::bind_values);
+		register_method("get_const", &Ingredient::get_cost);
+		register_method("get_type", &Ingredient::get_type);
+		register_method("get_id", &Ingredient::get_id);
+		register_method("get_name", &Ingredient::get_name);
+		register_method("is_available", &Ingredient::is_available);
 	}
 
 	void _init() {};

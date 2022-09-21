@@ -7,7 +7,7 @@
 #include <Godot.hpp>
 #include <Node.hpp>
 
-#include "Ingridient.hpp"
+#include "Ingredient.hpp"
 
 namespace godot {
 
@@ -26,10 +26,10 @@ public:
 	Centrifuge() = default;
 	~Centrifuge() = default;
 
-	const Ingridient* get_ingridient(const Ingridient* from);
+	const Ingredient* get_ingridient(const Ingredient* from);
 
 private:
-	std::map<const Ingridient*, const Ingridient*> ingridient_map;
+	std::map<const Ingredient*, const Ingredient*> ingridient_map;
 };
 
 } //namespace godot

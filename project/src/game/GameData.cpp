@@ -10,21 +10,21 @@ godot::Civilian* godot::GameData::get_civilian(int idx)
 	return all_civilians[idx];
 }
 
-void godot::GameData::add_ingridient(Ingridient* ingr)
+void godot::GameData::add_ingredient(Ingredient* ingr)
 {
-	all_ingridients.push_back(ingr);
+	all_ingredients.push_back(ingr);
 }
 
-godot::Ingridient * godot::GameData::get_ingridient(int idx)
+godot::Ingredient * godot::GameData::get_ingredient(int idx)
 {
-	return all_ingridients[idx];
+	return all_ingredients[idx];
 }
 
-godot::Array godot::GameData::get_ingridient_mult(godot::Array idxs)
+godot::Array godot::GameData::get_ingredient_mult(godot::Array idxs)
 {
 	godot::Array arr;
 	for (int i = 0; i < idxs.size(); ++i) {
-		arr.push_back(get_ingridient(i));
+		arr.push_back(get_ingredient(i));
 	}
 	return arr;
 }
