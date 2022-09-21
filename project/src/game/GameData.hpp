@@ -32,6 +32,9 @@ public:
 		register_method("add_food", &GameData::add_food);
 		register_method("get_food", &GameData::get_food);
 		register_method("total_foods", &GameData::total_food);
+		register_method("add_dialog", &GameData::add_dialog);
+		register_method("get_dialog", &GameData::get_dialog);
+		register_method("total_dialogs", &GameData::total_dialogs);
 	}
 
 	void _init() {};
@@ -45,6 +48,9 @@ public:
 	inline int total_food() const {
 		return (int)all_food.size();
 	};
+	inline int total_dialogs() const {
+		return (int)all_dialogs.size();
+	};
 
 	void add_civilian(Civilian* civ);
 	Civilian* get_civilian(int idx);
@@ -55,6 +61,9 @@ public:
 
 	void add_food(Food* food);
 	Food* get_food(int idx);
+
+	void add_dialog(Dialog* diag);
+	Dialog* get_dialog(int id);
 
 private:
 	std::vector<Civilian*> all_civilians;

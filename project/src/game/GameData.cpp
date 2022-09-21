@@ -38,3 +38,13 @@ godot::Food* godot::GameData::get_food(int idx)
 {
 	return all_food[idx];
 }
+
+void godot::GameData::add_dialog(Dialog* diag)
+{
+	all_dialogs.push_back(diag);
+}
+
+godot::Dialog* godot::GameData::get_dialog(int id)
+{
+	return all_dialogs[id];
+}

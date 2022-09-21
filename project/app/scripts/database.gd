@@ -136,6 +136,7 @@ func load_dialogs() -> void:
 			var index = select_matrix[j][2]
 			var speaker_ptr : Civilian = game_data.get_civilian(speaker_id)
 			new_dialog.add_phrase_to_conv(speaker_ptr, text, index)
+			game_data.add_dialog(new_dialog)
 		
 func select_dialog(diag_id : int) -> Array:
 	var table_name = "DIALOG_TEXTS"
@@ -154,5 +155,46 @@ func load_quests() -> void:
 	var err = db.query("SELECT id, name, descr, asker_id, receiver_id, start_dialog_id, end_dialog_id FROM " + table_name + ";")
 	if !err:
 		print("ERROR in database.gd::load_quests(): ", err, db.error_message)
-	# TO DO: finish func
-	pass
+	var matrix : Array = create_2d_array(db.query_result.size(), 7)
+	for i in range(0, db.query_result.size()):
+		matrix[i][0] = db.query_result[i]["id"]
+		matrix[i][1] = db.query_result[i]["name"]
+		matrix[i][2] = db.query_result[i]["descr"]
+		matrix[i][3] = db.query_result[i]["askr_id"]
+		matrix[i][4] = db.query_result[i]["receiver_id"]
+		matrix[i][5] = db.query_result[i]["start_dialog_id"]
+		matrix[i][6] = db.query_result[i]["end_dialog_id"]
+		
+	for i in range(0, matrix.size()):
+		var id = matrix[i][0]
+		var name = matrix[i][1]
+		var descr = matrix[i][2]
+		var asker_id = matrix[i][3]
+		var receiver_id = matrix[i][4]
+		var start_dialog_id = matrix[i][5]
+		var end_dialog_id = matrix[i][6]
+		
+		# Get pointer to objects by id
+		var asker = game_data.get_civilian(asker_id)
+		var receiver = game_data.get_civilian(receiver_id)
+		var start_dialog = game_data.get_dialog(start_dialog_id)
+		var end_dialog = game_data.get_dialog(end_dialog_id)
+		
+		var targ_arr : Array = select_quest_targets(id)
+		var targ_arr_ptrs : Array = []
+		for j in range(0, targ_arr.size()):
+			targ_arr_ptrs.append(game_data.get_food(targ_arr[j]))
+		
+		var new_quest = Quest.new()
+		new_quest.bind_values(id, name, descr, asker, receiver, start_dialog, end_dialog)
+		new_quest.add_food_targets(targ_arr_ptrs)
+
+func select_quest_targets(quest_id : int) -> Array:
+	var arr : Array
+	var table_name = "QUESTS_TARGETS"
+	var err = db.query("SELECT food_id FROM " + table_name + " WHERE quest_id =" + quest_id + ";")
+	if !err:
+		print("ERROR in database.gd::select_quest_targets(): ", err, db.error_message)
+	for i in range(0, db.query_result.size()):
+		arr.append(db.query_result[i]["food_id"])
+	return arr
