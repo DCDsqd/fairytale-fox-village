@@ -1,8 +1,11 @@
 #pragma once
 
 #include <vector>
+#include <set>
+#include <memory>
 
 #include <Godot.hpp>
+#include <Node.hpp>
 
 #include "Food.hpp"
 #include "Civilian.hpp"
@@ -10,7 +13,17 @@
 
 namespace godot {
 
-class Quest {
+class Quest : public Node {
+
+	GODOT_CLASS(Quest, Node);
+
+public:
+	static void _register_methods()
+	{
+		//register_method("", &Quest);
+	}
+
+	void _init() {};
 
 private:
 	godot::String name;
