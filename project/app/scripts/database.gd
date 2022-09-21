@@ -4,7 +4,7 @@ var game_data # Object that is supposed to contain all the needed info from db
 # !!! @game_data variable is not valid until init_game_data_obj() is called
 
 const SQLite = preload("res://addons/godot-sqlite/bin/gdsqlite.gdns")
-var db # Actual database object, not valid until setup_db() is called
+var db : SQLite # Actual database object, not valid until setup_db() is called
 var db_path = "res://db/data.db" # Path do db
 
 # Sets up the database connection and makes @db variable valid
@@ -73,20 +73,29 @@ func load_ingridients() -> void:
 
 func load_food() -> void:
 	var table_name = "FOOD"
-	var err = db.query("SELECT id, name, type FROM " + table_name + ";")
+	var err = db.query("SELECT id, name, type, cost FROM " + table_name + ";")
 	if !err:
 		print("ERROR in database.gd::load_food(): ", err, db.error_message)
-	for i in range(0, db.query_result.size()):
-		var food_id = db.query_result[i]["id"]
-		var food_name = db.query_result[i]["name"]
-		var food_type = db.query_result[i]["type"]
-		var ingr_reqs_ids : Array = select_food_reqs(food_id)
+		
+	var n = db.query_result.size()
+	var query_matrix = create_2d_array(n, 4)
+
+	for i in range(0, n):
+		# print(i)
+		query_matrix[i][0] = db.query_result[i]["id"]
+		query_matrix[i][1] = db.query_result[i]["name"]
+		query_matrix[i][2] = db.query_result[i]["type"]
+		query_matrix[i][3] = db.query_result[i]["cost"]
+		
+		# var act_ingr : Array = game_data.get_food(0).get_ingridients()
+		# print(act_ingr[0].get_name())
+		
+	for i in range(0, n):
+		var ingr_reqs_ids : Array = select_food_reqs(query_matrix[i][0])
 		var ingr_reqs : Array = game_data.get_ingridient_mult(ingr_reqs_ids)
 		var food = Food.new()
-		food.bind_values(food_id, food_name, ingr_reqs, food_type)
+		food.bind_values(query_matrix[i][0], query_matrix[i][1], ingr_reqs, query_matrix[i][2], query_matrix[i][3])
 		game_data.add_food(food)
-		var act_ingr : Array = game_data.get_food(0).get_ingridients()
-		print(act_ingr[0].get_name())
 		
 func select_food_reqs(food_id : int) -> Array:
 	var req_arr : Array = []
@@ -97,3 +106,13 @@ func select_food_reqs(food_id : int) -> Array:
 	for i in range(0, db.query_result.size()):
 		req_arr.append(db.query_result[i]["ingr_id"])
 	return req_arr
+
+func create_2d_array(w, h):
+	var map = []
+
+	for x in range(w):
+		var col = []
+		col.resize(h)
+		map.append(col)
+
+	return map

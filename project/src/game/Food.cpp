@@ -1,6 +1,6 @@
 #include "Food.hpp"
 
-void godot::Food::bind_values(int _id, godot::String _name, godot::Array ingr_reqs, godot::String _type)
+void godot::Food::bind_values(int _id, godot::String _name, godot::Array ingr_reqs, godot::String _type, int _cost)
 {
 	id = _id;
 	name = _name;
@@ -8,6 +8,7 @@ void godot::Food::bind_values(int _id, godot::String _name, godot::Array ingr_re
 		ingridients.push_back(static_cast<Ingridient*>(ingr_reqs[i]));
 	}
 	type = _type;
+	cost = _cost;
 }
 
 godot::Array godot::Food::get_ingridients()
