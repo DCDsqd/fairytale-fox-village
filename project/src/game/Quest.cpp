@@ -17,3 +17,12 @@ void godot::Quest::add_food_targets(godot::Array gd_targets)
 		targets.push_back(static_cast<Food*>(gd_targets[i]));
 	}
 }
+
+godot::Array godot::Quest::get_targets()
+{
+	godot::Array arr;
+	for (int i = 0; i < targets.size(); ++i) {
+		arr.push_back(targets[i]);
+	}
+	return arr;
+}
