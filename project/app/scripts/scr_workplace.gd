@@ -6,6 +6,7 @@ class_name workspace
 var timer: float = 0.0;
 var state = 'noth';
 var type;
+var food : Food
 
 func set_type(_type):
 	type = _type
@@ -38,5 +39,6 @@ func timer(sp_timer, sp_comp, delta):
 		sp_timer.visible = false
 		sp_comp.visible = false
 
-func coock(type):
+func coock(i : Food):
 	state = "coock"
+	food = i

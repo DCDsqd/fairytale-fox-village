@@ -1,23 +1,87 @@
 extends HBoxContainer
 
-
+onready var hero
 onready var game : Game
-onready var bt_prev : Button
-onready var bt_next : Button
-onready var bt_made : Button
+onready var player : Player
+onready var data : GameData
+onready var ingr_1 : TextureRect
+onready var ingr_2 : TextureRect
+onready var res : TextureRect
+
+
+
+var sel = 0;
+var craft_food : Array = [];
 var wrkplc
 
 func _redy() -> void:
-	bt_prev = get_node("prev")
-	bt_next = get_node("next")
-	bt_next.connect("pressed", self, "prev")
+	pass
 
 func turner(vis) -> void:
-	visible = vis
+	hero = get_parent().get_parent().get_node("ob_hero")
+	if vis == true:
+		hero.state = 'ui'
+		#hero.anim()
+		visible = vis
+		work()
+	else:
+		hero.state = 'game'
+		visible = vis
+
+func work():
+	sel = 0
+	ingr_1 = get_node("ingt_1")
+	ingr_2 = get_node("ingt_2")
+	game = get_parent().get_parent().get_game()
+	player = get_parent().get_parent().get_player()
+	data = get_parent().get_parent().get_db().get_data()
+	
+	for i in range(0,10):
+		player.inv_add_ingredients(data.get_ingredient(i), 10)
+
+	var av_food : Array = [];
+	av_food = player.inv_get_available_food(data)
+	
+	for i in av_food:
+		if i.get_type() == wrkplc.type:
+			craft_food.push_back(i)
+	
+	print('size ',craft_food.size())
+	
+	if craft_food.size() == 0:
+		print('i can\'t')
+		turner(false)
+	else:
+		set_food()
+		#print(av_food.size())
+
+func set_food():
+	ingr_1.texture.current_frame = craft_food[sel].get_ingridients()[0].get_id()
+	ingr_2.texture.current_frame = craft_food[sel].get_ingridients()[1].get_id()
 
 func set_wrk(plc):
 	wrkplc = plc
-	wrkplc.coock('sfasdfsadf')
+
+func next():
+	if craft_food.size()-1 == sel:
+		sel = 0
+	else:
+		sel+=1
+	set_food()
+	print('next')
 
 func prev():
+	if sel == 0:
+		sel = craft_food.size()-1
+	else:
+		sel-=1
+	set_food()
 	print('prev')
+
+func made():
+	var av_food : Array = [];
+	av_food = player.inv_get_available_food(data)
+	
+	turner(false)
+	wrkplc.coock(craft_food[sel])
+	

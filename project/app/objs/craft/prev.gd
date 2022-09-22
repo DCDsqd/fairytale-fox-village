@@ -3,4 +3,4 @@ extends TextureButton
 onready var par = get_parent();
 
 func _ready():
-	connect("pressed", par, "next")
+	connect("pressed", par, "prev")

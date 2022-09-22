@@ -73,3 +73,9 @@ func setup_db() -> void:
 
 func get_game() -> Game:
 	return game
+
+func get_player() -> Player:
+	return player
+
+func get_db() -> Script:
+	return db_script

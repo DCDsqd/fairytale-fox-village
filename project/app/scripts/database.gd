@@ -199,3 +199,7 @@ func select_quest_targets(quest_id : int) -> Array:
 	for i in range(0, db.query_result.size()):
 		arr.append(db.query_result[i]["food_id"])
 	return arr
+
+
+func get_data() -> GameData:
+	return game_data

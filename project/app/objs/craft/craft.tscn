@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://sprite/hud/plus.png" type="Texture" id=1]
 [ext_resource path="res://sprite/hud/equals.png" type="Texture" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://sprite/items/ingr/sp_ingr.tres" type="Texture" id=5]
 [ext_resource path="res://sprite/hud/arrow_l.png" type="Texture" id=6]
 [ext_resource path="res://objs/craft/next.gd" type="Script" id=7]
+[ext_resource path="res://objs/craft/made.gd" type="Script" id=8]
+[ext_resource path="res://objs/craft/prev.gd" type="Script" id=9]
+[ext_resource path="res://sprite/items/ingr/sp_ingr_2.tres" type="Texture" id=10]
 
 [node name="hud_craft" type="HBoxContainer"]
 anchor_right = 0.495
@@ -16,49 +19,49 @@ margin_bottom = -6.0
 rect_pivot_offset = Vector2( 198, 0 )
 script = ExtResource( 4 )
 
-[node name="prev" type="Button" parent="."]
-margin_right = 60.0
-margin_bottom = 54.0
-icon = ExtResource( 6 )
-flat = true
-align = 0
+[node name="prev" type="TextureButton" parent="."]
+margin_right = 48.0
+margin_bottom = 48.0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 6 )
+script = ExtResource( 9 )
 
 [node name="ingt_1" type="TextureRect" parent="."]
-margin_left = 64.0
-margin_right = 112.0
-margin_bottom = 54.0
+margin_left = 52.0
+margin_right = 100.0
+margin_bottom = 48.0
 texture = ExtResource( 5 )
 
 [node name="plus" type="TextureRect" parent="."]
-margin_left = 116.0
-margin_right = 164.0
-margin_bottom = 54.0
+margin_left = 104.0
+margin_right = 152.0
+margin_bottom = 48.0
 texture = ExtResource( 1 )
 
 [node name="ingt_2" type="TextureRect" parent="."]
-margin_left = 168.0
-margin_right = 216.0
-margin_bottom = 54.0
-texture = ExtResource( 5 )
+margin_left = 156.0
+margin_right = 204.0
+margin_bottom = 48.0
+texture = ExtResource( 10 )
 
 [node name="equals" type="TextureRect" parent="."]
-margin_left = 220.0
-margin_right = 268.0
-margin_bottom = 54.0
+margin_left = 208.0
+margin_right = 256.0
+margin_bottom = 48.0
 texture = ExtResource( 2 )
 
-[node name="made" type="Button" parent="."]
-margin_left = 272.0
-margin_right = 332.0
-margin_bottom = 54.0
-icon = ExtResource( 5 )
-flat = true
-align = 0
+[node name="made" type="TextureButton" parent="."]
+margin_left = 260.0
+margin_right = 308.0
+margin_bottom = 48.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 5 )
+script = ExtResource( 8 )
 
-[node name="next" type="Button" parent="."]
-margin_left = 336.0
-margin_right = 396.0
-margin_bottom = 54.0
-icon = ExtResource( 3 )
-flat = true
+[node name="next" type="TextureButton" parent="."]
+margin_left = 312.0
+margin_right = 360.0
+margin_bottom = 48.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 3 )
 script = ExtResource( 7 )
