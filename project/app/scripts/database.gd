@@ -164,10 +164,10 @@ func select_dialog(diag_id : int) -> Array:
 	
 func load_quests() -> void:
 	var table_name = "QUESTS"
-	var err = db.query("SELECT id, name, descr, asker_id, receiver_id, start_dialog_id, end_dialog_id FROM " + table_name + ";")
+	var err = db.query("SELECT id, name, descr, asker_id, receiver_id, start_dialog_id, end_dialog_id, day FROM " + table_name + ";")
 	if !err:
 		print("ERROR in database.gd::load_quests(): ", err, db.error_message)
-	var matrix : Array = create_2d_array(db.query_result.size(), 7)
+	var matrix : Array = create_2d_array(db.query_result.size(), 8)
 	for i in range(0, db.query_result.size()):
 		matrix[i][0] = db.query_result[i]["id"]
 		matrix[i][1] = db.query_result[i]["name"]
@@ -176,6 +176,7 @@ func load_quests() -> void:
 		matrix[i][4] = db.query_result[i]["receiver_id"]
 		matrix[i][5] = db.query_result[i]["start_dialog_id"]
 		matrix[i][6] = db.query_result[i]["end_dialog_id"]
+		matrix[i][7] = db.query_result[i]["day"]
 		
 	for i in range(0, matrix.size()):
 		var id = matrix[i][0]
@@ -185,6 +186,7 @@ func load_quests() -> void:
 		var receiver_id = matrix[i][4]
 		var start_dialog_id = matrix[i][5]
 		var end_dialog_id = matrix[i][6]
+		var quest_day = matrix[i][7]
 		
 		# Get pointer to objects by id
 		var asker = game_data.get_civilian(asker_id - 1)
@@ -199,7 +201,7 @@ func load_quests() -> void:
 			targ_arr_ptrs.append(game_data.get_food(targ_arr[j] - 1))
 		
 		var new_quest = Quest.new()
-		new_quest.bind_values(id, name, descr, asker, receiver, start_dialog, end_dialog)
+		new_quest.bind_values(id, name, descr, asker, receiver, start_dialog, end_dialog, quest_day)
 		new_quest.add_food_targets(targ_arr_ptrs)
 
 func select_quest_targets(quest_id : int) -> Array:
