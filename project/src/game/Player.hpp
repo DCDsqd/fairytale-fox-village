@@ -10,6 +10,7 @@
 #include "Inventory.hpp"
 #include "Ingredient.hpp"
 #include "Food.hpp"
+#include "GameData.hpp"
 
 namespace godot {
 
@@ -38,7 +39,7 @@ public:
 	inline Game* get_game() { return game; };
 	void inv_add_ingredients(Ingredient* ingr, int amount = 1);
 	int inv_get_ingredients_cnt(Ingredient* ingr);
-	godot::Array inv_get_available_food(godot::Array& all_food);
+	godot::Array inv_get_available_food(GameData* game_data);
 
 private:
 	bool correct = false;
