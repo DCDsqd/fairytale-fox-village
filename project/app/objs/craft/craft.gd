@@ -6,7 +6,7 @@ onready var player : Player
 onready var data : GameData
 onready var ingr_1 : TextureRect
 onready var ingr_2 : TextureRect
-onready var res : TextureRect
+onready var res : TextureButton
 
 
 
@@ -32,12 +32,13 @@ func work():
 	sel = 0
 	ingr_1 = get_node("ingt_1")
 	ingr_2 = get_node("ingt_2")
+	res = get_node("made")
 	game = get_parent().get_parent().get_game()
 	player = get_parent().get_parent().get_player()
 	data = get_parent().get_parent().get_db().get_data()
 	
 	for i in range(0,10):
-		player.inv_add_ingredients(data.get_ingredient(i), 10)
+		player.inv_add_ingredients(data.get_ingredient(i), 19)
 
 	var av_food : Array = [];
 	av_food = player.inv_get_available_food(data)
@@ -56,8 +57,11 @@ func work():
 		#print(av_food.size())
 
 func set_food():
+	print(craft_food[sel].get_name())
+	print(craft_food[sel].get_id())
 	ingr_1.texture.current_frame = craft_food[sel].get_ingridients()[0].get_id()
 	ingr_2.texture.current_frame = craft_food[sel].get_ingridients()[1].get_id()
+	res.texture_normal.current_frame = craft_food[sel].get_id()-1
 
 func set_wrk(plc):
 	wrkplc = plc
@@ -68,7 +72,6 @@ func next():
 	else:
 		sel+=1
 	set_food()
-	print('next')
 
 func prev():
 	if sel == 0:
@@ -76,12 +79,12 @@ func prev():
 	else:
 		sel-=1
 	set_food()
-	print('prev')
 
 func made():
 	var av_food : Array = [];
 	av_food = player.inv_get_available_food(data)
-	
+	player.inv_add_ingredients(craft_food[sel].get_ingridients()[0],-1)
+	player.inv_add_ingredients(craft_food[sel].get_ingridients()[1],-1)
 	turner(false)
 	wrkplc.coock(craft_food[sel])
-	
+	craft_food.clear()
