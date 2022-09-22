@@ -32,11 +32,12 @@ public:
 		register_method("get_receiver", &Quest::get_receiver);
 		register_method("get_start_dialog", &Quest::get_start_dialog);
 		register_method("get_end_dialog", &Quest::get_end_dialog);	
+		register_method("get_day", &Quest::get_day);
 	}
 
 	void _init() {};
 	
-	void bind_values(int _id, godot::String _name, godot::String _descr, Civilian* _asker, Civilian* _receiver, Dialog* _start_dialog, Dialog* _end_dialog);
+	void bind_values(int _id, godot::String _name, godot::String _descr, Civilian* _asker, Civilian* _receiver, Dialog* _start_dialog, Dialog* _end_dialog, int _day);
 	void add_food_targets(godot::Array gd_targets);
 	inline int get_id() const { return id; };
 	inline godot::String get_name() const { return name; };
@@ -47,6 +48,7 @@ public:
 	inline Civilian* get_receiver() { return receiver; };
 	inline Dialog* get_start_dialog() { return start_dialog; };
 	inline Dialog* get_end_dialog() { return end_dialog; };
+	inline int get_day() { return day; };
 
 private:
 	int id;
@@ -58,6 +60,7 @@ private:
 	Civilian* receiver = nullptr;
 	Dialog* start_dialog;
 	Dialog* end_dialog;
+	int day;
 };
 
 } //namespace godot

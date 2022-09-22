@@ -1,6 +1,6 @@
 #include "Quest.hpp"
 
-void godot::Quest::bind_values(int _id, godot::String _name, godot::String _descr, Civilian* _asker, Civilian* _receiver, Dialog* _start_dialog, Dialog* _end_dialog)
+void godot::Quest::bind_values(int _id, godot::String _name, godot::String _descr, Civilian* _asker, Civilian* _receiver, Dialog* _start_dialog, Dialog* _end_dialog, int _day)
 {
 	id = _id;
 	name = _name;
@@ -9,6 +9,7 @@ void godot::Quest::bind_values(int _id, godot::String _name, godot::String _desc
 	receiver = _receiver;
 	start_dialog = _start_dialog;
 	end_dialog = _end_dialog;
+	day = _day;
 }
 
 void godot::Quest::add_food_targets(godot::Array gd_targets)
