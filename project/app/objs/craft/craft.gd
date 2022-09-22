@@ -35,7 +35,7 @@ func work():
 	player = get_parent().get_parent().get_player()
 	game_data = get_parent().get_parent().get_db().get_data()
 	
-	for i in range(0, 20):
+	for i in range(0, 21):
 		var cur_ingr_to_add = game_data.get_ingredient(i)
 		player.inv_add_ingredients(cur_ingr_to_add, 19)
 
@@ -58,10 +58,10 @@ func work():
 		print(av_food.size())
 
 func set_food():
-	print(craft_food[sel].get_name())
-	print(craft_food[sel].get_id())
-	ingr_1.texture.current_frame = craft_food[sel].get_ingridients()[0].get_id()
-	ingr_2.texture.current_frame = craft_food[sel].get_ingridients()[1].get_id()
+	#print(craft_food[sel].get_ingridients()[0].get_id() - 1)
+	#print(craft_food[sel].get_ingridients()[1].get_id() - 1)
+	ingr_1.texture.current_frame = craft_food[sel].get_ingridients()[0].get_id() - 1
+	ingr_2.texture.current_frame = craft_food[sel].get_ingridients()[1].get_id() - 1
 	res.texture_normal.current_frame = craft_food[sel].get_id() - 1
 	return
 
@@ -88,5 +88,5 @@ func made():
 	player.inv_add_ingredients(craft_food[sel].get_ingridients()[0],-1)
 	player.inv_add_ingredients(craft_food[sel].get_ingridients()[1],-1)
 	turner(false)
-	wrkplc.coock(craft_food[sel])
+	wrkplc.coock(craft_food[sel], player)
 	craft_food.clear()

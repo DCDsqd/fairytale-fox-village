@@ -166,9 +166,11 @@ position = Vector2( 120, -114 )
 process_priority = 9
 position = Vector2( 165, 208 )
 
-[node name="leaf" type="Particles2D" parent="."]
-material = SubResource( 7 )
+[node name="leaf" type="Node2D" parent="."]
 position = Vector2( 408, 822 )
+
+[node name="leaf" type="Particles2D" parent="leaf"]
+material = SubResource( 7 )
 z_index = 2000
 amount = 16
 lifetime = 1.75
@@ -178,9 +180,9 @@ process_material = SubResource( 8 )
 texture = ExtResource( 20 )
 script = ExtResource( 19 )
 
-[node name="leaf2" type="Particles2D" parent="."]
+[node name="leaf2" type="Particles2D" parent="leaf"]
 material = SubResource( 7 )
-position = Vector2( 912, 504 )
+position = Vector2( 504, -318 )
 z_index = 2000
 amount = 16
 lifetime = 1.75
@@ -190,9 +192,9 @@ process_material = SubResource( 9 )
 texture = ExtResource( 20 )
 script = ExtResource( 19 )
 
-[node name="leaf3" type="Particles2D" parent="."]
+[node name="leaf3" type="Particles2D" parent="leaf"]
 material = SubResource( 7 )
-position = Vector2( 48, 504 )
+position = Vector2( -360, -318 )
 z_index = 2000
 amount = 16
 lifetime = 1.75

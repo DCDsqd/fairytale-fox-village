@@ -7,6 +7,7 @@ var timer: float = 0.0;
 var state = 'noth';
 var type;
 var food : Food
+var player : Player
 
 func set_type(_type):
 	type = _type
@@ -23,6 +24,7 @@ func inter(sp_comp, clr, craft_ui : HBoxContainer) -> String:
 		if timer <= 0:
 			state = 'noth'
 			timer = 0
+			player.inv_add_food(food, 1)
 			return 'compl'
 		else:
 			return 'process'
@@ -39,6 +41,7 @@ func timer(sp_timer, sp_comp, delta):
 		sp_timer.visible = false
 		sp_comp.visible = false
 
-func coock(i : Food):
+func coock(i : Food, _player):
 	state = "coock"
 	food = i
+	player = _player
