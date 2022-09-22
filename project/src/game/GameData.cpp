@@ -58,3 +58,27 @@ godot::Array godot::GameData::get_all_dialogs()
 	}
 	return arr;
 }
+
+void godot::GameData::add_quest(Quest* quest)
+{
+	all_quests.push_back(quest);
+}
+
+godot::Quest* godot::GameData::get_quest(int id)
+{
+	return all_quests[id];
+}
+
+godot::Array godot::GameData::get_all_quests()
+{
+	godot::Array arr;
+	for (int i = 0; i < all_quests.size(); ++i) {
+		arr.append(all_quests[i]);
+	}
+	return arr;
+}
+
+std::vector<godot::Quest*>& godot::GameData::get_all_quests_cpp_ref()
+{
+	return all_quests;
+}

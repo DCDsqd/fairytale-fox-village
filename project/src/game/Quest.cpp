@@ -27,3 +27,11 @@ godot::Array godot::Quest::get_targets()
 	}
 	return arr;
 }
+
+bool godot::Quest::is_available(int cur_day)
+{
+	if (cur_day == day && status == 0) {
+		return true;
+	}
+	return false;
+}

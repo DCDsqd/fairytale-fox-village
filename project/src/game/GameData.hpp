@@ -36,6 +36,11 @@ public:
 		register_method("get_dialog", &GameData::get_dialog);
 		register_method("total_dialogs", &GameData::total_dialogs);
 		register_method("get_all_dialogs", &GameData::get_all_dialogs);
+		register_method("get_quest", &GameData::get_quest);
+		register_method("total_quests", &GameData::total_quests);
+		register_method("get_all_quests", &GameData::get_all_quests);
+		register_method("add_quest", &GameData::add_quest);
+		register_method("total_quests", &GameData::total_quests);
 	}
 
 	void _init() {};
@@ -66,6 +71,12 @@ public:
 	void add_dialog(Dialog* diag);
 	Dialog* get_dialog(int id);
 	godot::Array get_all_dialogs();
+
+	void add_quest(Quest* quest);
+	Quest* get_quest(int id);
+	godot::Array get_all_quests();
+	std::vector<Quest*>& get_all_quests_cpp_ref();
+	inline int total_quests() const noexcept { return (int)all_quests.size(); };
 
 private:
 	std::vector<Civilian*> all_civilians;

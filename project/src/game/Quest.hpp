@@ -49,12 +49,13 @@ public:
 	inline Dialog* get_start_dialog() { return start_dialog; };
 	inline Dialog* get_end_dialog() { return end_dialog; };
 	inline int get_day() { return day; };
+	bool is_available(int cur_day);
 
 private:
 	int id;
 	godot::String name;
 	godot::String descr;
-	int status;
+	int status = -1; //0 - not completed, 1 - in progress, 2 - completed, 3 - failed
 	std::vector<Food*> targets;
 	Civilian* asker = nullptr;
 	Civilian* receiver = nullptr;
