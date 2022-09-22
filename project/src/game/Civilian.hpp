@@ -25,7 +25,7 @@ public:
 		register_method("get_id", &Civilian::get_id);
 		register_method("get_catch_phrase", &Civilian::get_catch_phrase);
 		register_method("bind_values", &Civilian::bind_values);
-		register_method("get_quest", &Civilian::get_quest);
+		//register_method("get_quest", &Civilian::get_quest);
 	}
 
 	void _init() {};
@@ -35,7 +35,7 @@ public:
 	inline godot::String get_name() const { return name; };
 	inline int get_id() const { return id; };
 	inline godot::String get_catch_phrase() const { return catch_phrase; };
-	Quest* get_quest(GameData* game_data, int cur_day) const;
+	godot::Quest* get_quest(godot::GameData* game_data, int cur_day);
 
 private:
 	godot::String name;
