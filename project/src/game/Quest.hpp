@@ -33,6 +33,9 @@ public:
 		register_method("get_start_dialog", &Quest::get_start_dialog);
 		register_method("get_end_dialog", &Quest::get_end_dialog);	
 		register_method("get_day", &Quest::get_day);
+		register_method("set_completed", &Quest::set_completed);
+		register_method("set_ing_prog", &Quest::set_in_prog);
+		register_method("set_failed", &Quest::set_failed);
 	}
 
 	void _init() {};
@@ -50,12 +53,15 @@ public:
 	inline Dialog* get_end_dialog() { return end_dialog; };
 	inline int get_day() { return day; };
 	bool is_available(int cur_day);
+	void set_completed();
+	void set_failed();
+	void set_in_prog();
 
 private:
 	int id;
 	godot::String name;
 	godot::String descr;
-	int status = -1; //0 - not completed, 1 - in progress, 2 - completed, 3 - failed
+	int status = 0; //0 - not completed, 1 - in progress, 2 - completed, 3 - failed
 	std::vector<Food*> targets;
 	Civilian* asker = nullptr;
 	Civilian* receiver = nullptr;

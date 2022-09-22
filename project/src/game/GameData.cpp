@@ -82,3 +82,24 @@ std::vector<godot::Quest*>& godot::GameData::get_all_quests_cpp_ref()
 {
 	return all_quests;
 }
+
+int godot::GameData::amount_of_failed_quests()
+{
+	int cnt = 0;
+	for (auto q : all_quests) {
+		if (q->get_status() == 3) {
+			cnt++;
+		}
+	}
+	return cnt;
+}
+
+//NOTE: This function is supposed to be performed AFTER the logical day switch
+void godot::GameData::update_quests_status_on_day_switch(int new_day)
+{
+	for (auto q : all_quests) {
+		if (q->get_day() == new_day - 1 && q->get_status() != 2) {
+			q->set_failed();
+		}
+	}
+}

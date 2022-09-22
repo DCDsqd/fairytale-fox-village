@@ -78,6 +78,9 @@ public:
 	std::vector<Quest*>& get_all_quests_cpp_ref();
 	inline int total_quests() const noexcept { return (int)all_quests.size(); };
 
+	int amount_of_failed_quests();
+	void update_quests_status_on_day_switch(int new_day);
+
 private:
 	std::vector<Civilian*> all_civilians;
 	std::vector<Dialog*> all_dialogs;

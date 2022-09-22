@@ -35,3 +35,18 @@ bool godot::Quest::is_available(int cur_day)
 	}
 	return false;
 }
+
+void godot::Quest::set_completed()
+{
+	status = 2;
+}
+
+void godot::Quest::set_failed()
+{
+	status = 3;
+}
+
+void godot::Quest::set_in_prog()
+{
+	status = 1;
+}
