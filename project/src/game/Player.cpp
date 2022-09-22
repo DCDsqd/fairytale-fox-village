@@ -35,7 +35,7 @@ godot::Array godot::Player::inv_get_available_food(GameData* game_data)
 		bool satisf = true;
 		for (int j = 0; j < ingr_reqs.size(); ++j) {
 			Ingredient* cur_ingr = ingr_reqs[j];
-			if (!inventory.get_amount_ingr(cur_ingr)) {
+			if (inventory.get_amount_ingr(cur_ingr) < 1) {
 				satisf = false;
 				break;
 			}

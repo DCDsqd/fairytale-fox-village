@@ -35,6 +35,7 @@ public:
 		register_method("add_dialog", &GameData::add_dialog);
 		register_method("get_dialog", &GameData::get_dialog);
 		register_method("total_dialogs", &GameData::total_dialogs);
+		register_method("get_all_dialogs", &GameData::get_all_dialogs);
 	}
 
 	void _init() {};
@@ -64,6 +65,7 @@ public:
 
 	void add_dialog(Dialog* diag);
 	Dialog* get_dialog(int id);
+	godot::Array get_all_dialogs();
 
 private:
 	std::vector<Civilian*> all_civilians;

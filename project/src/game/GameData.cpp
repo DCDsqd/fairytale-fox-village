@@ -24,7 +24,8 @@ godot::Array godot::GameData::get_ingredient_mult(godot::Array idxs)
 {
 	godot::Array arr;
 	for (int i = 0; i < idxs.size(); ++i) {
-		arr.push_back(get_ingredient(i));
+		int cur_idx = idxs[i];
+		arr.push_back(get_ingredient(cur_idx - 1));
 	}
 	return arr;
 }
@@ -47,4 +48,13 @@ void godot::GameData::add_dialog(Dialog* diag)
 godot::Dialog* godot::GameData::get_dialog(int id)
 {
 	return all_dialogs[id];
+}
+
+godot::Array godot::GameData::get_all_dialogs()
+{
+	godot::Array arr;
+	for (int i = 0; i < all_dialogs.size(); ++i) {
+		arr.append(all_dialogs[i]);
+	}
+	return arr;
 }

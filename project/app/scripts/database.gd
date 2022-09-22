@@ -126,23 +126,29 @@ func select_food_reqs(food_id : int) -> Array:
 	
 func load_dialogs() -> void:
 	var table_name = "DIALOGS"
-	var diag_idx_arr : Array = []
-	var err = db.query("SELECT id FROM " + table_name + ";")
+	var err = db.query("SELECT id, partner_id FROM " + table_name + ";")
 	if !err:
 		print("ERROR in database.gd::load_dialogs(): ", err, db.error_message)
+	var diag_idx_arr : Array = create_2d_array(db.query_result.size(), 2)
 	for i in range(0, db.query_result.size()):
-		diag_idx_arr.append(db.query_result[i]["id"])
+		diag_idx_arr[i][0] = db.query_result[i]["id"]
+		diag_idx_arr[i][1] = db.query_result[i]["partner_id"]
 	for i in range(0, diag_idx_arr.size()):
-		var select_matrix : Array = select_dialog(diag_idx_arr[i])
+		var select_matrix : Array = select_dialog(diag_idx_arr[i][0])
+		var partner_ptr = game_data.get_civilian(diag_idx_arr[i][1] - 1)
 		var new_dialog = Dialog.new()
-		new_dialog.set_dialog_id(diag_idx_arr[i])
+		new_dialog.set_dialog_id(diag_idx_arr[i][0])
 		for j in range(0, select_matrix.size()):
 			var speaker_id = select_matrix[j][0]
 			var text = select_matrix[j][1]
 			var index = select_matrix[j][2]
-			var speaker_ptr : Civilian = game_data.get_civilian(speaker_id)
+			var speaker_ptr : Civilian
+			if speaker_id == 1:
+				speaker_ptr = partner_ptr
+			else:
+				speaker_ptr = null
 			new_dialog.add_phrase_to_conv(speaker_ptr, text, index)
-			game_data.add_dialog(new_dialog)
+		game_data.add_dialog(new_dialog)
 		
 func select_dialog(diag_id : int) -> Array:
 	var table_name = "DIALOG_TEXTS"
@@ -181,15 +187,16 @@ func load_quests() -> void:
 		var end_dialog_id = matrix[i][6]
 		
 		# Get pointer to objects by id
-		var asker = game_data.get_civilian(asker_id)
-		var receiver = game_data.get_civilian(receiver_id)
-		var start_dialog = game_data.get_dialog(start_dialog_id)
-		var end_dialog = game_data.get_dialog(end_dialog_id)
+		var asker = game_data.get_civilian(asker_id - 1)
+		var receiver = game_data.get_civilian(receiver_id - 1)
+		#var all_dialogs = game_data.get_all_dialogs()
+		var start_dialog = game_data.get_dialog(start_dialog_id - 1)
+		var end_dialog = game_data.get_dialog(end_dialog_id - 1)
 		
 		var targ_arr : Array = select_quest_targets(id)
 		var targ_arr_ptrs : Array = []
 		for j in range(0, targ_arr.size()):
-			targ_arr_ptrs.append(game_data.get_food(targ_arr[j]))
+			targ_arr_ptrs.append(game_data.get_food(targ_arr[j] - 1))
 		
 		var new_quest = Quest.new()
 		new_quest.bind_values(id, name, descr, asker, receiver, start_dialog, end_dialog)

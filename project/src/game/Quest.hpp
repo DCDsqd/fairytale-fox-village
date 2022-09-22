@@ -31,7 +31,7 @@ public:
 		register_method("get_asker", &Quest::get_asker);
 		register_method("get_receiver", &Quest::get_receiver);
 		register_method("get_start_dialog", &Quest::get_start_dialog);
-		register_method("get_end_dialog", &Quest::get_end_dialog);
+		register_method("get_end_dialog", &Quest::get_end_dialog);	
 	}
 
 	void _init() {};
