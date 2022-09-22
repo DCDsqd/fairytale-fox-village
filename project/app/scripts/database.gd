@@ -5,11 +5,16 @@ var game_data # Object that is supposed to contain all the needed info from db
 
 const SQLite = preload("res://addons/godot-sqlite/bin/gdsqlite.gdns")
 var db : SQLite # Actual database object, not valid until setup_db() is called
-var db_path = "res://db/data.db" # Path do db
+var db_path # Path do db, not valid until setup_db() is called
 
 # Sets up the database connection and makes @db variable valid
 func setup_db() -> void:
 	print("database.gd::setup_db was called")
+	if not Engine.editor_hint:
+		db_path = "res://db/data.db"
+	else: 
+		db_path = OS.get_executable_path() + "/db/data.db"
+	print(OS.get_executable_path())
 	db = SQLite.new()
 	db.path = db_path
 	
