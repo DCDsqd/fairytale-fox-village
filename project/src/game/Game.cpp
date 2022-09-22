@@ -23,6 +23,14 @@ int godot::Game::current_day() const noexcept
 	return day;
 }
 
+void godot::Game::add_gold(int i) {
+	gold += i;
+}
+
+int godot::Game::get_gold() {
+	return gold;
+}
+
 bool godot::Game::add_hour()
 {
 	if (time == DAY_END_TIME) {

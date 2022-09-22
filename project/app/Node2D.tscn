@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://scripts/example.gd" type="Script" id=1]
 [ext_resource path="res://objs/ob_hero.tscn" type="PackedScene" id=2]
@@ -28,6 +28,8 @@
 [ext_resource path="res://objs/trees/ob_tree_5.tscn" type="PackedScene" id=26]
 [ext_resource path="res://objs/trees/ob_tree_11.tscn" type="PackedScene" id=27]
 [ext_resource path="res://objs/trees/ob_tree_6.tscn" type="PackedScene" id=28]
+[ext_resource path="res://objs/npc/customer/ob_customer_controller.tscn" type="PackedScene" id=29]
+[ext_resource path="res://objs/workplace/ob_funt.tscn" type="PackedScene" id=30]
 
 [sub_resource type="CanvasItemMaterial" id=7]
 particles_animation = true
@@ -74,6 +76,7 @@ extents = Vector2( 144, 6 )
 extents = Vector2( 120, 6 )
 
 [node name="Node2D" type="Node2D"]
+pause_mode = 2
 process_priority = 10
 script = ExtResource( 1 )
 
@@ -217,7 +220,6 @@ frame = 1
 script = ExtResource( 22 )
 
 [node name="mask" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="ms_1" type="CollisionShape2D" parent="mask"]
 position = Vector2( 384, 75 )
@@ -245,3 +247,9 @@ shape = SubResource( 6 )
 
 [node name="ob_door_out" parent="." instance=ExtResource( 25 )]
 position = Vector2( 462, 768 )
+
+[node name="ob_customer_controller" parent="." instance=ExtResource( 29 )]
+position = Vector2( 462, 684 )
+
+[node name="ob_funt" parent="." instance=ExtResource( 30 )]
+position = Vector2( 486, 603 )

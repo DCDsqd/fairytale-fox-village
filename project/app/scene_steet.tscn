@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://scripts/camera_street.gd" type="Script" id=1]
 [ext_resource path="res://objs/ob_hero.tscn" type="PackedScene" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://objs/houses/ob_house_4.tscn" type="PackedScene" id=19]
 [ext_resource path="res://objs/trees/ob_tree_3.tscn" type="PackedScene" id=20]
 [ext_resource path="res://objs/houses/ob_house_3.tscn" type="PackedScene" id=21]
+[ext_resource path="res://scr_relocator.gd" type="Script" id=22]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 particles_animation = true
@@ -94,7 +95,7 @@ texture = ExtResource( 10 )
 script = ExtResource( 9 )
 
 [node name="ob_hero" parent="." instance=ExtResource( 2 )]
-position = Vector2( 711, 678 )
+position = Vector2( 628, 740 )
 collision_layer = 9
 
 [node name="ob_house_2" parent="." instance=ExtResource( 16 )]
@@ -230,3 +231,7 @@ shape = SubResource( 10 )
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 1227, 1671 )
 shape = SubResource( 11 )
+
+[node name="relocator" type="Node2D" parent="."]
+position = Vector2( 715, 702 )
+script = ExtResource( 22 )

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://sprite/sp_funt.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://objs/workplace/ob_funt.gd" type="Script" id=2]
+
+[node name="ob_funt" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = ExtResource( 1 )

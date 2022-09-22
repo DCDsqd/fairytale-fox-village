@@ -41,6 +41,8 @@ public:
         register_method("current_day", &Game::current_day);
         register_method("add_hour", &Game::add_hour);
         register_method("is_correct", &Game::is_correct);
+        register_method("add_gold", &Game::add_gold);
+        register_method("get_gold", &Game::get_gold);
         //register_method("", &Game);
     }
     
@@ -63,11 +65,15 @@ public:
     int current_day() const noexcept;
     bool add_hour();
 
+    void add_gold(int i);
+    int get_gold();
+
 private:
     bool correct = false;
     Player* player = nullptr;
     int time = DAY_START_TIME;
     int day = FIRST_DAY;
+    int gold = 300;
     std::vector<Quest*> active_quests;
     std::vector<Quest*> all_quests;
 };
