@@ -29,6 +29,8 @@ public:
 		register_method("get_game", &Player::get_game);
 		register_method("inv_add_ingredients", &Player::inv_add_ingredients);
 		register_method("inv_get_ingredients_cnt", &Player::inv_get_ingredients_cnt);
+		register_method("inv_add_food", &Player::inv_add_food);
+		register_method("inv_get_food_cnt", &Player::inv_get_food_cnt);
 		register_method("inv_get_available_food", &Player::inv_get_available_food);
     }
 
@@ -39,6 +41,8 @@ public:
 	inline Game* get_game() { return game; };
 	void inv_add_ingredients(Ingredient* ingr, int amount = 1);
 	int inv_get_ingredients_cnt(Ingredient* ingr);
+	void inv_add_food(Food* food, int amount = 1);
+	int inv_get_food_cnt(Food* food);
 	godot::Array inv_get_available_food(GameData* game_data);
 
 private:

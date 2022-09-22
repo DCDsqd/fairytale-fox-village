@@ -37,7 +37,6 @@ private:
 	godot::String name;
 	int id;
 	godot::String catch_phrase;
-	Quest* quest;
 };
 
 } //namespace godot
