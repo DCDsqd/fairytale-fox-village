@@ -8,3 +8,5 @@ script = ExtResource( 2 )
 
 [node name="sp_shopkeeper" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
+speed_scale = 0.1
+playing = true
