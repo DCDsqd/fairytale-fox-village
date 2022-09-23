@@ -42,7 +42,7 @@ godot::Food* godot::GameData::get_food(int idx)
 
 int godot::GameData::get_total_food()
 {
-	return all_food.size();
+	return (int)all_food.size();
 }
 
 void godot::GameData::add_dialog(Dialog* diag)

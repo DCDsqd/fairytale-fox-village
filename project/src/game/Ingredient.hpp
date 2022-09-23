@@ -31,14 +31,14 @@ public:
 	inline int get_type() const { return type; };
 	inline int get_id() const { return id; };
 	inline godot::String get_name() const { return name; };
-	inline int is_available() const { return (int)available; };
+	inline int is_available() const { return available; };
 
 private:
 	int id;
 	godot::String name;
 	int type;
 	int cost;
-	bool available;
+	int available;
 };
 
 } //namespace godot
