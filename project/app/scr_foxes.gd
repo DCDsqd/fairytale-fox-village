@@ -27,11 +27,11 @@ func say_dialog(id, pos, game_data, game, player, hero):
 	hero.get_node("sp_dialog_1").visible = true
 	var say = dialog_main.get_conv_elem(iter)
 	if say[0] == null:
-		hero.get_node("sp_dialog_1").global_position.y = hero.position.y-96
+		hero.get_node("sp_dialog_1").global_position.y = hero.position.y-126
 		hero.get_node("sp_dialog_1").global_position.x = hero.position.x
 		hero.get_node("sp_dialog_1/txt").text = say[1]
 	else:
-		hero.get_node("sp_dialog_1").global_position.y = pos.y-96
+		hero.get_node("sp_dialog_1").global_position.y = pos.y-126
 		hero.get_node("sp_dialog_1").global_position.x = pos.x
 		hero.get_node("sp_dialog_1/txt").text = say[1]
 

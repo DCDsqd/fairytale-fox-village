@@ -21,7 +21,7 @@ shape = SubResource( 1 )
 
 [node name="sp_dialog_1" type="AnimatedSprite" parent="."]
 visible = false
-position = Vector2( 0, -96 )
+position = Vector2( 0, -126 )
 frames = ExtResource( 3 )
 
 [node name="txt" type="Label" parent="sp_dialog_1"]
