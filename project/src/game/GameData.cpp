@@ -128,3 +128,27 @@ godot::Quest* godot::GameData::get_avail_quest_for_civ(Civilian* civ, int cur_da
 	}
 	return nullptr;
 }
+
+godot::String godot::GameData::get_ingr_shop_info(Ingredient* ingr, Player* player)
+{
+	godot::String str = "Usage in receips:\n";
+	std::vector<Food*> receips;
+	for (int i = 0; i < all_food.size(); ++i) {
+		std::vector<Ingredient*>& ingrs = all_food[i]->get_ingr_ref_cpp();
+		bool found = false;
+		for (int j = 0; j < ingrs.size(); ++j) {
+			if (ingrs[j] == ingr) {
+				found = true;
+				break;
+			}
+		}
+		if (found) {
+			receips.push_back(all_food[i]);
+		}
+	}
+	for (auto r : receips) {
+		str += "\t" + r->get_name() + " (cost: " + godot::String(r->get_cost()) + ")\n";
+	}
+	str += "Currently owned: " + godot::String(player->inv_get_ingredients_cnt(ingr));
+	return str;
+}

@@ -35,6 +35,7 @@ public:
 	godot::Array get_ingridients();
 	inline godot::String get_type() const { return type; };
 	inline int get_cost() const { return cost; };
+	std::vector<Ingredient*>& get_ingr_ref_cpp() { return ingridients; };
 
 private:
 	godot::String name;
