@@ -70,7 +70,7 @@ func _setup_time_control() -> void:
 func add_hour() -> void:
 	var day_changed = game.add_hour()
 	if day_changed == true:
-		game_data.update_quests_status_on_day_switch()
+		game_data.update_quests_status_on_day_switch(game.current_day())
 	print("Time has been updated! New time: ", str(game.current_time()) + ":00", ", day: ", str(game.current_day()))
 
 func change(res):
