@@ -34,7 +34,7 @@ public:
 		register_method("get_end_dialog", &Quest::get_end_dialog);	
 		register_method("get_day", &Quest::get_day);
 		register_method("set_completed", &Quest::set_completed);
-		register_method("set_ing_prog", &Quest::set_in_prog);
+		register_method("set_in_prog", &Quest::set_in_prog);
 		register_method("set_failed", &Quest::set_failed);
 		register_method("get_reqs", &Quest::get_reqs);
 	}

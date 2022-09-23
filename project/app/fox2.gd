@@ -4,7 +4,7 @@ onready var hero = get_parent().get_node("ob_hero")
 onready var game_data : GameData
 onready var game : Game
 onready var player : Player
-var id = 1
+var id = 7
 
 func _process(delta) -> void:
 	if Input.is_action_just_released("inter"):
