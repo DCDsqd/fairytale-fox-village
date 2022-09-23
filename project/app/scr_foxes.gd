@@ -58,6 +58,9 @@ func get_dialog(id, pos, game_data, game, player, hero) -> void:
 	elif quest_avail != null:
 		dialog_main = quest_avail.get_start_dialog()
 		quest_avail.set_in_prog()
+		var st = quest_avail.get_status()
+		print("st:" ,st)
+		var t
 	elif extra_check:
 		var catch_phrase : String = civ.get_catch_phrase()
 		dialog_main = Dialog.new()
