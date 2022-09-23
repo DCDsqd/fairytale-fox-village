@@ -75,6 +75,7 @@ func change(res):
 	var node = load(res)
 	var node_inst = node.instance()
 	add_child(node_inst)
+	scene = node_inst
 
 # Sets up SQLite database connection and @db variable
 func setup_db() -> void:
