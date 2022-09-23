@@ -183,7 +183,7 @@ func load_quests() -> void:
 		var name = matrix[i][1]
 		var descr = matrix[i][2]
 		var asker_id = matrix[i][3]
-		var receiver_id = matrix[i][4]
+		var receiver_id = int(matrix[i][4])
 		var start_dialog_id = matrix[i][5]
 		var end_dialog_id = matrix[i][6]
 		var quest_day = matrix[i][7]
@@ -195,8 +195,14 @@ func load_quests() -> void:
 		var start_dialog = game_data.get_dialog(start_dialog_id - 1)
 		var end_dialog = game_data.get_dialog(end_dialog_id - 1)
 		
+		if receiver_id == 1:
+			var d = 0
+		
 		var targ_arr : Array = select_quest_targets(id)
 		var targ_arr_ptrs : Array = []
+		
+		print("food: " ,game_data.get_total_food())
+		
 		for j in range(0, targ_arr.size()):
 			targ_arr_ptrs.append(game_data.get_food(targ_arr[j] - 1))
 		

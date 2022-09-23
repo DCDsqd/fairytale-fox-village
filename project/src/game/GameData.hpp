@@ -41,6 +41,7 @@ public:
 		register_method("get_all_quests", &GameData::get_all_quests);
 		register_method("add_quest", &GameData::add_quest);
 		register_method("total_quests", &GameData::total_quests);
+		register_method("get_total_food", &GameData::get_total_food);
 	}
 
 	void _init() {};
@@ -67,6 +68,7 @@ public:
 
 	void add_food(Food* food);
 	Food* get_food(int idx);
+	int get_total_food();
 
 	void add_dialog(Dialog* diag);
 	Dialog* get_dialog(int id);
