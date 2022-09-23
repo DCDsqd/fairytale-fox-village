@@ -6,6 +6,7 @@ var game # Main game object
 var player # Main player object
 var scene : Node2D
 var game_data : GameData
+var npc_spr : Array
 
 func _ready():
 	# Setub db connection
@@ -42,6 +43,16 @@ func _ready():
 	var g = player.get_game()
 	print(g.current_day())
 	change("res://Node2D.tscn")
+	npc_loader()
+
+func npc_loader():
+	npc_spr.append(load("res://sprite/npc/sp_rose.tres"))
+	npc_spr.append(load("res://sprite/npc/sp_rose.tres"))
+	npc_spr.append(load("res://sprite/npc/sp_luna.tres"))
+	npc_spr.append(load("res://sprite/npc/sp_luna.tres"))
+	npc_spr.append(load("res://sprite/npc/sp_flareon.tres"))
+	npc_spr.append(load("res://sprite/npc/sp_gideon.tres"))
+	npc_spr.append(load("res://sprite/npc/sp_runi.tres"))
 
 # Starts the timer for updating game time during the game
 func _setup_time_control() -> void:
