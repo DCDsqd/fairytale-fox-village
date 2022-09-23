@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://sprite/hero/sp_hero.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://scripts/ob_hero.gd" type="Script" id=2]
+[ext_resource path="res://sprite/hud/sp_dialog.tres" type="SpriteFrames" id=3]
+[ext_resource path="res://fonts/main.tres" type="DynamicFont" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 19.5, 19.5 )
@@ -16,3 +18,19 @@ animation = "f_idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.5, 22 )
 shape = SubResource( 1 )
+
+[node name="sp_dialog_1" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 0, -96 )
+frames = ExtResource( 3 )
+
+[node name="txt" type="Label" parent="sp_dialog_1"]
+margin_left = -90.0
+margin_top = -42.0
+margin_right = 264.0
+margin_bottom = 90.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "dfafasdfsadf asdfasdfasdf sdafasdfsdfsdf"
+autowrap = true

@@ -13,7 +13,7 @@ script = ExtResource( 3 )
 [node name="sp_person" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
 animation = "f_idle"
-frame = 4
+frame = 6
 playing = true
 
 [node name="sp_emot" type="AnimatedSprite" parent="."]
