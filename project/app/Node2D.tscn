@@ -172,6 +172,7 @@ position = Vector2( 165, 208 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ob_hero"]
 stream = ExtResource( 31 )
+volume_db = -9.0
 autoplay = true
 
 [node name="leaf" type="Node2D" parent="."]
