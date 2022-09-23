@@ -18,13 +18,6 @@
 
 namespace godot {
 
-godot::String from_num(int num) {
-	std::string standardString = std::to_string(num);
-	godot::String godotString = godot::String(standardString.c_str());
-	return godotString;
-}
-
-
 class GameData : public Node {
 
 	GODOT_CLASS(GameData, Node);
@@ -60,6 +53,12 @@ public:
 	}
 
 	void _init() {};
+
+	static godot::String gs_from_num(int num) {
+		std::string standardString = std::to_string(num);
+		godot::String godotString = godot::String(standardString.c_str());
+		return godotString;
+	}
 
 	inline int total_civilians() const {
 		return (int)all_civilians.size();
