@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://scripts/camera_street.gd" type="Script" id=1]
 [ext_resource path="res://objs/ob_hero.tscn" type="PackedScene" id=2]
@@ -22,6 +22,8 @@
 [ext_resource path="res://objs/trees/ob_tree_3.tscn" type="PackedScene" id=20]
 [ext_resource path="res://objs/houses/ob_house_3.tscn" type="PackedScene" id=21]
 [ext_resource path="res://scr_relocator.gd" type="Script" id=22]
+[ext_resource path="res://objs/npc/ob_shopkeeper.tscn" type="PackedScene" id=23]
+[ext_resource path="res://objs/npc/ui_shop.tscn" type="PackedScene" id=24]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 particles_animation = true
@@ -93,6 +95,13 @@ visibility_rect = Rect2( -200, -200, 400, 400 )
 process_material = SubResource( 2 )
 texture = ExtResource( 10 )
 script = ExtResource( 9 )
+
+[node name="Control" parent="camera_street" instance=ExtResource( 24 )]
+visible = false
+margin_left = -400.0
+margin_top = -225.0
+margin_right = -400.0
+margin_bottom = -225.0
 
 [node name="ob_hero" parent="." instance=ExtResource( 2 )]
 position = Vector2( 628, 740 )
@@ -235,3 +244,6 @@ shape = SubResource( 11 )
 [node name="relocator" type="Node2D" parent="."]
 position = Vector2( 715, 702 )
 script = ExtResource( 22 )
+
+[node name="ob_shopkeeper" parent="." instance=ExtResource( 23 )]
+position = Vector2( 1305, 868 )
