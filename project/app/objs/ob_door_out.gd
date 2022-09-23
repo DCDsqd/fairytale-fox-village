@@ -8,4 +8,4 @@ func _ready() -> void:
 func _process(delta) -> void:
 	if Input.is_action_just_released("inter"):
 		if position.distance_to(hero.position) < 50:
-			get_tree().change_scene("res://scene_steet.tscn")
+			get_parent().get_parent().change("res://scene_steet.tscn")

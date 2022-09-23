@@ -76,7 +76,7 @@ extents = Vector2( 144, 6 )
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 120, 6 )
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 pause_mode = 2
 process_priority = 10
 script = ExtResource( 1 )
@@ -168,7 +168,7 @@ position = Vector2( 120, -114 )
 
 [node name="ob_hero" parent="." instance=ExtResource( 2 )]
 process_priority = 9
-position = Vector2( 165, 208 )
+position = Vector2( 458, 733 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ob_hero"]
 stream = ExtResource( 31 )
