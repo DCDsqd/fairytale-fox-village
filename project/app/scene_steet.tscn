@@ -98,8 +98,6 @@ script = ExtResource( 9 )
 position = Vector2( 628, 740 )
 collision_layer = 9
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ob_hero"]
-
 [node name="ob_house_2" parent="." instance=ExtResource( 16 )]
 position = Vector2( -174, 588 )
 
