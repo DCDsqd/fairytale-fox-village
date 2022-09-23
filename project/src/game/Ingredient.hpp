@@ -26,7 +26,7 @@ public:
 
 	void _init() {};
 
-	void bind_values(int _id, godot::String _name, int _type, int _cost, int _available);
+	void bind_values(int _id, godot::String _name, int _type, int _available, int _cost);
 	inline int get_cost() const { return cost; };
 	inline int get_type() const { return type; };
 	inline int get_id() const { return id; };

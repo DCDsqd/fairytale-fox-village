@@ -1,6 +1,6 @@
 #include "Ingredient.hpp"
 
-void godot::Ingredient::bind_values(int _id, godot::String _name, int _type, int _cost, int _available)
+void godot::Ingredient::bind_values(int _id, godot::String _name, int _type, int _available, int _cost)
 {
 	id = _id;
 	name = _name;
