@@ -36,6 +36,7 @@ public:
 		register_method("set_completed", &Quest::set_completed);
 		register_method("set_ing_prog", &Quest::set_in_prog);
 		register_method("set_failed", &Quest::set_failed);
+		register_method("get_reqs", &Quest::get_reqs);
 	}
 
 	void _init() {};
@@ -56,6 +57,7 @@ public:
 	void set_completed();
 	void set_failed();
 	void set_in_prog();
+	godot::Array get_reqs();
 
 private:
 	int id;

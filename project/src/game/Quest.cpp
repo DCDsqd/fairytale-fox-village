@@ -50,3 +50,12 @@ void godot::Quest::set_in_prog()
 {
 	status = 1;
 }
+
+godot::Array godot::Quest::get_reqs()
+{
+	godot::Array arr;
+	for (int i = 0; i < targets.size(); ++i) {
+		arr.append(targets[i]);
+	}
+	return arr;
+}
