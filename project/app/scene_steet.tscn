@@ -257,3 +257,39 @@ shape = SubResource( 11 )
 [node name="relocator" type="Node2D" parent="."]
 position = Vector2( 715, 702 )
 script = ExtResource( 22 )
+
+[node name="fox1" type="Node2D" parent="."]
+position = Vector2( -470, 931 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="fox1"]
+position = Vector2( 103, 23 )
+
+[node name="fox2" type="Node2D" parent="."]
+position = Vector2( -1300, 831 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="fox2"]
+
+[node name="fox3" type="Node2D" parent="."]
+position = Vector2( -1755, 886 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="fox3"]
+
+[node name="fox4" type="Node2D" parent="."]
+position = Vector2( -3088, 776 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="fox4"]
+
+[node name="fox5" type="Node2D" parent="."]
+position = Vector2( -3745, 874 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="fox5"]
+
+[node name="fox6" type="Node2D" parent="."]
+position = Vector2( -941, 844 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="fox6"]
+
+[node name="fox7" type="Node2D" parent="."]
+position = Vector2( -2348, 828 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="fox7"]
