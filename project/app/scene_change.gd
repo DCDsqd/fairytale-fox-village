@@ -60,7 +60,7 @@ func _setup_time_control() -> void:
 	var timer := Timer.new()
 
 	# Set timer interval in seconds
-	var HOUR_REAL_TIME := 10
+	var HOUR_REAL_TIME := 21
 	timer.set_wait_time(HOUR_REAL_TIME)
 
 	# Set it as repeat
@@ -82,6 +82,7 @@ func add_hour() -> void:
 	var day_changed = game.add_hour()
 	if day_changed == true:
 		game_data.update_quests_status_on_day_switch(game.current_day())
+		change("res://Node2D.tscn")
 	print("Time has been updated! New time: ", str(game.current_time()) + ":00", ", day: ", str(game.current_day()))
 
 func change(res):
