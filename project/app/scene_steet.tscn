@@ -79,8 +79,12 @@ tile_data = PoolIntArray( 65441, 0, 1, 65442, 0, 1, 65443, 0, 1, 65444, 0, 1, 65
 [node name="ob_house_shop" parent="." instance=ExtResource( 8 )]
 position = Vector2( 726, 621 )
 
+[node name="ob_shopkeeper" parent="." instance=ExtResource( 23 )]
+position = Vector2( 1305, 868 )
+
 [node name="camera_street" type="Camera2D" parent="."]
 position = Vector2( 705, 690 )
+z_index = 2000
 current = true
 script = ExtResource( 1 )
 
@@ -244,6 +248,3 @@ shape = SubResource( 11 )
 [node name="relocator" type="Node2D" parent="."]
 position = Vector2( 715, 702 )
 script = ExtResource( 22 )
-
-[node name="ob_shopkeeper" parent="." instance=ExtResource( 23 )]
-position = Vector2( 1305, 868 )
