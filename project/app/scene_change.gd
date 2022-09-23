@@ -49,7 +49,7 @@ func npc_loader():
 	npc_spr.append(load("res://sprite/npc/sp_rose.tres"))
 	npc_spr.append(load("res://sprite/npc/sp_rose.tres"))
 	npc_spr.append(load("res://sprite/npc/sp_luna.tres"))
-	npc_spr.append(load("res://sprite/npc/sp_luna.tres"))
+	npc_spr.append(load("res://sprite/npc/sp_ozi.tres"))
 	npc_spr.append(load("res://sprite/npc/sp_flareon.tres"))
 	npc_spr.append(load("res://sprite/npc/sp_gideon.tres"))
 	npc_spr.append(load("res://sprite/npc/sp_runi.tres"))

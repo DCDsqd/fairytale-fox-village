@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://scripts/camera_street.gd" type="Script" id=1]
 [ext_resource path="res://objs/ob_hero.tscn" type="PackedScene" id=2]
@@ -27,6 +27,12 @@
 [ext_resource path="res://objs/ob_hud.tscn" type="PackedScene" id=25]
 [ext_resource path="res://scene_steet.gd" type="Script" id=26]
 [ext_resource path="res://fox1.gd" type="Script" id=27]
+[ext_resource path="res://sprite/npc/sp_runi.tres" type="SpriteFrames" id=28]
+[ext_resource path="res://sprite/npc/sp_gideon.tres" type="SpriteFrames" id=29]
+[ext_resource path="res://sprite/npc/sp_ozi.tres" type="SpriteFrames" id=30]
+[ext_resource path="res://sprite/npc/sp_rose.tres" type="SpriteFrames" id=31]
+[ext_resource path="res://sprite/npc/sp_flareon.tres" type="SpriteFrames" id=32]
+[ext_resource path="res://sprite/npc/sp_luna.tres" type="SpriteFrames" id=33]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 particles_animation = true
@@ -264,31 +270,54 @@ position = Vector2( -470, 931 )
 script = ExtResource( 27 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="fox1"]
+frames = ExtResource( 32 )
+animation = "f_idle"
+playing = true
 
 [node name="fox2" type="Node2D" parent="."]
 position = Vector2( -1300, 831 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="fox2"]
+frames = ExtResource( 33 )
+animation = "f_idle"
+frame = 2
+playing = true
 
 [node name="fox3" type="Node2D" parent="."]
 position = Vector2( -1755, 886 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="fox3"]
+frames = ExtResource( 29 )
+animation = "f_idle"
+frame = 7
+playing = true
 
 [node name="fox4" type="Node2D" parent="."]
 position = Vector2( -3088, 776 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="fox4"]
+frames = ExtResource( 30 )
+animation = "f_idle"
+frame = 6
+playing = true
 
 [node name="fox5" type="Node2D" parent="."]
 position = Vector2( -3745, 874 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="fox5"]
+frames = ExtResource( 31 )
+animation = "f_idle"
+frame = 4
+playing = true
 
 [node name="fox6" type="Node2D" parent="."]
 position = Vector2( -941, 844 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="fox6"]
+frames = ExtResource( 28 )
+animation = "f_idle"
+frame = 4
+playing = true
 
 [node name="fox7" type="Node2D" parent="."]
 position = Vector2( -2348, 828 )
