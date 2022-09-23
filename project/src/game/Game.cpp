@@ -58,3 +58,11 @@ bool godot::Game::add_hour()//::GameData* game_data)
 	++time;
 	return false;
 }
+
+bool godot::Game::game_over() const
+{
+	if (day >= DAY_END_TIME) {
+		return true;
+	}
+	return false;
+}

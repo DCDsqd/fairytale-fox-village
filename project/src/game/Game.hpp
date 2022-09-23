@@ -46,6 +46,7 @@ public:
         register_method("get_gold", &Game::get_gold);
         register_method("activate_quest", &Game::activate_quest);
         register_method("deactivate_quest", &Game::deactivate_quest);
+        register_method("game_over", &Game::game_over);
         //register_method("", &Game);
     }
     
@@ -70,6 +71,7 @@ public:
     int current_time() const noexcept;
     int current_day() const noexcept;
     bool add_hour();//godot::GameData* game_data);
+    bool game_over() const;
 
     void add_gold(int i);
     int get_gold();
