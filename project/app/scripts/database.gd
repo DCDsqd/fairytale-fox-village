@@ -203,6 +203,7 @@ func load_quests() -> void:
 		var new_quest = Quest.new()
 		new_quest.bind_values(id, name, descr, asker, receiver, start_dialog, end_dialog, quest_day)
 		new_quest.add_food_targets(targ_arr_ptrs)
+		game_data.add_quest(new_quest)
 
 func select_quest_targets(quest_id : int) -> Array:
 	var arr : Array

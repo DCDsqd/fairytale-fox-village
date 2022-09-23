@@ -147,8 +147,8 @@ godot::String godot::GameData::get_ingr_shop_info(Ingredient* ingr, Player* play
 		}
 	}
 	for (auto r : receips) {
-		str += "\t" + r->get_name() + " (cost: " + godot::String(r->get_cost()) + ")\n";
+		str += "\t" + r->get_name() + " (cost: " + godot::from_num(r->get_cost()) + ")\n";
 	}
-	str += "Currently owned: " + godot::String(player->inv_get_ingredients_cnt(ingr));
+	str += "Currently owned: " + godot::from_num(player->inv_get_ingredients_cnt(ingr));
 	return str;
 }
