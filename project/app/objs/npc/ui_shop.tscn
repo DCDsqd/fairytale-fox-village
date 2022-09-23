@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://sprite/book.png" type="Texture" id=1]
+[ext_resource path="res://sprite/ui/book.png" type="Texture" id=1]
 [ext_resource path="res://sprite/items/sp_ingr_2.tres" type="Texture" id=2]
 [ext_resource path="res://sprite/items/sp_ingr_1.tres" type="Texture" id=3]
 [ext_resource path="res://fonts/main_bold.tres" type="DynamicFont" id=4]
