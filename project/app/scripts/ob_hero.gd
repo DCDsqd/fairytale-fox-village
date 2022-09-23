@@ -38,4 +38,4 @@ func _process(delta) -> void:
 	
 	if (state == 'game'):
 		animat()
-		move_and_slide(Vector2(_x,_y) * delta * speed)
+		move_and_slide(Vector2(_x,_y) * speed)
