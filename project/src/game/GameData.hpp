@@ -3,6 +3,8 @@
 #include <set>
 #include <memory>
 #include <vector>
+#include <string>
+#include <algorithm>
 
 #include <Godot.hpp>
 #include <Node.hpp>
@@ -11,6 +13,7 @@
 #include "Dialog.hpp"
 #include "Ingredient.hpp"
 #include "Food.hpp"
+#include "Player.hpp"
 #include "Quest.hpp"
 
 namespace godot {
@@ -46,6 +49,7 @@ public:
 		register_method("amount_of_failed_quests", &GameData::amount_of_failed_quests);
 		register_method("get_active_quest_for_civ", &GameData::get_active_quest_for_civ);
 		register_method("get_avail_quest_for_civ", &GameData::get_avail_quest_for_civ);
+		register_method("get_ingr_shop_info", &GameData::get_ingr_shop_info);
 	}
 
 	void _init() {};
@@ -89,6 +93,8 @@ public:
 
 	Quest* get_active_quest_for_civ(Civilian* civ);
 	Quest* get_avail_quest_for_civ(Civilian* civ, int cur_day);
+
+	godot::String get_ingr_shop_info(Ingredient* ingr, Player* player);
 
 private:
 	std::vector<Civilian*> all_civilians;
