@@ -10,6 +10,8 @@ onready var txt_2 : Label
 onready var txt_1 : Label
 onready var over_1 : Label
 onready var over_2 : Label
+onready var descr_1 : Label
+onready var descr_2 : Label
 
 var sel_item : Array;
 var sel = 0
@@ -26,6 +28,9 @@ func turner(vis) -> void:
 	txt_2 = get_node("TextureRect/HBoxContainer/text_2/lb_name")
 	over_1 = get_node("TextureRect/HBoxContainer/text_1/lb_over")
 	over_2 = get_node("TextureRect/HBoxContainer/text_2/lb_over")
+	descr_1 = get_node("TextureRect/HBoxContainer/text_1/lb_descr")
+	descr_2 = get_node("TextureRect/HBoxContainer/text_2/lb_descr")
+	
 	
 	for i in range(0, 20):
 		if game_data.get_ingredient(i).is_available() == 1:
@@ -49,6 +54,9 @@ func upd() -> void:
 	
 	over_1.text = String( sel_item[sel].get_const())
 	over_2.text = String( sel_item[sel+1].get_const())
+	
+	descr_1.text = String( game_data.get_ingr_shop_info(sel_item[sel], player))
+	descr_2.text = String( game_data.get_ingr_shop_info(sel_item[sel], player))
 
 func buy_1() -> void:
 	if game.get_gold() >= sel_item[sel].get_const():
@@ -58,7 +66,7 @@ func buy_1() -> void:
 
 func buy_2() -> void:
 	if game.get_gold() >= sel_item[sel+1].get_const():
-		player.inv_add_ingredients(sel_item[sel])
+		player.inv_add_ingredients(sel_item[sel], 1)
 		game.add_gold(-sel_item[sel].get_const())
 		print(player.inv_get_ingredients(sel_item[sel]))
 	pass

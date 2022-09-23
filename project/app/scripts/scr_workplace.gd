@@ -41,6 +41,10 @@ func timer(sp_timer, sp_comp, delta):
 		sp_timer.visible = false
 		sp_comp.visible = false
 
+func close():
+	state ='noth'
+	pass
+
 func coock(i : Food, _player):
 	state = "coock"
 	food = i

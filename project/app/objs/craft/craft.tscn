@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://sprite/hud/plus.png" type="Texture" id=1]
 [ext_resource path="res://sprite/hud/equals.png" type="Texture" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://objs/craft/prev.gd" type="Script" id=9]
 [ext_resource path="res://sprite/items/sp_ingr_2.tres" type="Texture" id=10]
 [ext_resource path="res://sprite/items/sp_food.tres" type="Texture" id=11]
+[ext_resource path="res://sprite/ui/close.png" type="Texture" id=12]
+[ext_resource path="res://sprite/ui/scompl.png" type="Texture" id=13]
 
 [node name="hud_craft" type="HBoxContainer"]
 anchor_right = 0.495
@@ -56,7 +58,7 @@ margin_left = 260.0
 margin_right = 308.0
 margin_bottom = 48.0
 texture_normal = ExtResource( 11 )
-texture_pressed = ExtResource( 11 )
+texture_pressed = ExtResource( 13 )
 script = ExtResource( 8 )
 
 [node name="next" type="TextureButton" parent="."]
@@ -65,4 +67,12 @@ margin_right = 360.0
 margin_bottom = 48.0
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 3 )
+script = ExtResource( 7 )
+
+[node name="close" type="TextureButton" parent="."]
+margin_left = 364.0
+margin_right = 412.0
+margin_bottom = 48.0
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 12 )
 script = ExtResource( 7 )

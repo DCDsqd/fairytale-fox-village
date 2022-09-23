@@ -82,6 +82,10 @@ func prev():
 		sel-=1
 	set_food()
 
+func close():
+	turner(false)
+	wrkplc.close()
+
 func made():
 	var av_food : Array = [];
 	av_food = player.inv_get_available_food(game_data)
