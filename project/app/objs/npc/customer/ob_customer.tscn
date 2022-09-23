@@ -13,11 +13,14 @@ script = ExtResource( 3 )
 [node name="sp_person" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
 animation = "f_idle"
+frame = 4
+playing = true
 
 [node name="sp_emot" type="AnimatedSprite" parent="."]
 visible = false
 position = Vector2( 0, -72 )
 frames = ExtResource( 2 )
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 24 )

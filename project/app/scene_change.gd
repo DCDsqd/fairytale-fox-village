@@ -92,6 +92,9 @@ func change(res):
 	add_child(node_inst)
 	scene = node_inst
 
+func get_sprs() -> Array:
+	return npc_spr
+
 # Sets up SQLite database connection and @db variable
 func setup_db() -> void:
 	db_script.setup_db()
