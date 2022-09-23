@@ -44,6 +44,10 @@ func _ready():
 	print(g.current_day())
 	change("res://Node2D.tscn")
 	npc_loader()
+	
+	for i in range(0, 21):
+		var cur_ingr_to_add = game_data.get_ingredient(i)
+		player.inv_add_ingredients(cur_ingr_to_add, 1)
 
 func npc_loader():
 	npc_spr.append(load("res://sprite/npc/sp_rose.tres"))

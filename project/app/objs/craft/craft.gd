@@ -35,9 +35,6 @@ func work():
 	player = get_parent().get_parent().get_player()
 	game_data = get_parent().get_parent().get_db().get_data()
 	
-	for i in range(0, 21):
-		var cur_ingr_to_add = game_data.get_ingredient(i)
-		player.inv_add_ingredients(cur_ingr_to_add, 19)
 
 	var av_food : Array = [];
 	av_food = player.inv_get_available_food(game_data)

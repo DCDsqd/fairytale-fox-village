@@ -280,7 +280,7 @@ script = ExtResource( 27 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="fox1"]
 frames = ExtResource( 31 )
 animation = "f_idle"
-frame = 1
+frame = 5
 playing = true
 
 [node name="sp_emot" type="AnimatedSprite" parent="fox1"]
@@ -308,7 +308,7 @@ script = ExtResource( 38 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="fox3"]
 frames = ExtResource( 33 )
 animation = "f_idle"
-frame = 7
+frame = 3
 playing = true
 
 [node name="sp_emot" type="AnimatedSprite" parent="fox3"]
@@ -322,7 +322,7 @@ script = ExtResource( 34 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="fox4"]
 frames = ExtResource( 30 )
 animation = "f_idle"
-frame = 3
+frame = 7
 playing = true
 
 [node name="sp_emot" type="AnimatedSprite" parent="fox4"]
@@ -354,7 +354,6 @@ frames = ExtResource( 40 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="fox6"]
 frames = ExtResource( 29 )
 animation = "f_idle"
-frame = 4
 playing = true
 
 [node name="fox7" type="Node2D" parent="."]
