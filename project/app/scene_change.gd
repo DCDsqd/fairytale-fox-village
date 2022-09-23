@@ -5,7 +5,7 @@ var db # Database object that is going to be valid after setup_db() is called
 var game # Main game object
 var player # Main player object
 var scene : Node2D
-
+var game_data : GameData
 
 func _ready():
 	# Setub db connection
@@ -19,6 +19,8 @@ func _ready():
 	
 	# Close db
 	db_script.close_db()
+	
+	game_data = db_script.game_data
 	
 	# Game object
 	game = Game.new()
@@ -66,7 +68,9 @@ func _setup_time_control() -> void:
 
 # Adds an hour to C++ game class time property and prints updated time
 func add_hour() -> void:
-	game.add_hour()
+	var day_changed = game.add_hour()
+	if day_changed == true:
+		game_data.update_quests_status_on_day_switch()
 	print("Time has been updated! New time: ", str(game.current_time()) + ":00", ", day: ", str(game.current_day()))
 
 func change(res):

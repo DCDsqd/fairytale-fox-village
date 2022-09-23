@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var speed = 7500
+var speed = 75000
 var _x = 0
 var _y = 0
 var anim = 'f_idle'

@@ -108,3 +108,23 @@ void godot::GameData::update_quests_status_on_day_switch(int new_day)
 		}
 	}
 }
+
+godot::Quest * godot::GameData::get_active_quest_for_civ(Civilian * civ)
+{
+	for (int i = 0; i < all_quests.size(); ++i) {
+		if (all_quests[i]->get_asker() == civ && all_quests[i]->get_status() == 1) {
+			return all_quests[i];
+		}
+	}
+	return nullptr;
+}
+
+godot::Quest* godot::GameData::get_avail_quest_for_civ(Civilian* civ, int cur_day)
+{
+	for (int i = 0; i < all_quests.size(); ++i) {
+		if (all_quests[i]->get_asker() == civ && all_quests[i]->is_available(cur_day)) {
+			return all_quests[i];
+		}
+	}
+	return nullptr;
+}

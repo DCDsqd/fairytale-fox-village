@@ -42,6 +42,10 @@ public:
 		register_method("add_quest", &GameData::add_quest);
 		register_method("total_quests", &GameData::total_quests);
 		register_method("get_total_food", &GameData::get_total_food);
+		register_method("update_quests_status_on_day_switch", &GameData::update_quests_status_on_day_switch);
+		register_method("amount_of_failed_quests", &GameData::amount_of_failed_quests);
+		register_method("get_active_quest_for_civ", &GameData::get_active_quest_for_civ);
+		register_method("get_avail_quest_for_civ", &GameData::get_avail_quest_for_civ);
 	}
 
 	void _init() {};
@@ -82,6 +86,9 @@ public:
 
 	int amount_of_failed_quests();
 	void update_quests_status_on_day_switch(int new_day);
+
+	Quest* get_active_quest_for_civ(Civilian* civ);
+	Quest* get_avail_quest_for_civ(Civilian* civ, int cur_day);
 
 private:
 	std::vector<Civilian*> all_civilians;

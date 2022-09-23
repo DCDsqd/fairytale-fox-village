@@ -1,10 +1,26 @@
 #include "Game.hpp"
 #include "Player.hpp"
+//#include "GameData.hpp"
 
-void godot::Game::additional_init(Player* _player)
+void godot::Game::additional_init(godot::Player* _player)
 {
 	player = _player;
 	correct = true;
+}
+
+void godot::Game::activate_quest(godot::Quest* quest)
+{
+	active_quests.push_back(quest);
+}
+
+void godot::Game::deactivate_quest(godot::Quest* quest)
+{
+	for (int i = 0; i < active_quests.size(); ++i) {
+		if (active_quests[i] == quest) {
+			active_quests.erase(active_quests.begin() + i, active_quests.begin() + i + 1);
+			break;
+		}
+	}
 }
 
 godot::String godot::Game::current_time_str() const noexcept
@@ -31,11 +47,12 @@ int godot::Game::get_gold() {
 	return gold;
 }
 
-bool godot::Game::add_hour()
+bool godot::Game::add_hour()//::GameData* game_data)
 {
 	if (time == DAY_END_TIME) {
 		++day;
 		time = DAY_START_TIME;
+		//game_data->update_quests_status_on_day_switch(day);
 		return true;
 	}
 	++time;
