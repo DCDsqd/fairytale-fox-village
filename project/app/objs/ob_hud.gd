@@ -8,5 +8,8 @@ onready var game : Game
 func _process(delta) -> void:
 	if game != null:
 		time.text = str(game.current_time(),'\n00')
+		money.text = str(game.get_gold(),'\n00')
 	else:
 		game = get_parent().get_parent().get_game()
+		if game == null:
+			game = get_parent().get_parent().get_parent().get_game()
