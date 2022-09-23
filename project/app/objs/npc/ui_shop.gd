@@ -46,16 +46,14 @@ func turner(vis) -> void:
 		visible = vis
 
 func upd() -> void:
-	ingr_1.texture_normal.current_frame = sel_item[sel].get_id()
-	ingr_2.texture_normal.current_frame =  sel_item[sel+1].get_id()
-	
+	ingr_1.texture_normal.current_frame = sel_item[sel].get_id()-1
 	txt_1.text =  sel_item[sel].get_name()
-	txt_2.text =  sel_item[sel+1].get_name()
-	
 	over_1.text = String( sel_item[sel].get_const())
-	over_2.text = String( sel_item[sel+1].get_const())
-	
 	descr_1.text = String( game_data.get_ingr_shop_info(sel_item[sel], player))
+
+	ingr_2.texture_normal.current_frame =  sel_item[sel+1].get_id()-1
+	txt_2.text =  sel_item[sel+1].get_name()
+	over_2.text = String( sel_item[sel+1].get_const())
 	descr_2.text = String( game_data.get_ingr_shop_info(sel_item[sel], player))
 
 func buy_1() -> void:
@@ -72,16 +70,16 @@ func buy_2() -> void:
 	pass
 
 func next() -> void:
-	if sel + 1 == sel_item.size():
+	if sel >= sel_item.size() - 2:
 		sel = 0
-	sel += 1
+	sel += 2
 	upd()
 
 func prev() -> void:
 	if sel == 0:
-		sel = sel_item.size() - 1
-	sel -= 1
-	pass
+		sel = sel_item.size() - 2
+	sel -= 2
+	upd()
 
 func close() -> void:
 	turner(false)
