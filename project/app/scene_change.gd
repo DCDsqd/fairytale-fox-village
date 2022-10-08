@@ -95,6 +95,7 @@ func change(res):
 	var node = load(res)
 	var node_inst = node.instance()
 	add_child(node_inst)
+	node_inst._ready()
 	scene = node_inst
 
 func get_sprs() -> Array:
@@ -113,3 +114,6 @@ func get_player() -> Player:
 
 func get_db() -> Script:
 	return db_script
+
+func get_data() -> GameData:
+	return game_data

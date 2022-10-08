@@ -1,13 +1,14 @@
 extends Node2D
 
 onready var hero = get_parent().get_node("ob_hero")
-onready var game_data : GameData = get_parent().get_game()
-onready var game : Game = get_parent().get_player()
-onready var player : Player
-var id = 1
+onready var game_data : GameData = get_parent().get_data()
+onready var game : Game = get_parent().get_game()
+onready var player : Player = get_parent().get_player()
+var id = 2
 onready var _main : Fox = Fox.new();
 
 func _ready() -> void:
+	#get_node("get_quest").visible = _main.get_quest(id, game, game_data)
 	pass
 
 func _process(delta) -> void:

@@ -37,7 +37,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "Fox",
 "language": "GDScript",
-"path": "res://scr_foxes.gd"
+"path": "res://foxes/scr_foxes.gd"
 }, {
 "base": "",
 "class": "Game",

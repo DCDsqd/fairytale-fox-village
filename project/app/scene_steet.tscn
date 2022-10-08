@@ -21,24 +21,24 @@
 [ext_resource path="res://objs/houses/ob_house_4.tscn" type="PackedScene" id=19]
 [ext_resource path="res://objs/trees/ob_tree_3.tscn" type="PackedScene" id=20]
 [ext_resource path="res://objs/houses/ob_house_3.tscn" type="PackedScene" id=21]
-[ext_resource path="res://scr_relocator.gd" type="Script" id=22]
+[ext_resource path="res://objs/doors/scr_relocator.gd" type="Script" id=22]
 [ext_resource path="res://objs/npc/ob_shopkeeper.tscn" type="PackedScene" id=23]
-[ext_resource path="res://objs/npc/ui_shop.tscn" type="PackedScene" id=24]
-[ext_resource path="res://objs/ob_hud.tscn" type="PackedScene" id=25]
+[ext_resource path="res://objs/huds/shop/ui_shop.tscn" type="PackedScene" id=24]
+[ext_resource path="res://objs/huds/main/ob_hud.tscn" type="PackedScene" id=25]
 [ext_resource path="res://scene_steet.gd" type="Script" id=26]
-[ext_resource path="res://fox1.gd" type="Script" id=27]
+[ext_resource path="res://foxes/fox1.gd" type="Script" id=27]
 [ext_resource path="res://sprite/npc/sp_runi.tres" type="SpriteFrames" id=28]
 [ext_resource path="res://sprite/npc/sp_gideon.tres" type="SpriteFrames" id=29]
 [ext_resource path="res://sprite/npc/sp_ozi.tres" type="SpriteFrames" id=30]
 [ext_resource path="res://sprite/npc/sp_rose.tres" type="SpriteFrames" id=31]
 [ext_resource path="res://sprite/npc/sp_flareon.tres" type="SpriteFrames" id=32]
 [ext_resource path="res://sprite/npc/sp_luna.tres" type="SpriteFrames" id=33]
-[ext_resource path="res://fox4.gd" type="Script" id=34]
-[ext_resource path="res://fox2.gd" type="Script" id=35]
-[ext_resource path="res://fox6.gd" type="Script" id=36]
-[ext_resource path="res://fox5.gd" type="Script" id=37]
-[ext_resource path="res://fox3.gd" type="Script" id=38]
-[ext_resource path="res://fox7.gd" type="Script" id=39]
+[ext_resource path="res://foxes/fox4.gd" type="Script" id=34]
+[ext_resource path="res://foxes/fox2.gd" type="Script" id=35]
+[ext_resource path="res://foxes/fox6.gd" type="Script" id=36]
+[ext_resource path="res://foxes/fox5.gd" type="Script" id=37]
+[ext_resource path="res://foxes/fox3.gd" type="Script" id=38]
+[ext_resource path="res://foxes/fox7.gd" type="Script" id=39]
 [ext_resource path="res://sprite/npc/sp_emot.tres" type="SpriteFrames" id=40]
 [ext_resource path="res://sprite/npc/sp_alice.tres" type="SpriteFrames" id=41]
 
@@ -86,6 +86,7 @@ extents = Vector2( 37.75, 74.3125 )
 extents = Vector2( 344, 8 )
 
 [node name="scene_steet" type="Node2D"]
+process_priority = 100
 script = ExtResource( 26 )
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -280,7 +281,7 @@ script = ExtResource( 27 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="fox1"]
 frames = ExtResource( 31 )
 animation = "f_idle"
-frame = 6
+frame = 2
 playing = true
 
 [node name="sp_emot" type="AnimatedSprite" parent="fox1"]
@@ -295,7 +296,7 @@ script = ExtResource( 35 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="fox2"]
 frames = ExtResource( 41 )
 animation = "f_idle"
-frame = 3
+frame = 2
 playing = true
 
 [node name="sp_emot" type="AnimatedSprite" parent="fox2"]
@@ -310,7 +311,6 @@ script = ExtResource( 38 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="fox3"]
 frames = ExtResource( 33 )
 animation = "f_idle"
-frame = 4
 playing = true
 
 [node name="sp_emot" type="AnimatedSprite" parent="fox3"]
@@ -325,6 +325,7 @@ script = ExtResource( 34 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="fox4"]
 frames = ExtResource( 30 )
 animation = "f_idle"
+frame = 4
 playing = true
 
 [node name="sp_emot" type="AnimatedSprite" parent="fox4"]
@@ -339,7 +340,7 @@ script = ExtResource( 37 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="fox5"]
 frames = ExtResource( 32 )
 animation = "f_idle"
-frame = 3
+frame = 2
 playing = true
 
 [node name="sp_emot" type="AnimatedSprite" parent="fox5"]
@@ -359,7 +360,7 @@ frames = ExtResource( 40 )
 visible = false
 frames = ExtResource( 29 )
 animation = "f_idle"
-frame = 1
+frame = 5
 playing = true
 
 [node name="fox7" type="Node2D" parent="."]
@@ -369,7 +370,7 @@ script = ExtResource( 39 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="fox7"]
 frames = ExtResource( 28 )
 animation = "f_idle"
-frame = 6
+frame = 5
 playing = true
 
 [node name="sp_emot" type="AnimatedSprite" parent="fox7"]

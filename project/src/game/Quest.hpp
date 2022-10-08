@@ -37,6 +37,7 @@ public:
 		register_method("set_in_prog", &Quest::set_in_prog);
 		register_method("set_failed", &Quest::set_failed);
 		register_method("get_reqs", &Quest::get_reqs);
+		register_method("is_available", &Quest::is_available);
 	}
 
 	void _init() {};
