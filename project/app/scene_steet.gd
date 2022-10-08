@@ -1,14 +1,15 @@
 extends Node2D
 
 var db_script
-var db # Database object that is going to be valid after setup_db() is called
-var game # Main game object
-var player # Main player object
+onready var db = get_parent().get_db()
+onready var game = get_parent().get_game()
+onready var player = get_parent().get_player()
 
 func _ready():
-	db_script = get_parent().get_db()
-	game = get_parent().get_game()
-	player = get_parent().get_player()
+	#db_script = get_parent().get_db()
+	#game = get_parent().get_game()
+	#player = get_parent().get_player()
+	pass
 
 func get_game() -> Game:
 	return game
