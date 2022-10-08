@@ -12,18 +12,17 @@ func _ready():
 	player = get_parent().get_player()
 	game_data = get_parent().get_data();
 	
-	print("asdgjoiaoshsjdg ", game.current_day())
 	pass
 
 func get_game() -> Game:
-	return game
+	return get_parent().get_game()
 
 func get_player() -> Player:
-	return player
+	return get_parent().get_player()
 
 func get_db() -> Script:
-	return db_script
+	return get_parent().get_db()
 
 
 func get_data() -> GameData:
-	return game_data
+	return get_parent().get_data();

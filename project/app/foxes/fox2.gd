@@ -8,10 +8,11 @@ var id = 2
 onready var _main : Fox = Fox.new();
 
 func _ready() -> void:
-	#get_node("get_quest").visible = _main.get_quest(id, game, game_data)
+	get_node("sp_emot").visible = _main.get_quest(id, game_data, game.current_day())
 	pass
 
 func _process(delta) -> void:
 	if Input.is_action_just_released("inter"):
 		if position.distance_to(hero.position) < 50:
 			_main.variator(id, position, game_data, game, player, hero)
+			get_node("sp_emot").visible = _main.get_quest(id, game_data, game.current_day())

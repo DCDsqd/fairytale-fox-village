@@ -281,7 +281,6 @@ script = ExtResource( 27 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="fox1"]
 frames = ExtResource( 31 )
 animation = "f_idle"
-frame = 2
 playing = true
 
 [node name="sp_emot" type="AnimatedSprite" parent="fox1"]
@@ -296,7 +295,7 @@ script = ExtResource( 35 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="fox2"]
 frames = ExtResource( 41 )
 animation = "f_idle"
-frame = 2
+frame = 5
 playing = true
 
 [node name="sp_emot" type="AnimatedSprite" parent="fox2"]
@@ -311,6 +310,7 @@ script = ExtResource( 38 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="fox3"]
 frames = ExtResource( 33 )
 animation = "f_idle"
+frame = 6
 playing = true
 
 [node name="sp_emot" type="AnimatedSprite" parent="fox3"]
@@ -325,7 +325,7 @@ script = ExtResource( 34 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="fox4"]
 frames = ExtResource( 30 )
 animation = "f_idle"
-frame = 4
+frame = 2
 playing = true
 
 [node name="sp_emot" type="AnimatedSprite" parent="fox4"]
@@ -340,7 +340,7 @@ script = ExtResource( 37 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="fox5"]
 frames = ExtResource( 32 )
 animation = "f_idle"
-frame = 2
+frame = 5
 playing = true
 
 [node name="sp_emot" type="AnimatedSprite" parent="fox5"]
@@ -353,14 +353,14 @@ position = Vector2( -941, 844 )
 script = ExtResource( 36 )
 
 [node name="sp_emot" type="AnimatedSprite" parent="fox6"]
+visible = false
 position = Vector2( 0, -64 )
 frames = ExtResource( 40 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="fox6"]
-visible = false
 frames = ExtResource( 29 )
 animation = "f_idle"
-frame = 5
+frame = 3
 playing = true
 
 [node name="fox7" type="Node2D" parent="."]
@@ -370,7 +370,6 @@ script = ExtResource( 39 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="fox7"]
 frames = ExtResource( 28 )
 animation = "f_idle"
-frame = 5
 playing = true
 
 [node name="sp_emot" type="AnimatedSprite" parent="fox7"]

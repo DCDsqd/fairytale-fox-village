@@ -6,10 +6,22 @@ onready var hero
 onready var game_data : GameData
 onready var game : Game
 onready var player : Player
-var dialog_main : Dialog
-var iter
+onready var dialog_main : Dialog
+onready var iter
 
 var state = 'wait'
+
+func get_quest(id, game_data, day) -> bool:
+	var civ : Civilian = game_data.get_civilian(id - 1)
+	var quest : Quest = game_data.get_avail_quest_for_civ(civ, day)
+	
+	if quest == null:
+		return false
+	
+	if quest.get_status() == 0:
+		return true
+	
+	return false
 
 func variator(id, pos, game_data, game, player, hero):
 	if state == 'wait':
