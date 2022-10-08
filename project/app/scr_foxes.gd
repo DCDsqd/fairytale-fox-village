@@ -49,22 +49,18 @@ func get_dialog(id, pos, game_data, game, player, hero) -> void:
 			if player.inv_get_food_cnt(reqs[i]) < 1:
 				satisf = false
 				break
-		
 		if satisf:
 			dialog_main = quest_in_progress.get_end_dialog()
 			quest_in_progress.set_completed()
 		else:
-			extra_check = true
+			var catch_phrase : String = civ.get_catch_phrase()
+			dialog_main = Dialog.new()
+			dialog_main.add_phrase_to_conv(civ, catch_phrase, 1)
 	elif quest_avail != null:
 		dialog_main = quest_avail.get_start_dialog()
 		quest_avail.set_in_prog()
 		var st = quest_avail.get_status()
 		print("st:" ,st)
-		var t
-	elif extra_check:
-		var catch_phrase : String = civ.get_catch_phrase()
-		dialog_main = Dialog.new()
-		dialog_main.add_phrase_to_conv(civ, catch_phrase, 1)
 	else:
 		var catch_phrase : String = civ.get_catch_phrase()
 		dialog_main = Dialog.new()

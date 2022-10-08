@@ -60,12 +60,14 @@ func buy_1() -> void:
 	if game.get_gold() >= sel_item[sel].get_const():
 		player.inv_add_ingredients(sel_item[sel], 1)
 		game.add_gold(-sel_item[sel].get_const())
+		print(player.inv_get_ingredients_cnt(sel_item[sel]))
 	pass
 
 func buy_2() -> void:
 	if game.get_gold() >= sel_item[sel+1].get_const():
-		player.inv_add_ingredients(sel_item[sel], 1)
-		game.add_gold(-sel_item[sel].get_const())
+		player.inv_add_ingredients(sel_item[sel+1], 1)
+		game.add_gold(-sel_item[sel+1].get_const())
+		print(player.inv_get_ingredients_cnt(sel_item[sel+1]))
 	pass
 
 func next() -> void:
