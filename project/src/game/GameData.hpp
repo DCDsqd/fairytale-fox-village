@@ -106,6 +106,7 @@ public:
 
 	godot::Array get_all_recerved_food();
 	godot::Array get_all_recerved_food_in_inv(Player* player);
+	
 
 private:
 	std::vector<Civilian*> all_civilians;

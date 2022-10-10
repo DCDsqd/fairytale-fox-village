@@ -44,6 +44,9 @@ public:
 	void inv_add_food(Food* food, int amount = 1);
 	int inv_get_food_cnt(Food* food);
 	godot::Array inv_get_available_food(GameData* game_data);
+	int inv_get_all_food_cnt() const;
+	int inv_get_all_ingr_cnt() const;
+	Food* inv_get_most_exp_food_available() const;
 
 private:
 	bool correct = false;

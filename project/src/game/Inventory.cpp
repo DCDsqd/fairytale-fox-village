@@ -27,3 +27,22 @@ int godot::Inventory::get_amount_food(Food* _food) noexcept
 {
 	return food[_food];
 }
+
+int godot::Inventory::inv_get_all_food_cnt() const
+{
+	return (int)food.size();
+}
+
+int godot::Inventory::inv_get_all_ingr_cnt() const
+{
+	return (int)ingredients.size();
+}
+
+std::vector<godot::Food*> godot::Inventory::get_all_unique_food() const
+{
+	std::vector<godot::Food*> v;
+	for (auto [key, value] : food) {
+		v.push_back(key);
+	}
+	return v;
+}
