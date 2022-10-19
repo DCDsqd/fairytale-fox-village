@@ -23,6 +23,15 @@ void godot::Game::deactivate_quest(godot::Quest* quest)
 	}
 }
 
+godot::Array godot::Game::get_all_active_quests()
+{
+	godot::Array arr;
+	for (int i = 0; i < active_quests.size(); ++i) {
+		arr.push_back(active_quests[i]);
+	}
+	return arr;
+}
+
 godot::String godot::Game::current_time_str() const noexcept
 {
 	godot::String s(time);

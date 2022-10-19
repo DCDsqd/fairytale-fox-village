@@ -28,7 +28,7 @@ func check():
 		state = 'see'
 
 func food_sel():
-d	var foods = player.inv_get_most_exp_food_available()
+	var foods = player.inv_get_most_exp_food_available()
 	if foods != null:
 		sel = foods
 		state = "selected"

@@ -47,6 +47,7 @@ public:
         register_method("activate_quest", &Game::activate_quest);
         register_method("deactivate_quest", &Game::deactivate_quest);
         register_method("game_over", &Game::game_over);
+        register_method("get_all_active_quests", &Game::get_all_active_quests);
         //register_method("", &Game);
     }
     
@@ -61,6 +62,7 @@ public:
 
     void activate_quest(Quest* quest);
     void deactivate_quest(Quest* quest);
+    godot::Array get_all_active_quests();
 
     inline godot::String test_godot_output() 
     {
