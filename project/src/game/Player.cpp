@@ -65,6 +65,9 @@ godot::Food* godot::Player::inv_get_most_exp_food_available(godot::Array quest_l
 	}
 	std::sort(all_avail_food.begin(), all_avail_food.end(), godot::Food::comp_food_by_cost);
 	int i = 0;
+	if (quest_list.empty()) {
+		return all_avail_food.front();
+	}
 	while (i < all_avail_food.size()) {
 		for (size_t j = 0; j < quest_list.size(); ++j) {
 			Quest* cur_quest = quest_list[i];
