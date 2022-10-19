@@ -28,9 +28,9 @@ func check():
 		state = 'see'
 
 func food_sel():
-	var foods = player.inv_get_available_food(game_data)
-	if foods.size() > 0:
-		sel = game_data.get_food(foods[0])
+	var foods = player.inv_get_most_exp_food_available()
+	if foods != null:
+		sel = foods
 		state = "selected"
 	if sel == null:
 		state = "see"
@@ -49,13 +49,31 @@ func sel():
 			state = 'selled'
 			print('seller')
 
+
+func rotater(mv : bool, rot : bool):
+	var anim
+	if rot:
+		anim = "b_"
+	else:
+		anim = "f_"
+	if mv:
+		anim += "run"
+	else:
+		anim += "idle"
+	get_node("sp_person").animation = anim
+
+
 func move(delta):
-	if position.distance_to(hero.position) > 50:
-		move_and_slide( (funt.position - position))
+	if (position.distance_to(hero.position) > 50 and position.distance_to(funt.position) > 20):
+		move_and_slide( (funt.position - position)*0.2)
+		rotater(true, true)
+	else:
+		rotater(false, true)
 
 func move_out(delta):
 	if position.distance_to(control.position) > 10:
-		move_and_slide((control.position - position))
+		move_and_slide((control.position - position)*0.8)
+		rotater(true, false)
 	else:
 		control.erase(self)
 

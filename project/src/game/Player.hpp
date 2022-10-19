@@ -32,6 +32,9 @@ public:
 		register_method("inv_add_food", &Player::inv_add_food);
 		register_method("inv_get_food_cnt", &Player::inv_get_food_cnt);
 		register_method("inv_get_available_food", &Player::inv_get_available_food);
+		register_method("inv_get_most_exp_food_available", &Player::inv_get_most_exp_food_available);
+		register_method("inv_get_all_food_cnt", &Player::inv_get_all_food_cnt);
+		register_method("inv_get_all_ingr_cnt", &Player::inv_get_all_ingr_cnt);
     }
 
     void _init() {};
