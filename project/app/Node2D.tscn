@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://scripts/example.gd" type="Script" id=1]
 [ext_resource path="res://objs/ob_hero.tscn" type="PackedScene" id=2]
@@ -30,6 +30,7 @@
 [ext_resource path="res://objs/trees/ob_tree_6.tscn" type="PackedScene" id=28]
 [ext_resource path="res://objs/npc/customer/ob_customer_controller.tscn" type="PackedScene" id=29]
 [ext_resource path="res://objs/workplace/ob_funt.tscn" type="PackedScene" id=30]
+[ext_resource path="res://objs/huds/journal/ob_journal.tscn" type="PackedScene" id=31]
 
 [sub_resource type="CanvasItemMaterial" id=7]
 particles_animation = true
@@ -138,6 +139,13 @@ margin_left = -198.0
 margin_right = 198.0
 margin_bottom = 54.0
 
+[node name="ob_journal" parent="camera_shop" instance=ExtResource( 31 )]
+visible = false
+margin_left = -400.0
+margin_top = 225.0
+margin_right = -400.0
+margin_bottom = 225.0
+
 [node name="trees" type="Node2D" parent="."]
 position = Vector2( 6, 0 )
 __meta__ = {
@@ -171,6 +179,7 @@ position = Vector2( 458, 733 )
 
 [node name="leaf" type="Node2D" parent="."]
 position = Vector2( 408, 822 )
+z_index = -10
 
 [node name="leaf" type="Particles2D" parent="leaf"]
 material = SubResource( 7 )

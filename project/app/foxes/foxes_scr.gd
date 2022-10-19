@@ -7,7 +7,8 @@ onready var game_data : GameData
 onready var game : Game
 onready var player : Player
 onready var dialog_main : Dialog
-onready var iter
+var iter
+var fiter
 
 var state = 'wait'
 
@@ -30,22 +31,78 @@ func variator(id, pos, game_data, game, player, hero):
 		if iter >= dialog_main.conv_size() - 1:
 			state = 'wait'
 			hero.state = 'game'
-			hero.get_node("sp_dialog_1").visible = false
+			
+			var dialog = hero.get_node("dialog") # reset
+			set_dialog(dialog, '')
+			
 		else:
 			say_dialog(id, pos, game_data, game, player, hero)
 
+
+func set_dialog(dialog, text):
+	if text == '':
+		dialog.get_node("txt").text = "test" # reset
+		dialog.get_node("sp_dialog_u").position.y = -21
+		dialog.get_node("txt").rect_position.y = - 42
+		dialog.visible = false
+		return
+	var heigh
+	dialog.get_node("txt").text = text
+	
+	heigh = dialog.get_node("txt").get_line_count()*6 #AAA BLYAD'
+	dialog.visible = true
+	
+	dialog.get_node("sp_dialog_c").scale.y = 0.111*(heigh-6)
+	dialog.get_node("sp_dialog_u").position.y = 4 - (heigh-6)*3 + 3
+	dialog.get_node("txt").rect_position.y = -12 - (heigh-6)*3 + 3
+	#print(heigh)
+
+func spliter(s: String, delimeters, allow_empty: bool = false) -> Array:
+	var parts := []
+	var start := 0
+	var i := 0
+	while i < s.length():
+		if s[i] in delimeters:
+			if allow_empty or start < i:
+				parts.push_back(s.substr(start, i - start+1))
+			start = i + 1
+		i += 1
+	if allow_empty or start < i:
+		parts.push_back(s.substr(start, i - start))
+	return parts
+
+
 func say_dialog(id, pos, game_data, game, player, hero):
-	iter +=1
-	hero.get_node("sp_dialog_1").visible = true
-	var say = dialog_main.get_conv_elem(iter)
+	if(fiter == -1):
+		iter +=1
+	
+	var dialog = hero.get_node("dialog")
+	var say : Array = dialog_main.get_conv_elem(iter)
+	var says : Array = spliter(say[1], ['.', '!', '?'])
+	var phraze : String;
+	
+	if(says.size() == 1):
+		phraze = say[1]
+	elif(says.size() > 1 and says.size()-1 > fiter):
+		fiter+=1
+		phraze = says[fiter]
+	elif(says.size() > 1 and says.size()-1 == fiter):
+		fiter = -1
+		variator(id, pos, game_data, game, player, hero)
+		return
+	
+	#var text : Label
+	#text.rect_size
+	set_dialog(dialog, '')
+	set_dialog(dialog, phraze)
+	
+	
 	if say[0] == null:
-		hero.get_node("sp_dialog_1").global_position.y = hero.position.y-126
-		hero.get_node("sp_dialog_1").global_position.x = hero.position.x
-		hero.get_node("sp_dialog_1/txt").text = say[1]
+		dialog.global_position.y = hero.position.y-42.5
+		dialog.global_position.x = hero.position.x-31.5
 	else:
-		hero.get_node("sp_dialog_1").global_position.y = pos.y-126
-		hero.get_node("sp_dialog_1").global_position.x = pos.x
-		hero.get_node("sp_dialog_1/txt").text = say[1]
+		dialog.global_position.y = pos.y-42.5
+		dialog.global_position.x = pos.x-32.5
 
 
 func get_dialog(id, pos, game_data, game, player, hero) -> void:
@@ -80,6 +137,7 @@ func get_dialog(id, pos, game_data, game, player, hero) -> void:
 	state = 'say'
 	hero.state = 'ui'
 	iter = -1
+	fiter = -1
 	say_dialog(id, pos, game_data, game, player, hero)
 	#TO DO: Make output on scene of @dialog_main obj
 	# Here:

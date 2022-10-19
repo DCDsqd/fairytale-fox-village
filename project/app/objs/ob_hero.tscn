@@ -19,18 +19,38 @@ animation = "f_idle"
 position = Vector2( 0.5, 22 )
 shape = SubResource( 1 )
 
-[node name="sp_dialog_1" type="AnimatedSprite" parent="."]
+[node name="dialog" type="Node2D" parent="."]
 visible = false
-position = Vector2( 0, -126 )
-frames = ExtResource( 3 )
+position = Vector2( -33, -75 )
 
-[node name="txt" type="Label" parent="sp_dialog_1"]
-margin_left = -90.0
-margin_top = -42.0
-margin_right = 264.0
-margin_bottom = 90.0
-rect_scale = Vector2( 0.5, 0.5 )
+[node name="sp_dialog_u" type="AnimatedSprite" parent="dialog"]
+position = Vector2( 4.5, 3 )
+frames = ExtResource( 3 )
+animation = "dynamic"
+offset = Vector2( 0, -13.5 )
+
+[node name="sp_dialog_d" type="AnimatedSprite" parent="dialog"]
+position = Vector2( 4.5, 32.5 )
+frames = ExtResource( 3 )
+animation = "dynamic"
+frame = 2
+offset = Vector2( 0, -13 )
+
+[node name="sp_dialog_c" type="AnimatedSprite" parent="dialog"]
+position = Vector2( 4.5, 6 )
+scale = Vector2( 1, 0.111111 )
+frames = ExtResource( 3 )
+animation = "dynamic"
+frame = 1
+offset = Vector2( 0, -13.5 )
+
+[node name="txt" type="Label" parent="dialog"]
+margin_left = -84.0
+margin_top = -18.0
+margin_right = 801.0
+margin_bottom = 91.0
+rect_scale = Vector2( 0.2, 0.2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 4 )
-text = "dfafasdfsadf asdfasdfasdf sdafasdfsdfsdf"
+text = "test"
 autowrap = true

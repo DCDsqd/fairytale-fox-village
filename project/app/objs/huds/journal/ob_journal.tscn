@@ -1,0 +1,751 @@
+[gd_scene load_steps=42 format=2]
+
+[ext_resource path="res://fonts/main.tres" type="DynamicFont" id=1]
+[ext_resource path="res://sprite/ui/mark.png" type="Texture" id=2]
+[ext_resource path="res://sprite/ui/book.png" type="Texture" id=3]
+[ext_resource path="res://sprite/ui/mark_sel.png" type="Texture" id=4]
+[ext_resource path="res://sprite/items/ingr/ingrs3.png" type="Texture" id=5]
+[ext_resource path="res://sprite/items/ingr/ingrs6.png" type="Texture" id=6]
+[ext_resource path="res://sprite/items/ingr/ingrs7.png" type="Texture" id=7]
+[ext_resource path="res://sprite/items/ingr/ingrs4.png" type="Texture" id=8]
+[ext_resource path="res://sprite/items/ingr/ingrs8.png" type="Texture" id=9]
+[ext_resource path="res://sprite/items/ingr/ingrs9.png" type="Texture" id=10]
+[ext_resource path="res://sprite/items/ingr/ingrs10.png" type="Texture" id=11]
+[ext_resource path="res://sprite/items/ingr/ingrs11.png" type="Texture" id=12]
+[ext_resource path="res://sprite/items/ingr/ingrs12.png" type="Texture" id=13]
+[ext_resource path="res://sprite/items/ingr/ingrs14.png" type="Texture" id=14]
+[ext_resource path="res://sprite/items/ingr/ingrs15.png" type="Texture" id=15]
+[ext_resource path="res://sprite/items/ingr/ingrs16.png" type="Texture" id=16]
+[ext_resource path="res://sprite/items/ingr/ingrs17.png" type="Texture" id=17]
+[ext_resource path="res://sprite/items/ingr/ingrs18.png" type="Texture" id=18]
+[ext_resource path="res://sprite/items/ingr/ingrs20.png" type="Texture" id=19]
+[ext_resource path="res://sprite/items/ingr/ingrs19.png" type="Texture" id=20]
+[ext_resource path="res://sprite/items/ingr/ingrs21.png" type="Texture" id=21]
+[ext_resource path="res://sprite/hud/arrow_r.png" type="Texture" id=22]
+[ext_resource path="res://sprite/hud/arrow_l.png" type="Texture" id=23]
+[ext_resource path="res://sprite/ui/guide.tres" type="Texture" id=24]
+[ext_resource path="res://materials/journal_btn.tres" type="Theme" id=25]
+[ext_resource path="res://objs/huds/journal/ob_journal.gd" type="Script" id=26]
+[ext_resource path="res://objs/huds/journal/Movement.gd" type="Script" id=27]
+[ext_resource path="res://objs/huds/journal/Cook.gd" type="Script" id=28]
+[ext_resource path="res://objs/huds/journal/Sale.gd" type="Script" id=29]
+[ext_resource path="res://objs/huds/journal/Quests.gd" type="Script" id=30]
+[ext_resource path="res://objs/huds/journal/next_page.gd" type="Script" id=31]
+[ext_resource path="res://objs/huds/journal/prev_page.gd" type="Script" id=32]
+[ext_resource path="res://materials/compl_btn.tres" type="Theme" id=33]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 144, 24 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 699, 423 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 144, 24 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 699, 423 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+
+[sub_resource type="StyleBoxTexture" id=7]
+
+[sub_resource type="StyleBoxTexture" id=8]
+
+[sub_resource type="StyleBoxTexture" id=9]
+
+[node name="ob_journal" type="Control"]
+margin_right = 800.0
+margin_bottom = 450.0
+script = ExtResource( 26 )
+
+[node name="Pages" type="TabContainer" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_top = -435.0
+margin_right = 3675.0
+margin_bottom = 1740.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color_bg = Color( 0, 0, 0, 1 )
+custom_colors/font_color_fg = Color( 0.290196, 0.215686, 0.470588, 1 )
+custom_constants/side_margin = 100
+custom_fonts/font = ExtResource( 1 )
+custom_styles/tab_fg = SubResource( 1 )
+custom_styles/tab_disabled = SubResource( 4 )
+custom_styles/tab_bg = SubResource( 3 )
+custom_styles/panel = SubResource( 5 )
+tab_align = 0
+
+[node name="Guide" type="Control" parent="Pages"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 91.0
+
+[node name="List" type="VBoxContainer" parent="Pages/Guide"]
+margin_left = 75.0
+margin_top = 74.0
+margin_right = 1800.0
+margin_bottom = 2084.0
+
+[node name="Movement" type="Button" parent="Pages/Guide/List"]
+margin_right = 1725.0
+margin_bottom = 91.0
+theme = ExtResource( 25 )
+custom_fonts/font = ExtResource( 1 )
+text = "Movement"
+align = 0
+script = ExtResource( 27 )
+
+[node name="Cook" type="Button" parent="Pages/Guide/List"]
+margin_top = 95.0
+margin_right = 1725.0
+margin_bottom = 186.0
+theme = ExtResource( 25 )
+custom_fonts/font = ExtResource( 1 )
+text = "Cook"
+align = 0
+script = ExtResource( 28 )
+
+[node name="Sale" type="Button" parent="Pages/Guide/List"]
+margin_top = 190.0
+margin_right = 1725.0
+margin_bottom = 281.0
+theme = ExtResource( 25 )
+custom_fonts/font = ExtResource( 1 )
+text = "Sale"
+align = 0
+script = ExtResource( 29 )
+
+[node name="Quests" type="Button" parent="Pages/Guide/List"]
+margin_top = 285.0
+margin_right = 1725.0
+margin_bottom = 376.0
+theme = ExtResource( 25 )
+custom_fonts/font = ExtResource( 1 )
+text = "Quests"
+align = 0
+script = ExtResource( 30 )
+
+[node name="TextureRect" type="TextureRect" parent="Pages/Guide"]
+margin_left = 1875.0
+margin_top = 59.0
+margin_right = 2205.0
+margin_bottom = 452.0
+rect_scale = Vector2( 5, 5 )
+texture = ExtResource( 24 )
+
+[node name="Ingredients" type="Control" parent="Pages"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 91.0
+rect_scale = Vector2( 5, 5 )
+
+[node name="Pages" type="TabContainer" parent="Pages/Ingredients"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 696.0
+margin_bottom = 398.0
+custom_styles/tab_fg = SubResource( 6 )
+custom_styles/tab_disabled = SubResource( 7 )
+custom_styles/tab_bg = SubResource( 8 )
+custom_styles/panel = SubResource( 9 )
+tabs_visible = false
+
+[node name="inv" type="GridContainer" parent="Pages/Ingredients/Pages"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/vseparation = 20
+custom_constants/hseparation = 20
+columns = 2
+
+[node name="id_3" type="TextureRect" parent="Pages/Ingredients/Pages/inv"]
+margin_right = 48.0
+margin_bottom = 48.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture = ExtResource( 5 )
+
+[node name="lbl" type="Label" parent="Pages/Ingredients/Pages/inv/id_3"]
+margin_left = 50.0
+margin_right = 990.0
+margin_bottom = 185.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Black chocolate
+"
+
+[node name="col" type="Label" parent="Pages/Ingredients/Pages/inv/id_3"]
+margin_left = 50.0
+margin_top = 24.8
+margin_right = 990.0
+margin_bottom = 209.8
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+
+[node name="id_4" type="TextureRect" parent="Pages/Ingredients/Pages/inv"]
+margin_left = 348.0
+margin_right = 396.0
+margin_bottom = 48.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture = ExtResource( 8 )
+
+[node name="lbl" type="Label" parent="Pages/Ingredients/Pages/inv/id_4"]
+margin_left = 50.0
+margin_right = 990.0
+margin_bottom = 185.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Sugar chocolate
+"
+
+[node name="col" type="Label" parent="Pages/Ingredients/Pages/inv/id_4"]
+margin_left = 50.0
+margin_top = 24.8
+margin_right = 990.0
+margin_bottom = 209.8
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+
+[node name="id_6" type="TextureRect" parent="Pages/Ingredients/Pages/inv"]
+margin_top = 68.0
+margin_right = 48.0
+margin_bottom = 116.0
+rect_pivot_offset = Vector2( -107, 58.8 )
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture = ExtResource( 6 )
+
+[node name="lbl" type="Label" parent="Pages/Ingredients/Pages/inv/id_6"]
+margin_left = 50.0
+margin_right = 990.0
+margin_bottom = 185.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Milk chocolate
+"
+
+[node name="col" type="Label" parent="Pages/Ingredients/Pages/inv/id_6"]
+margin_left = 50.0
+margin_top = 24.8
+margin_right = 990.0
+margin_bottom = 209.8
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+
+[node name="id_7" type="TextureRect" parent="Pages/Ingredients/Pages/inv"]
+margin_left = 348.0
+margin_top = 68.0
+margin_right = 396.0
+margin_bottom = 116.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture = ExtResource( 7 )
+
+[node name="lbl" type="Label" parent="Pages/Ingredients/Pages/inv/id_7"]
+margin_left = 50.0
+margin_right = 990.0
+margin_bottom = 185.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Hazelnut"
+
+[node name="col" type="Label" parent="Pages/Ingredients/Pages/inv/id_7"]
+margin_left = 50.0
+margin_top = 24.8
+margin_right = 990.0
+margin_bottom = 209.8
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+
+[node name="id_8" type="TextureRect" parent="Pages/Ingredients/Pages/inv"]
+margin_top = 136.0
+margin_right = 48.0
+margin_bottom = 184.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture = ExtResource( 9 )
+
+[node name="lbl" type="Label" parent="Pages/Ingredients/Pages/inv/id_8"]
+margin_left = 50.0
+margin_right = 990.0
+margin_bottom = 185.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Apple
+"
+
+[node name="col" type="Label" parent="Pages/Ingredients/Pages/inv/id_8"]
+margin_left = 50.0
+margin_top = 24.8
+margin_right = 990.0
+margin_bottom = 209.8
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+
+[node name="id_9" type="TextureRect" parent="Pages/Ingredients/Pages/inv"]
+margin_left = 348.0
+margin_top = 136.0
+margin_right = 396.0
+margin_bottom = 184.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture = ExtResource( 10 )
+
+[node name="lbl" type="Label" parent="Pages/Ingredients/Pages/inv/id_9"]
+margin_left = 50.0
+margin_right = 990.0
+margin_bottom = 185.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Cherry jam
+"
+
+[node name="col" type="Label" parent="Pages/Ingredients/Pages/inv/id_9"]
+margin_left = 50.0
+margin_top = 24.8
+margin_right = 990.0
+margin_bottom = 209.8
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+
+[node name="id_10" type="TextureRect" parent="Pages/Ingredients/Pages/inv"]
+margin_top = 204.0
+margin_right = 48.0
+margin_bottom = 252.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture = ExtResource( 11 )
+
+[node name="lbl" type="Label" parent="Pages/Ingredients/Pages/inv/id_10"]
+margin_left = 50.0
+margin_right = 990.0
+margin_bottom = 185.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Apple jam
+"
+
+[node name="col" type="Label" parent="Pages/Ingredients/Pages/inv/id_10"]
+margin_left = 50.0
+margin_top = 24.8
+margin_right = 990.0
+margin_bottom = 209.8
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+
+[node name="id_11" type="TextureRect" parent="Pages/Ingredients/Pages/inv"]
+margin_left = 348.0
+margin_top = 204.0
+margin_right = 396.0
+margin_bottom = 252.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture = ExtResource( 12 )
+
+[node name="lbl" type="Label" parent="Pages/Ingredients/Pages/inv/id_11"]
+margin_left = 50.0
+margin_right = 990.0
+margin_bottom = 185.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Cane sugar
+"
+
+[node name="col" type="Label" parent="Pages/Ingredients/Pages/inv/id_11"]
+margin_left = 50.0
+margin_top = 24.8
+margin_right = 990.0
+margin_bottom = 209.8
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+
+[node name="id_12" type="TextureRect" parent="Pages/Ingredients/Pages/inv"]
+margin_top = 272.0
+margin_right = 48.0
+margin_bottom = 320.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture = ExtResource( 13 )
+
+[node name="lbl" type="Label" parent="Pages/Ingredients/Pages/inv/id_12"]
+margin_left = 50.0
+margin_right = 990.0
+margin_bottom = 185.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Maple sugar
+"
+
+[node name="col" type="Label" parent="Pages/Ingredients/Pages/inv/id_12"]
+margin_left = 50.0
+margin_top = 24.8
+margin_right = 990.0
+margin_bottom = 209.8
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+
+[node name="id_14" type="TextureRect" parent="Pages/Ingredients/Pages/inv"]
+margin_left = 348.0
+margin_top = 272.0
+margin_right = 396.0
+margin_bottom = 320.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture = ExtResource( 14 )
+
+[node name="lbl" type="Label" parent="Pages/Ingredients/Pages/inv/id_14"]
+margin_left = 50.0
+margin_right = 990.0
+margin_bottom = 185.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Pistachio chocolate
+"
+
+[node name="col" type="Label" parent="Pages/Ingredients/Pages/inv/id_14"]
+margin_left = 50.0
+margin_top = 24.8
+margin_right = 990.0
+margin_bottom = 209.8
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+
+[node name="empty" type="Control" parent="Pages/Ingredients/Pages/inv"]
+margin_top = 340.0
+margin_bottom = 340.0
+rect_pivot_offset = Vector2( -273.2, -165 )
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="next_page" type="TextureButton" parent="Pages/Ingredients/Pages/inv"]
+margin_left = 628.0
+margin_top = 340.0
+margin_right = 676.0
+margin_bottom = 388.0
+rect_pivot_offset = Vector2( -273.2, -165 )
+size_flags_horizontal = 8
+size_flags_vertical = 2
+texture_normal = ExtResource( 22 )
+texture_pressed = ExtResource( 22 )
+script = ExtResource( 31 )
+
+[node name="inv2" type="GridContainer" parent="Pages/Ingredients/Pages"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/vseparation = 20
+custom_constants/hseparation = 20
+columns = 2
+
+[node name="id_15" type="TextureRect" parent="Pages/Ingredients/Pages/inv2"]
+margin_right = 48.0
+margin_bottom = 48.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture = ExtResource( 15 )
+
+[node name="lbl" type="Label" parent="Pages/Ingredients/Pages/inv2/id_15"]
+margin_left = 50.0
+margin_right = 990.0
+margin_bottom = 185.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Caramel
+"
+
+[node name="col" type="Label" parent="Pages/Ingredients/Pages/inv2/id_15"]
+margin_left = 50.0
+margin_top = 24.8
+margin_right = 990.0
+margin_bottom = 209.8
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+
+[node name="id_16" type="TextureRect" parent="Pages/Ingredients/Pages/inv2"]
+margin_left = 348.0
+margin_right = 396.0
+margin_bottom = 48.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture = ExtResource( 16 )
+
+[node name="lbl" type="Label" parent="Pages/Ingredients/Pages/inv2/id_16"]
+margin_left = 50.0
+margin_right = 990.0
+margin_bottom = 185.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Mango
+"
+
+[node name="col" type="Label" parent="Pages/Ingredients/Pages/inv2/id_16"]
+margin_left = 50.0
+margin_top = 24.8
+margin_right = 990.0
+margin_bottom = 209.8
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+
+[node name="id_17" type="TextureRect" parent="Pages/Ingredients/Pages/inv2"]
+margin_top = 68.0
+margin_right = 48.0
+margin_bottom = 116.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture = ExtResource( 17 )
+
+[node name="lbl" type="Label" parent="Pages/Ingredients/Pages/inv2/id_17"]
+margin_left = 50.0
+margin_right = 990.0
+margin_bottom = 185.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Mango jam
+"
+
+[node name="col" type="Label" parent="Pages/Ingredients/Pages/inv2/id_17"]
+margin_left = 50.0
+margin_top = 24.8
+margin_right = 990.0
+margin_bottom = 209.8
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+
+[node name="id_18" type="TextureRect" parent="Pages/Ingredients/Pages/inv2"]
+margin_left = 348.0
+margin_top = 68.0
+margin_right = 396.0
+margin_bottom = 116.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture = ExtResource( 18 )
+
+[node name="lbl" type="Label" parent="Pages/Ingredients/Pages/inv2/id_18"]
+margin_left = 50.0
+margin_right = 990.0
+margin_bottom = 185.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Grape jam
+"
+
+[node name="col" type="Label" parent="Pages/Ingredients/Pages/inv2/id_18"]
+margin_left = 50.0
+margin_top = 24.8
+margin_right = 990.0
+margin_bottom = 209.8
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+
+[node name="id_19" type="TextureRect" parent="Pages/Ingredients/Pages/inv2"]
+margin_top = 136.0
+margin_right = 48.0
+margin_bottom = 184.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture = ExtResource( 20 )
+
+[node name="lbl" type="Label" parent="Pages/Ingredients/Pages/inv2/id_19"]
+margin_left = 50.0
+margin_right = 990.0
+margin_bottom = 185.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Palm sugar
+"
+
+[node name="col" type="Label" parent="Pages/Ingredients/Pages/inv2/id_19"]
+margin_left = 50.0
+margin_top = 24.8
+margin_right = 990.0
+margin_bottom = 209.8
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+
+[node name="id_20" type="TextureRect" parent="Pages/Ingredients/Pages/inv2"]
+margin_left = 348.0
+margin_top = 136.0
+margin_right = 396.0
+margin_bottom = 184.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture = ExtResource( 19 )
+
+[node name="lbl" type="Label" parent="Pages/Ingredients/Pages/inv2/id_20"]
+margin_left = 50.0
+margin_right = 990.0
+margin_bottom = 185.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Autumn eye flower
+"
+
+[node name="col" type="Label" parent="Pages/Ingredients/Pages/inv2/id_20"]
+margin_left = 50.0
+margin_top = 24.8
+margin_right = 990.0
+margin_bottom = 209.8
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+
+[node name="id_21" type="TextureRect" parent="Pages/Ingredients/Pages/inv2"]
+margin_top = 204.0
+margin_right = 48.0
+margin_bottom = 252.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture = ExtResource( 21 )
+
+[node name="lbl" type="Label" parent="Pages/Ingredients/Pages/inv2/id_21"]
+margin_left = 50.0
+margin_right = 990.0
+margin_bottom = 185.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Autumn eye jam
+"
+
+[node name="col" type="Label" parent="Pages/Ingredients/Pages/inv2/id_21"]
+margin_left = 50.0
+margin_top = 24.8
+margin_right = 990.0
+margin_bottom = 209.8
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+
+[node name="empty" type="Control" parent="Pages/Ingredients/Pages/inv2"]
+margin_left = 348.0
+margin_top = 204.0
+margin_right = 348.0
+margin_bottom = 204.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="empty3" type="Control" parent="Pages/Ingredients/Pages/inv2"]
+margin_top = 272.0
+margin_bottom = 272.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="empty2" type="Control" parent="Pages/Ingredients/Pages/inv2"]
+margin_left = 348.0
+margin_top = 272.0
+margin_right = 348.0
+margin_bottom = 272.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="prev_page" type="TextureButton" parent="Pages/Ingredients/Pages/inv2"]
+margin_top = 330.0
+margin_right = 48.0
+margin_bottom = 378.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture_normal = ExtResource( 23 )
+texture_pressed = ExtResource( 23 )
+script = ExtResource( 32 )
+
+[node name="Quests" type="Control" parent="Pages"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 91.0
+
+[node name="List" type="VBoxContainer" parent="Pages/Quests"]
+margin_left = 75.0
+margin_top = 74.0
+margin_right = 1800.0
+margin_bottom = 2084.0
+
+[node name="tst_in_prgrs" type="Button" parent="Pages/Quests/List"]
+margin_right = 1725.0
+margin_bottom = 91.0
+theme = ExtResource( 25 )
+custom_fonts/font = ExtResource( 1 )
+text = "test"
+flat = true
+align = 0
+
+[node name="tst_compl" type="Button" parent="Pages/Quests/List"]
+margin_top = 95.0
+margin_right = 1725.0
+margin_bottom = 186.0
+theme = ExtResource( 33 )
+custom_fonts/font = ExtResource( 1 )
+text = "test"
+flat = true
+align = 0
+
+[node name="Descr" type="Label" parent="Pages/Quests"]
+margin_left = 1860.0
+margin_top = 74.0
+margin_right = 3570.0
+margin_bottom = 2084.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Select the quest for description"
+autowrap = true
+
+[node name="Recepe" type="Control" parent="Pages"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 91.0

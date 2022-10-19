@@ -8,7 +8,7 @@ var _main = workspace.new();
 onready var hero = get_parent().get_parent().get_node("ob_hero")
 onready var sp_comp = get_node("sp_work/sp_comp")
 onready var sp_timer = get_node("sp_work/sp_timer")
-onready var craft_ui : HBoxContainer;
+onready var craft_ui : Control;
 
 func _ready() -> void:
 	z_index = position.y/5

@@ -9,6 +9,8 @@ func mover(pos, delta):
 		position = position.move_toward(Vector2(400, 633), delta*500)
 
 func _process(delta) -> void:
+	if Input.is_action_just_released("ui_home") and (hero.state == 'menu' or hero.state == 'game'):
+		get_node("ob_journal").turner()
 	if hero.position.y < 400:
 		mover(0, delta)
 	else:

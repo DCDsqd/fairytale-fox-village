@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://objs/huds/craft/next.gd" type="Script" id=1]
 [ext_resource path="res://objs/huds/craft/prev.gd" type="Script" id=2]
@@ -13,47 +13,60 @@
 [ext_resource path="res://sprite/hud/arrow_r.png" type="Texture" id=11]
 [ext_resource path="res://objs/huds/craft/craft.gd" type="Script" id=12]
 [ext_resource path="res://sprite/items/sp_ingr_1.tres" type="Texture" id=13]
+[ext_resource path="res://objs/huds/craft/close.gd" type="Script" id=14]
+[ext_resource path="res://sprite/hud/craft_hud.png" type="Texture" id=15]
 
-[node name="hud_craft" type="HBoxContainer"]
-anchor_right = 0.495
-anchor_bottom = 0.12
-margin_right = -192.0
-margin_bottom = -6.0
+[node name="hud_craft" type="Control"]
+anchor_right = 0.515
+anchor_bottom = 0.107
+margin_right = -208.0
+margin_bottom = -0.150005
 rect_pivot_offset = Vector2( 198, 0 )
 script = ExtResource( 12 )
 
-[node name="prev" type="TextureButton" parent="."]
+[node name="bkg" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 15 )
+
+[node name="list" type="HBoxContainer" parent="bkg"]
+margin_left = 3.0
+margin_top = 9.0
+margin_right = 429.0
+margin_bottom = 57.0
+
+[node name="prev" type="TextureButton" parent="bkg/list"]
 margin_right = 48.0
 margin_bottom = 48.0
 texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 8 )
 script = ExtResource( 2 )
 
-[node name="ingt_1" type="TextureRect" parent="."]
+[node name="ingt_1" type="TextureRect" parent="bkg/list"]
 margin_left = 52.0
 margin_right = 100.0
 margin_bottom = 48.0
 texture = ExtResource( 13 )
 
-[node name="plus" type="TextureRect" parent="."]
+[node name="plus" type="TextureRect" parent="bkg/list"]
 margin_left = 104.0
 margin_right = 152.0
 margin_bottom = 48.0
 texture = ExtResource( 9 )
 
-[node name="ingt_2" type="TextureRect" parent="."]
+[node name="ingt_2" type="TextureRect" parent="bkg/list"]
 margin_left = 156.0
 margin_right = 204.0
 margin_bottom = 48.0
 texture = ExtResource( 3 )
 
-[node name="equals" type="TextureRect" parent="."]
+[node name="equals" type="TextureRect" parent="bkg/list"]
 margin_left = 208.0
 margin_right = 256.0
 margin_bottom = 48.0
 texture = ExtResource( 10 )
 
-[node name="made" type="TextureButton" parent="."]
+[node name="made" type="TextureButton" parent="bkg/list"]
 margin_left = 260.0
 margin_right = 308.0
 margin_bottom = 48.0
@@ -61,7 +74,7 @@ texture_normal = ExtResource( 7 )
 texture_pressed = ExtResource( 4 )
 script = ExtResource( 6 )
 
-[node name="next" type="TextureButton" parent="."]
+[node name="next" type="TextureButton" parent="bkg/list"]
 margin_left = 312.0
 margin_right = 360.0
 margin_bottom = 48.0
@@ -69,10 +82,10 @@ texture_normal = ExtResource( 11 )
 texture_pressed = ExtResource( 11 )
 script = ExtResource( 1 )
 
-[node name="close" type="TextureButton" parent="."]
+[node name="close" type="TextureButton" parent="bkg/list"]
 margin_left = 364.0
 margin_right = 412.0
 margin_bottom = 48.0
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 5 )
-script = ExtResource( 1 )
+script = ExtResource( 14 )

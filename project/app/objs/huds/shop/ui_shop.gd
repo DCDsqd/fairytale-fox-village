@@ -34,7 +34,7 @@ func turner(vis) -> void:
 	
 	for i in range(0, 20):
 		if game_data.get_ingredient(i).is_available() == 1:
-			print(game_data.get_ingredient(i).get_name())
+			#print(game_data.get_ingredient(i).get_name())
 			sel_item.append(game_data.get_ingredient(i))
 	
 	if vis == true:
@@ -59,6 +59,7 @@ func upd() -> void:
 func buy_1() -> void:
 	if game.get_gold() >= sel_item[sel].get_const():
 		player.inv_add_ingredients(sel_item[sel], 1)
+		print(sel_item[sel].get_name())
 		game.add_gold(-sel_item[sel].get_const())
 		print(player.inv_get_ingredients_cnt(sel_item[sel]))
 	pass

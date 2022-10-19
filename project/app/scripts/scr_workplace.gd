@@ -12,7 +12,7 @@ var player : Player
 func set_type(_type):
 	type = _type
 
-func inter(sp_comp, clr, craft_ui : HBoxContainer) -> String:
+func inter(sp_comp, clr, craft_ui : Control) -> String:
 	if state == 'noth':
 		sp_comp.modulate = clr
 		state = 'wait'

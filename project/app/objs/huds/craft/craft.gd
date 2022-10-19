@@ -1,4 +1,4 @@
-extends HBoxContainer
+extends Control
 
 onready var hero
 onready var game : Game
@@ -21,16 +21,18 @@ func turner(vis) -> void:
 		hero.state = 'ui'
 		#hero.anim()
 		visible = vis
+		craft_food.clear()
 		work()
 	else:
+		craft_food.clear()
 		hero.state = 'game'
 		visible = vis
 
 func work():
 	sel = 0
-	ingr_1 = get_node("ingt_1")
-	ingr_2 = get_node("ingt_2")
-	res = get_node("made")
+	ingr_1 = get_node("bkg/list/ingt_1")
+	ingr_2 = get_node("bkg/list/ingt_2")
+	res = get_node("bkg/list/made")
 	game = get_parent().get_parent().get_game()
 	player = get_parent().get_parent().get_player()
 	game_data = get_parent().get_parent().get_db().get_data()
@@ -88,6 +90,5 @@ func made():
 	av_food = player.inv_get_available_food(game_data)
 	player.inv_add_ingredients(craft_food[sel].get_ingridients()[0],-1)
 	player.inv_add_ingredients(craft_food[sel].get_ingridients()[1],-1)
-	turner(false)
 	wrkplc.coock(craft_food[sel], player)
-	craft_food.clear()
+	turner(false)

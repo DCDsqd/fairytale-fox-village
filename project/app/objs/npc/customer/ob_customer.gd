@@ -28,10 +28,10 @@ func check():
 		state = 'see'
 
 func food_sel():
-	for i in range(0, 19):
-		if player.inv_get_food_cnt(game_data.get_food(i)) > 0:
-			sel = game_data.get_food(i)
-			state = "selected"
+	var foods = player.inv_get_available_food(game_data)
+	if foods.size() > 0:
+		sel = game_data.get_food(foods[0])
+		state = "selected"
 	if sel == null:
 		state = "see"
 	else:
@@ -51,11 +51,11 @@ func sel():
 
 func move(delta):
 	if position.distance_to(hero.position) > 50:
-		move_and_slide( (funt.position - position)* delta * 10)
+		move_and_slide( (funt.position - position))
 
 func move_out(delta):
 	if position.distance_to(control.position) > 10:
-		move_and_slide((control.position - position) * delta * 10)
+		move_and_slide((control.position - position))
 	else:
 		control.erase(self)
 
