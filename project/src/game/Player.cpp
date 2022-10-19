@@ -46,3 +46,23 @@ godot::Array godot::Player::inv_get_available_food(GameData* game_data)
 	}
 	return ans;
 }
+
+int godot::Player::inv_get_all_food_cnt() const
+{
+	return inventory.inv_get_all_food_cnt();
+}
+
+int godot::Player::inv_get_all_ingr_cnt() const
+{
+	return inventory.inv_get_all_ingr_cnt();
+}
+
+godot::Food* godot::Player::inv_get_most_exp_food_available() const
+{
+	auto all_avail_food = inventory.get_all_unique_food();
+	if (all_avail_food.empty()) {
+		return nullptr;
+	}
+	std::sort(all_avail_food.begin(), all_avail_food.end(), godot::Food::comp_food_by_cost);
+	return all_avail_food.front();
+}

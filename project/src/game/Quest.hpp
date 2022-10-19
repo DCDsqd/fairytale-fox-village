@@ -60,11 +60,18 @@ public:
 	void set_in_prog();
 	godot::Array get_reqs();
 
+	enum QUEST_STATUS {
+		NOT_COMPLETED = 0,
+		IN_PROGRESS = 1,
+		COMPLETED = 2,
+		FAILED = 3
+	};
+
 private:
 	int id;
 	godot::String name;
 	godot::String descr;
-	int status = 0; //0 - not completed, 1 - in progress, 2 - completed, 3 - failed
+	int status = NOT_COMPLETED; //0 - not completed, 1 - in progress, 2 - completed, 3 - failed
 	std::vector<Food*> targets;
 	Civilian* asker = nullptr;
 	Civilian* receiver = nullptr;

@@ -37,6 +37,10 @@ public:
 	inline int get_cost() const { return cost; };
 	std::vector<Ingredient*>& get_ingr_ref_cpp() { return ingridients; };
 
+	static bool comp_food_by_cost(const Food* a, const Food* b) {
+		return a->get_cost() < b->get_cost();
+	}
+
 private:
 	godot::String name;
 	int id;

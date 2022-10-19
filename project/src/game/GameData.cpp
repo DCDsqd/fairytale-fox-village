@@ -152,3 +152,35 @@ godot::String godot::GameData::get_ingr_shop_info(Ingredient* ingr, Player* play
 	str += "Currently owned: " + godot::GameData::gs_from_num(player->inv_get_ingredients_cnt(ingr));
 	return str;
 }
+
+godot::Array godot::GameData::get_all_recerved_food()
+{
+	godot::Array res;
+	for (const auto q : all_quests) {
+		if (q->get_status() == Quest::QUEST_STATUS::IN_PROGRESS) {
+			godot::Array cur_reqs = q->get_reqs();
+			for (int i = 0; i < cur_reqs.size(); ++i) {
+				if (cur_reqs.find(cur_reqs[i]) != -1){
+					res.append(cur_reqs[i]);
+				}
+			}
+		}
+	}
+	return res;
+}
+
+godot::Array godot::GameData::get_all_recerved_food_in_inv(Player* player)
+{
+	godot::Array res;
+	for (const auto q : all_quests) {
+		if (q->get_status() == Quest::QUEST_STATUS::IN_PROGRESS) {
+			godot::Array cur_reqs = q->get_reqs();
+			for (int i = 0; i < cur_reqs.size(); ++i) {
+				if (cur_reqs.find(cur_reqs[i]) != -1 && player->inv_get_ingredients_cnt(cur_reqs[i]) > 0) {
+					res.append(cur_reqs[i]);
+				}
+			}
+		}
+	}
+	return res;
+}

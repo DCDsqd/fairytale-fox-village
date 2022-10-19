@@ -50,6 +50,8 @@ public:
 		register_method("get_active_quest_for_civ", &GameData::get_active_quest_for_civ);
 		register_method("get_avail_quest_for_civ", &GameData::get_avail_quest_for_civ);
 		register_method("get_ingr_shop_info", &GameData::get_ingr_shop_info);
+		register_method("get_all_recerved_food", &GameData::get_all_recerved_food);
+		register_method("get_all_recerved_food_in_inv", &GameData::get_all_recerved_food_in_inv);
 	}
 
 	void _init() {};
@@ -93,8 +95,6 @@ public:
 	godot::Array get_all_quests();
 	std::vector<Quest*>& get_all_quests_cpp_ref();
 	inline int total_quests() const noexcept { return (int)all_quests.size(); };
-	
-
 
 	int amount_of_failed_quests();
 	void update_quests_status_on_day_switch(int new_day);
@@ -103,6 +103,10 @@ public:
 	Quest* get_avail_quest_for_civ(Civilian* civ, int cur_day);
 
 	godot::String get_ingr_shop_info(Ingredient* ingr, Player* player);
+
+	godot::Array get_all_recerved_food();
+	godot::Array get_all_recerved_food_in_inv(Player* player);
+	
 
 private:
 	std::vector<Civilian*> all_civilians;
