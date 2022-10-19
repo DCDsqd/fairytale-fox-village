@@ -64,17 +64,22 @@ godot::Food* godot::Player::inv_get_most_exp_food_available(godot::Array quest_l
 		return nullptr;
 	}
 	std::sort(all_avail_food.begin(), all_avail_food.end(), godot::Food::comp_food_by_cost);
-	int i = 0;
 	if (quest_list.empty()) {
 		return all_avail_food.front();
 	}
+	size_t i = 0;
 	while (i < all_avail_food.size()) {
+		bool avaliable_to_buy = true;
 		for (size_t j = 0; j < quest_list.size(); ++j) {
 			Quest* cur_quest = quest_list[i];
 			auto food_targets = cur_quest->get_targets();
-			if (food_targets.find(all_avail_food[i]) == -1) {
-				return all_avail_food[i];
+			if (food_targets.find(all_avail_food[i]) != -1) {
+				avaliable_to_buy = false;
+				break;
 			}
+		}
+		if (avaliable_to_buy) {
+			return all_avail_food[i];
 		}
 		++i;
 	}
