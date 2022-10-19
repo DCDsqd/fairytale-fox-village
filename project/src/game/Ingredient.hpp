@@ -32,7 +32,7 @@ public:
 	inline int get_id() const { return id; };
 	inline godot::String get_name() const { return name; };
 	inline int is_available() const { return available; };
-
+	
 private:
 	int id;
 	godot::String name;
