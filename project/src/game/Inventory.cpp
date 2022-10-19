@@ -42,7 +42,9 @@ std::vector<godot::Food*> godot::Inventory::get_all_unique_food() const
 {
 	std::vector<godot::Food*> v;
 	for (auto [key, value] : food) {
-		v.push_back(key);
+		if (value > 0) {
+			v.push_back(key);
+		}
 	}
 	return v;
 }
