@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=68 format=2]
 
 [ext_resource path="res://fonts/main.tres" type="DynamicFont" id=1]
 [ext_resource path="res://sprite/ui/mark.png" type="Texture" id=2]
@@ -32,7 +32,29 @@
 [ext_resource path="res://objs/huds/journal/Quests.gd" type="Script" id=30]
 [ext_resource path="res://objs/huds/journal/next_page.gd" type="Script" id=31]
 [ext_resource path="res://objs/huds/journal/prev_page.gd" type="Script" id=32]
-[ext_resource path="res://materials/compl_btn.tres" type="Theme" id=33]
+[ext_resource path="res://sprite/hud/plus.png" type="Texture" id=34]
+[ext_resource path="res://sprite/hud/equals.png" type="Texture" id=35]
+[ext_resource path="res://sprite/items/food/foods1.png" type="Texture" id=36]
+[ext_resource path="res://sprite/items/food/foods2.png" type="Texture" id=37]
+[ext_resource path="res://sprite/items/food/foods3.png" type="Texture" id=38]
+[ext_resource path="res://sprite/items/food/foods4.png" type="Texture" id=39]
+[ext_resource path="res://sprite/items/food/foods5.png" type="Texture" id=40]
+[ext_resource path="res://sprite/items/food/foods7.png" type="Texture" id=41]
+[ext_resource path="res://sprite/items/food/foods6.png" type="Texture" id=42]
+[ext_resource path="res://sprite/items/food/foods8.png" type="Texture" id=43]
+[ext_resource path="res://sprite/items/food/foods19.png" type="Texture" id=44]
+[ext_resource path="res://sprite/items/food/foods9.png" type="Texture" id=45]
+[ext_resource path="res://sprite/items/food/foods12.png" type="Texture" id=46]
+[ext_resource path="res://sprite/items/food/foods14.png" type="Texture" id=47]
+[ext_resource path="res://sprite/items/food/foods10.png" type="Texture" id=48]
+[ext_resource path="res://sprite/items/food/foods13.png" type="Texture" id=49]
+[ext_resource path="res://sprite/items/food/foods15.png" type="Texture" id=50]
+[ext_resource path="res://sprite/items/food/foods17.png" type="Texture" id=51]
+[ext_resource path="res://sprite/items/food/foods18.png" type="Texture" id=52]
+[ext_resource path="res://sprite/items/food/foods16.png" type="Texture" id=53]
+[ext_resource path="res://sprite/items/food/foods11.png" type="Texture" id=54]
+[ext_resource path="res://objs/huds/journal/rec_next.gd" type="Script" id=55]
+[ext_resource path="res://objs/huds/journal/rec_prev.gd" type="Script" id=56]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 4 )
@@ -58,6 +80,14 @@ region_rect = Rect2( 0, 0, 699, 423 )
 
 [sub_resource type="StyleBoxTexture" id=9]
 
+[sub_resource type="StyleBoxTexture" id=10]
+
+[sub_resource type="StyleBoxTexture" id=11]
+
+[sub_resource type="StyleBoxTexture" id=12]
+
+[sub_resource type="StyleBoxTexture" id=13]
+
 [node name="ob_journal" type="Control"]
 margin_right = 800.0
 margin_bottom = 450.0
@@ -82,6 +112,7 @@ custom_styles/panel = SubResource( 5 )
 tab_align = 0
 
 [node name="Guide" type="Control" parent="Pages"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 91.0
@@ -704,7 +735,6 @@ texture_pressed = ExtResource( 23 )
 script = ExtResource( 32 )
 
 [node name="Quests" type="Control" parent="Pages"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 91.0
@@ -714,25 +744,6 @@ margin_left = 75.0
 margin_top = 74.0
 margin_right = 1800.0
 margin_bottom = 2084.0
-
-[node name="tst_in_prgrs" type="Button" parent="Pages/Quests/List"]
-margin_right = 1725.0
-margin_bottom = 91.0
-theme = ExtResource( 25 )
-custom_fonts/font = ExtResource( 1 )
-text = "test"
-flat = true
-align = 0
-
-[node name="tst_compl" type="Button" parent="Pages/Quests/List"]
-margin_top = 95.0
-margin_right = 1725.0
-margin_bottom = 186.0
-theme = ExtResource( 33 )
-custom_fonts/font = ExtResource( 1 )
-text = "test"
-flat = true
-align = 0
 
 [node name="Descr" type="Label" parent="Pages/Quests"]
 margin_left = 1860.0
@@ -749,3 +760,1335 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 91.0
+
+[node name="Pages" type="TabContainer" parent="Pages/Recepe"]
+margin_left = 285.0
+margin_top = 74.0
+margin_right = 906.0
+margin_bottom = 461.0
+rect_scale = Vector2( 5, 5 )
+custom_styles/tab_fg = SubResource( 10 )
+custom_styles/tab_disabled = SubResource( 11 )
+custom_styles/tab_bg = SubResource( 12 )
+custom_styles/panel = SubResource( 13 )
+tabs_visible = false
+
+[node name="List_1" type="GridContainer" parent="Pages/Recepe/Pages"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/vseparation = 20
+custom_constants/hseparation = 40
+columns = 2
+
+[node name="id_1" type="Control" parent="Pages/Recepe/Pages/List_1"]
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="pic" type="HBoxContainer" parent="Pages/Recepe/Pages/List_1/id_1"]
+margin_right = 256.0
+margin_bottom = 48.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="ingr_1" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_1/pic"]
+margin_right = 48.0
+margin_bottom = 48.0
+texture = ExtResource( 5 )
+
+[node name="sp_plus" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_1/pic"]
+margin_left = 52.0
+margin_right = 100.0
+margin_bottom = 48.0
+texture = ExtResource( 34 )
+
+[node name="ingr_2" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_1/pic"]
+margin_left = 104.0
+margin_right = 152.0
+margin_bottom = 48.0
+texture = ExtResource( 7 )
+
+[node name="sp_res" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_1/pic"]
+margin_left = 156.0
+margin_right = 204.0
+margin_bottom = 48.0
+texture = ExtResource( 35 )
+
+[node name="food" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_1/pic"]
+margin_left = 208.0
+margin_right = 256.0
+margin_bottom = 48.0
+texture = ExtResource( 36 )
+
+[node name="txt" type="VBoxContainer" parent="Pages/Recepe/Pages/List_1/id_1"]
+margin_top = 51.0
+margin_right = 1275.0
+margin_bottom = 237.0
+rect_scale = Vector2( 0.2, 0.2 )
+
+[node name="name" type="Label" parent="Pages/Recepe/Pages/List_1/id_1/txt"]
+margin_right = 1520.0
+margin_bottom = 91.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Chocolate with hazelnuts"
+
+[node name="cnt" type="Label" parent="Pages/Recepe/Pages/List_1/id_1/txt"]
+margin_top = 95.0
+margin_right = 1520.0
+margin_bottom = 186.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "count: 0"
+align = 2
+
+[node name="id_2" type="Control" parent="Pages/Recepe/Pages/List_1"]
+margin_left = 330.0
+margin_right = 330.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="pic" type="HBoxContainer" parent="Pages/Recepe/Pages/List_1/id_2"]
+margin_right = 256.0
+margin_bottom = 48.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="ingr_1" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_2/pic"]
+margin_right = 48.0
+margin_bottom = 48.0
+texture = ExtResource( 8 )
+
+[node name="sp_plus" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_2/pic"]
+margin_left = 52.0
+margin_right = 100.0
+margin_bottom = 48.0
+texture = ExtResource( 34 )
+
+[node name="ingr_2" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_2/pic"]
+margin_left = 104.0
+margin_right = 152.0
+margin_bottom = 48.0
+texture = ExtResource( 7 )
+
+[node name="sp_res" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_2/pic"]
+margin_left = 156.0
+margin_right = 204.0
+margin_bottom = 48.0
+texture = ExtResource( 35 )
+
+[node name="food" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_2/pic"]
+margin_left = 208.0
+margin_right = 256.0
+margin_bottom = 48.0
+texture = ExtResource( 37 )
+
+[node name="txt" type="VBoxContainer" parent="Pages/Recepe/Pages/List_1/id_2"]
+margin_top = 51.0
+margin_right = 1275.0
+margin_bottom = 237.0
+rect_scale = Vector2( 0.2, 0.2 )
+
+[node name="name" type="Label" parent="Pages/Recepe/Pages/List_1/id_2/txt"]
+margin_right = 1360.0
+margin_bottom = 91.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Hazelnuts in chocolate"
+
+[node name="cnt" type="Label" parent="Pages/Recepe/Pages/List_1/id_2/txt"]
+margin_top = 95.0
+margin_right = 1360.0
+margin_bottom = 186.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "count: 0"
+align = 2
+
+[node name="id_3" type="Control" parent="Pages/Recepe/Pages/List_1"]
+margin_top = 101.0
+margin_bottom = 101.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="pic" type="HBoxContainer" parent="Pages/Recepe/Pages/List_1/id_3"]
+margin_right = 256.0
+margin_bottom = 48.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="ingr_1" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_3/pic"]
+margin_right = 48.0
+margin_bottom = 48.0
+texture = ExtResource( 9 )
+
+[node name="sp_plus" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_3/pic"]
+margin_left = 52.0
+margin_right = 100.0
+margin_bottom = 48.0
+texture = ExtResource( 34 )
+
+[node name="ingr_2" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_3/pic"]
+margin_left = 104.0
+margin_right = 152.0
+margin_bottom = 48.0
+texture = ExtResource( 12 )
+
+[node name="sp_res" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_3/pic"]
+margin_left = 156.0
+margin_right = 204.0
+margin_bottom = 48.0
+texture = ExtResource( 35 )
+
+[node name="food" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_3/pic"]
+margin_left = 208.0
+margin_right = 256.0
+margin_bottom = 48.0
+texture = ExtResource( 38 )
+
+[node name="txt" type="VBoxContainer" parent="Pages/Recepe/Pages/List_1/id_3"]
+margin_top = 51.0
+margin_right = 1275.0
+margin_bottom = 237.0
+rect_scale = Vector2( 0.2, 0.2 )
+
+[node name="name" type="Label" parent="Pages/Recepe/Pages/List_1/id_3/txt"]
+margin_right = 990.0
+margin_bottom = 91.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Apple marmalade"
+
+[node name="cnt" type="Label" parent="Pages/Recepe/Pages/List_1/id_3/txt"]
+margin_top = 95.0
+margin_right = 1275.0
+margin_bottom = 186.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "count: 0"
+align = 2
+
+[node name="id_4" type="Control" parent="Pages/Recepe/Pages/List_1"]
+margin_left = 330.0
+margin_top = 101.0
+margin_right = 330.0
+margin_bottom = 101.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="pic" type="HBoxContainer" parent="Pages/Recepe/Pages/List_1/id_4"]
+margin_right = 256.0
+margin_bottom = 48.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="ingr_1" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_4/pic"]
+margin_right = 48.0
+margin_bottom = 48.0
+texture = ExtResource( 9 )
+
+[node name="sp_plus" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_4/pic"]
+margin_left = 52.0
+margin_right = 100.0
+margin_bottom = 48.0
+texture = ExtResource( 34 )
+
+[node name="ingr_2" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_4/pic"]
+margin_left = 104.0
+margin_right = 152.0
+margin_bottom = 48.0
+texture = ExtResource( 13 )
+
+[node name="sp_res" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_4/pic"]
+margin_left = 156.0
+margin_right = 204.0
+margin_bottom = 48.0
+texture = ExtResource( 35 )
+
+[node name="food" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_4/pic"]
+margin_left = 208.0
+margin_right = 256.0
+margin_bottom = 48.0
+texture = ExtResource( 39 )
+
+[node name="txt" type="VBoxContainer" parent="Pages/Recepe/Pages/List_1/id_4"]
+margin_top = 51.0
+margin_right = 1275.0
+margin_bottom = 237.0
+rect_scale = Vector2( 0.2, 0.2 )
+
+[node name="name" type="Label" parent="Pages/Recepe/Pages/List_1/id_4/txt"]
+margin_right = 770.0
+margin_bottom = 91.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Apple lollipop"
+
+[node name="cnt" type="Label" parent="Pages/Recepe/Pages/List_1/id_4/txt"]
+margin_top = 95.0
+margin_right = 1275.0
+margin_bottom = 186.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "count: 0"
+align = 2
+
+[node name="id_5" type="Control" parent="Pages/Recepe/Pages/List_1"]
+margin_top = 202.0
+margin_bottom = 202.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="pic" type="HBoxContainer" parent="Pages/Recepe/Pages/List_1/id_5"]
+margin_right = 256.0
+margin_bottom = 48.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="ingr_1" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_5/pic"]
+margin_right = 48.0
+margin_bottom = 48.0
+texture = ExtResource( 6 )
+
+[node name="sp_plus" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_5/pic"]
+margin_left = 52.0
+margin_right = 100.0
+margin_bottom = 48.0
+texture = ExtResource( 34 )
+
+[node name="ingr_2" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_5/pic"]
+margin_left = 104.0
+margin_right = 152.0
+margin_bottom = 48.0
+texture = ExtResource( 9 )
+
+[node name="sp_res" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_5/pic"]
+margin_left = 156.0
+margin_right = 204.0
+margin_bottom = 48.0
+texture = ExtResource( 35 )
+
+[node name="food" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_5/pic"]
+margin_left = 208.0
+margin_right = 256.0
+margin_bottom = 48.0
+texture = ExtResource( 40 )
+
+[node name="txt" type="VBoxContainer" parent="Pages/Recepe/Pages/List_1/id_5"]
+margin_top = 51.0
+margin_right = 1275.0
+margin_bottom = 237.0
+rect_scale = Vector2( 0.2, 0.2 )
+
+[node name="name" type="Label" parent="Pages/Recepe/Pages/List_1/id_5/txt"]
+margin_right = 720.0
+margin_bottom = 91.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Apple candy"
+
+[node name="cnt" type="Label" parent="Pages/Recepe/Pages/List_1/id_5/txt"]
+margin_top = 95.0
+margin_right = 1275.0
+margin_bottom = 186.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "count: 0"
+align = 2
+
+[node name="id_6" type="Control" parent="Pages/Recepe/Pages/List_1"]
+margin_left = 330.0
+margin_top = 202.0
+margin_right = 330.0
+margin_bottom = 202.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="pic" type="HBoxContainer" parent="Pages/Recepe/Pages/List_1/id_6"]
+margin_right = 256.0
+margin_bottom = 48.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="ingr_1" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_6/pic"]
+margin_right = 48.0
+margin_bottom = 48.0
+texture = ExtResource( 6 )
+
+[node name="sp_plus" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_6/pic"]
+margin_left = 52.0
+margin_right = 100.0
+margin_bottom = 48.0
+texture = ExtResource( 34 )
+
+[node name="ingr_2" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_6/pic"]
+margin_left = 104.0
+margin_right = 152.0
+margin_bottom = 48.0
+texture = ExtResource( 15 )
+
+[node name="sp_res" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_6/pic"]
+margin_left = 156.0
+margin_right = 204.0
+margin_bottom = 48.0
+texture = ExtResource( 35 )
+
+[node name="food" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_6/pic"]
+margin_left = 208.0
+margin_right = 256.0
+margin_bottom = 48.0
+texture = ExtResource( 42 )
+
+[node name="txt" type="VBoxContainer" parent="Pages/Recepe/Pages/List_1/id_6"]
+margin_top = 51.0
+margin_right = 1275.0
+margin_bottom = 237.0
+rect_scale = Vector2( 0.2, 0.2 )
+
+[node name="name" type="Label" parent="Pages/Recepe/Pages/List_1/id_6/txt"]
+margin_right = 1090.0
+margin_bottom = 91.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Caramel chocolate"
+
+[node name="cnt" type="Label" parent="Pages/Recepe/Pages/List_1/id_6/txt"]
+margin_top = 95.0
+margin_right = 1275.0
+margin_bottom = 186.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "count: 0"
+align = 2
+
+[node name="id_7" type="Control" parent="Pages/Recepe/Pages/List_1"]
+margin_top = 303.0
+margin_bottom = 303.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="pic" type="HBoxContainer" parent="Pages/Recepe/Pages/List_1/id_7"]
+margin_right = 256.0
+margin_bottom = 48.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="ingr_1" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_7/pic"]
+margin_right = 48.0
+margin_bottom = 48.0
+texture = ExtResource( 8 )
+
+[node name="sp_plus" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_7/pic"]
+margin_left = 52.0
+margin_right = 100.0
+margin_bottom = 48.0
+texture = ExtResource( 34 )
+
+[node name="ingr_2" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_7/pic"]
+margin_left = 104.0
+margin_right = 152.0
+margin_bottom = 48.0
+texture = ExtResource( 16 )
+
+[node name="sp_res" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_7/pic"]
+margin_left = 156.0
+margin_right = 204.0
+margin_bottom = 48.0
+texture = ExtResource( 35 )
+
+[node name="food" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_7/pic"]
+margin_left = 208.0
+margin_right = 256.0
+margin_bottom = 48.0
+texture = ExtResource( 41 )
+
+[node name="txt" type="VBoxContainer" parent="Pages/Recepe/Pages/List_1/id_7"]
+margin_top = 51.0
+margin_right = 1275.0
+margin_bottom = 237.0
+rect_scale = Vector2( 0.2, 0.2 )
+
+[node name="name" type="Label" parent="Pages/Recepe/Pages/List_1/id_7/txt"]
+margin_right = 780.0
+margin_bottom = 91.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Mango candy"
+
+[node name="cnt" type="Label" parent="Pages/Recepe/Pages/List_1/id_7/txt"]
+margin_top = 95.0
+margin_right = 1275.0
+margin_bottom = 186.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "count: 0"
+align = 2
+
+[node name="id_8" type="Control" parent="Pages/Recepe/Pages/List_1"]
+margin_left = 330.0
+margin_top = 303.0
+margin_right = 330.0
+margin_bottom = 303.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="pic" type="HBoxContainer" parent="Pages/Recepe/Pages/List_1/id_8"]
+margin_right = 256.0
+margin_bottom = 48.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="ingr_1" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_8/pic"]
+margin_right = 48.0
+margin_bottom = 48.0
+texture = ExtResource( 16 )
+
+[node name="sp_plus" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_8/pic"]
+margin_left = 52.0
+margin_right = 100.0
+margin_bottom = 48.0
+texture = ExtResource( 34 )
+
+[node name="ingr_2" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_8/pic"]
+margin_left = 104.0
+margin_right = 152.0
+margin_bottom = 48.0
+texture = ExtResource( 13 )
+
+[node name="sp_res" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_8/pic"]
+margin_left = 156.0
+margin_right = 204.0
+margin_bottom = 48.0
+texture = ExtResource( 35 )
+
+[node name="food" type="TextureRect" parent="Pages/Recepe/Pages/List_1/id_8/pic"]
+margin_left = 208.0
+margin_right = 256.0
+margin_bottom = 48.0
+texture = ExtResource( 43 )
+
+[node name="txt" type="VBoxContainer" parent="Pages/Recepe/Pages/List_1/id_8"]
+margin_top = 51.0
+margin_right = 1275.0
+margin_bottom = 237.0
+rect_scale = Vector2( 0.2, 0.2 )
+
+[node name="name" type="Label" parent="Pages/Recepe/Pages/List_1/id_8/txt"]
+margin_right = 1050.0
+margin_bottom = 91.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Mango marmalade"
+
+[node name="cnt" type="Label" parent="Pages/Recepe/Pages/List_1/id_8/txt"]
+margin_top = 95.0
+margin_right = 1275.0
+margin_bottom = 186.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "count: 0"
+align = 2
+
+[node name="List_2" type="GridContainer" parent="Pages/Recepe/Pages"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/vseparation = 20
+custom_constants/hseparation = 40
+columns = 2
+
+[node name="id_9" type="Control" parent="Pages/Recepe/Pages/List_2"]
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="pic" type="HBoxContainer" parent="Pages/Recepe/Pages/List_2/id_9"]
+margin_right = 256.0
+margin_bottom = 48.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="ingr_1" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_9/pic"]
+margin_right = 48.0
+margin_bottom = 48.0
+texture = ExtResource( 15 )
+
+[node name="sp_plus" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_9/pic"]
+margin_left = 52.0
+margin_right = 100.0
+margin_bottom = 48.0
+texture = ExtResource( 34 )
+
+[node name="ingr_2" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_9/pic"]
+margin_left = 104.0
+margin_right = 152.0
+margin_bottom = 48.0
+texture = ExtResource( 12 )
+
+[node name="sp_res" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_9/pic"]
+margin_left = 156.0
+margin_right = 204.0
+margin_bottom = 48.0
+texture = ExtResource( 35 )
+
+[node name="food" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_9/pic"]
+margin_left = 208.0
+margin_right = 256.0
+margin_bottom = 48.0
+texture = ExtResource( 45 )
+
+[node name="txt" type="VBoxContainer" parent="Pages/Recepe/Pages/List_2/id_9"]
+margin_top = 51.0
+margin_right = 1275.0
+margin_bottom = 237.0
+rect_scale = Vector2( 0.2, 0.2 )
+
+[node name="name" type="Label" parent="Pages/Recepe/Pages/List_2/id_9/txt"]
+margin_right = 920.0
+margin_bottom = 91.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Caramel lollipop"
+
+[node name="cnt" type="Label" parent="Pages/Recepe/Pages/List_2/id_9/txt"]
+margin_top = 95.0
+margin_right = 1275.0
+margin_bottom = 186.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "count: 0"
+align = 2
+
+[node name="id_10" type="Control" parent="Pages/Recepe/Pages/List_2"]
+margin_left = 330.0
+margin_right = 330.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="pic" type="HBoxContainer" parent="Pages/Recepe/Pages/List_2/id_10"]
+margin_right = 256.0
+margin_bottom = 48.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="ingr_1" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_10/pic"]
+margin_right = 48.0
+margin_bottom = 48.0
+texture = ExtResource( 5 )
+
+[node name="sp_plus" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_10/pic"]
+margin_left = 52.0
+margin_right = 100.0
+margin_bottom = 48.0
+texture = ExtResource( 34 )
+
+[node name="ingr_2" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_10/pic"]
+margin_left = 104.0
+margin_right = 152.0
+margin_bottom = 48.0
+texture = ExtResource( 7 )
+
+[node name="sp_res" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_10/pic"]
+margin_left = 156.0
+margin_right = 204.0
+margin_bottom = 48.0
+texture = ExtResource( 35 )
+
+[node name="food" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_10/pic"]
+margin_left = 208.0
+margin_right = 256.0
+margin_bottom = 48.0
+texture = ExtResource( 48 )
+
+[node name="txt" type="VBoxContainer" parent="Pages/Recepe/Pages/List_2/id_10"]
+margin_top = 51.0
+margin_right = 1275.0
+margin_bottom = 237.0
+rect_scale = Vector2( 0.2, 0.2 )
+
+[node name="name" type="Label" parent="Pages/Recepe/Pages/List_2/id_10/txt"]
+margin_right = 1300.0
+margin_bottom = 91.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Candy with hazelnuts"
+
+[node name="cnt" type="Label" parent="Pages/Recepe/Pages/List_2/id_10/txt"]
+margin_top = 95.0
+margin_right = 1300.0
+margin_bottom = 186.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "count: 0"
+align = 2
+
+[node name="id_11" type="Control" parent="Pages/Recepe/Pages/List_2"]
+margin_top = 101.0
+margin_bottom = 101.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="pic" type="HBoxContainer" parent="Pages/Recepe/Pages/List_2/id_11"]
+margin_right = 256.0
+margin_bottom = 48.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="ingr_1" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_11/pic"]
+margin_right = 48.0
+margin_bottom = 48.0
+texture = ExtResource( 8 )
+
+[node name="sp_plus" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_11/pic"]
+margin_left = 52.0
+margin_right = 100.0
+margin_bottom = 48.0
+texture = ExtResource( 34 )
+
+[node name="ingr_2" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_11/pic"]
+margin_left = 104.0
+margin_right = 152.0
+margin_bottom = 48.0
+texture = ExtResource( 15 )
+
+[node name="sp_res" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_11/pic"]
+margin_left = 156.0
+margin_right = 204.0
+margin_bottom = 48.0
+texture = ExtResource( 35 )
+
+[node name="food" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_11/pic"]
+margin_left = 208.0
+margin_right = 256.0
+margin_bottom = 48.0
+texture = ExtResource( 54 )
+
+[node name="txt" type="VBoxContainer" parent="Pages/Recepe/Pages/List_2/id_11"]
+margin_top = 51.0
+margin_right = 1275.0
+margin_bottom = 237.0
+rect_scale = Vector2( 0.2, 0.2 )
+
+[node name="name" type="Label" parent="Pages/Recepe/Pages/List_2/id_11/txt"]
+margin_right = 870.0
+margin_bottom = 91.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Caramel candy"
+
+[node name="cnt" type="Label" parent="Pages/Recepe/Pages/List_2/id_11/txt"]
+margin_top = 95.0
+margin_right = 1275.0
+margin_bottom = 186.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "count: 0"
+align = 2
+
+[node name="id_12" type="Control" parent="Pages/Recepe/Pages/List_2"]
+margin_left = 330.0
+margin_top = 101.0
+margin_right = 330.0
+margin_bottom = 101.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="pic" type="HBoxContainer" parent="Pages/Recepe/Pages/List_2/id_12"]
+margin_right = 256.0
+margin_bottom = 48.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="ingr_1" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_12/pic"]
+margin_right = 48.0
+margin_bottom = 48.0
+texture = ExtResource( 14 )
+
+[node name="sp_plus" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_12/pic"]
+margin_left = 52.0
+margin_right = 100.0
+margin_bottom = 48.0
+texture = ExtResource( 34 )
+
+[node name="ingr_2" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_12/pic"]
+margin_left = 104.0
+margin_right = 152.0
+margin_bottom = 48.0
+texture = ExtResource( 7 )
+
+[node name="sp_res" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_12/pic"]
+margin_left = 156.0
+margin_right = 204.0
+margin_bottom = 48.0
+texture = ExtResource( 35 )
+
+[node name="food" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_12/pic"]
+margin_left = 208.0
+margin_right = 256.0
+margin_bottom = 48.0
+texture = ExtResource( 46 )
+
+[node name="txt" type="VBoxContainer" parent="Pages/Recepe/Pages/List_2/id_12"]
+margin_top = 51.0
+margin_right = 1275.0
+margin_bottom = 237.0
+rect_scale = Vector2( 0.2, 0.2 )
+
+[node name="name" type="Label" parent="Pages/Recepe/Pages/List_2/id_12/txt"]
+margin_right = 1160.0
+margin_bottom = 91.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Pistachio chocolate"
+
+[node name="cnt" type="Label" parent="Pages/Recepe/Pages/List_2/id_12/txt"]
+margin_top = 95.0
+margin_right = 1275.0
+margin_bottom = 186.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "count: 0"
+align = 2
+
+[node name="id_13" type="Control" parent="Pages/Recepe/Pages/List_2"]
+margin_top = 202.0
+margin_bottom = 202.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="pic" type="HBoxContainer" parent="Pages/Recepe/Pages/List_2/id_13"]
+margin_right = 256.0
+margin_bottom = 48.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="ingr_1" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_13/pic"]
+margin_right = 48.0
+margin_bottom = 48.0
+texture = ExtResource( 14 )
+
+[node name="sp_plus" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_13/pic"]
+margin_left = 52.0
+margin_right = 100.0
+margin_bottom = 48.0
+texture = ExtResource( 34 )
+
+[node name="ingr_2" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_13/pic"]
+margin_left = 104.0
+margin_right = 152.0
+margin_bottom = 48.0
+texture = ExtResource( 15 )
+
+[node name="sp_res" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_13/pic"]
+margin_left = 156.0
+margin_right = 204.0
+margin_bottom = 48.0
+texture = ExtResource( 35 )
+
+[node name="food" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_13/pic"]
+margin_left = 208.0
+margin_right = 256.0
+margin_bottom = 48.0
+texture = ExtResource( 49 )
+
+[node name="txt" type="VBoxContainer" parent="Pages/Recepe/Pages/List_2/id_13"]
+margin_top = 51.0
+margin_right = 1275.0
+margin_bottom = 237.0
+rect_scale = Vector2( 0.2, 0.2 )
+
+[node name="name" type="Label" parent="Pages/Recepe/Pages/List_2/id_13/txt"]
+margin_right = 1460.0
+margin_bottom = 91.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Caramel pistachio candy"
+
+[node name="cnt" type="Label" parent="Pages/Recepe/Pages/List_2/id_13/txt"]
+margin_top = 95.0
+margin_right = 1460.0
+margin_bottom = 186.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "count: 0"
+align = 2
+
+[node name="id_14" type="Control" parent="Pages/Recepe/Pages/List_2"]
+margin_left = 330.0
+margin_top = 202.0
+margin_right = 330.0
+margin_bottom = 202.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="pic" type="HBoxContainer" parent="Pages/Recepe/Pages/List_2/id_14"]
+margin_right = 256.0
+margin_bottom = 48.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="ingr_1" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_14/pic"]
+margin_right = 48.0
+margin_bottom = 48.0
+texture = ExtResource( 10 )
+
+[node name="sp_plus" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_14/pic"]
+margin_left = 52.0
+margin_right = 100.0
+margin_bottom = 48.0
+texture = ExtResource( 34 )
+
+[node name="ingr_2" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_14/pic"]
+margin_left = 104.0
+margin_right = 152.0
+margin_bottom = 48.0
+texture = ExtResource( 12 )
+
+[node name="sp_res" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_14/pic"]
+margin_left = 156.0
+margin_right = 204.0
+margin_bottom = 48.0
+texture = ExtResource( 35 )
+
+[node name="food" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_14/pic"]
+margin_left = 208.0
+margin_right = 256.0
+margin_bottom = 48.0
+texture = ExtResource( 47 )
+
+[node name="txt" type="VBoxContainer" parent="Pages/Recepe/Pages/List_2/id_14"]
+margin_top = 51.0
+margin_right = 1275.0
+margin_bottom = 237.0
+rect_scale = Vector2( 0.2, 0.2 )
+
+[node name="name" type="Label" parent="Pages/Recepe/Pages/List_2/id_14/txt"]
+margin_right = 1080.0
+margin_bottom = 91.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Cherry marmalade"
+
+[node name="cnt" type="Label" parent="Pages/Recepe/Pages/List_2/id_14/txt"]
+margin_top = 95.0
+margin_right = 1275.0
+margin_bottom = 186.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "count: 0"
+align = 2
+
+[node name="id_15" type="Control" parent="Pages/Recepe/Pages/List_2"]
+margin_top = 303.0
+margin_bottom = 303.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="pic" type="HBoxContainer" parent="Pages/Recepe/Pages/List_2/id_15"]
+margin_right = 256.0
+margin_bottom = 48.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="ingr_1" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_15/pic"]
+margin_right = 48.0
+margin_bottom = 48.0
+texture = ExtResource( 18 )
+
+[node name="sp_plus" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_15/pic"]
+margin_left = 52.0
+margin_right = 100.0
+margin_bottom = 48.0
+texture = ExtResource( 34 )
+
+[node name="ingr_2" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_15/pic"]
+margin_left = 104.0
+margin_right = 152.0
+margin_bottom = 48.0
+texture = ExtResource( 20 )
+
+[node name="sp_res" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_15/pic"]
+margin_left = 156.0
+margin_right = 204.0
+margin_bottom = 48.0
+texture = ExtResource( 35 )
+
+[node name="food" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_15/pic"]
+margin_left = 208.0
+margin_right = 256.0
+margin_bottom = 48.0
+texture = ExtResource( 50 )
+
+[node name="txt" type="VBoxContainer" parent="Pages/Recepe/Pages/List_2/id_15"]
+margin_top = 51.0
+margin_right = 1275.0
+margin_bottom = 237.0
+rect_scale = Vector2( 0.2, 0.2 )
+
+[node name="name" type="Label" parent="Pages/Recepe/Pages/List_2/id_15/txt"]
+margin_right = 1020.0
+margin_bottom = 91.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Grape marmalade"
+
+[node name="cnt" type="Label" parent="Pages/Recepe/Pages/List_2/id_15/txt"]
+margin_top = 95.0
+margin_right = 1275.0
+margin_bottom = 186.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "count: 0"
+align = 2
+
+[node name="id_16" type="Control" parent="Pages/Recepe/Pages/List_2"]
+margin_left = 330.0
+margin_top = 303.0
+margin_right = 330.0
+margin_bottom = 303.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="pic" type="HBoxContainer" parent="Pages/Recepe/Pages/List_2/id_16"]
+margin_right = 256.0
+margin_bottom = 48.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="ingr_1" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_16/pic"]
+margin_right = 48.0
+margin_bottom = 48.0
+texture = ExtResource( 16 )
+
+[node name="sp_plus" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_16/pic"]
+margin_left = 52.0
+margin_right = 100.0
+margin_bottom = 48.0
+texture = ExtResource( 34 )
+
+[node name="ingr_2" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_16/pic"]
+margin_left = 104.0
+margin_right = 152.0
+margin_bottom = 48.0
+texture = ExtResource( 20 )
+
+[node name="sp_res" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_16/pic"]
+margin_left = 156.0
+margin_right = 204.0
+margin_bottom = 48.0
+texture = ExtResource( 35 )
+
+[node name="food" type="TextureRect" parent="Pages/Recepe/Pages/List_2/id_16/pic"]
+margin_left = 208.0
+margin_right = 256.0
+margin_bottom = 48.0
+texture = ExtResource( 53 )
+
+[node name="txt" type="VBoxContainer" parent="Pages/Recepe/Pages/List_2/id_16"]
+margin_top = 51.0
+margin_right = 1275.0
+margin_bottom = 237.0
+rect_scale = Vector2( 0.2, 0.2 )
+
+[node name="name" type="Label" parent="Pages/Recepe/Pages/List_2/id_16/txt"]
+margin_right = 830.0
+margin_bottom = 91.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Mango lollipop"
+
+[node name="cnt" type="Label" parent="Pages/Recepe/Pages/List_2/id_16/txt"]
+margin_top = 95.0
+margin_right = 1275.0
+margin_bottom = 186.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "count: 0"
+align = 2
+
+[node name="List_3" type="GridContainer" parent="Pages/Recepe/Pages"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/vseparation = 20
+custom_constants/hseparation = 40
+columns = 2
+
+[node name="id_17" type="Control" parent="Pages/Recepe/Pages/List_3"]
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="pic" type="HBoxContainer" parent="Pages/Recepe/Pages/List_3/id_17"]
+margin_right = 256.0
+margin_bottom = 48.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="ingr_1" type="TextureRect" parent="Pages/Recepe/Pages/List_3/id_17/pic"]
+margin_right = 48.0
+margin_bottom = 48.0
+texture = ExtResource( 14 )
+
+[node name="sp_plus" type="TextureRect" parent="Pages/Recepe/Pages/List_3/id_17/pic"]
+margin_left = 52.0
+margin_right = 100.0
+margin_bottom = 48.0
+texture = ExtResource( 34 )
+
+[node name="ingr_2" type="TextureRect" parent="Pages/Recepe/Pages/List_3/id_17/pic"]
+margin_left = 104.0
+margin_right = 152.0
+margin_bottom = 48.0
+texture = ExtResource( 19 )
+
+[node name="sp_res" type="TextureRect" parent="Pages/Recepe/Pages/List_3/id_17/pic"]
+margin_left = 156.0
+margin_right = 204.0
+margin_bottom = 48.0
+texture = ExtResource( 35 )
+
+[node name="food" type="TextureRect" parent="Pages/Recepe/Pages/List_3/id_17/pic"]
+margin_left = 208.0
+margin_right = 256.0
+margin_bottom = 48.0
+texture = ExtResource( 51 )
+
+[node name="txt" type="VBoxContainer" parent="Pages/Recepe/Pages/List_3/id_17"]
+margin_top = 51.0
+margin_right = 1275.0
+margin_bottom = 237.0
+rect_scale = Vector2( 0.2, 0.2 )
+
+[node name="name" type="Label" parent="Pages/Recepe/Pages/List_3/id_17/txt"]
+margin_right = 1290.0
+margin_bottom = 91.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Autumn flower candy"
+
+[node name="cnt" type="Label" parent="Pages/Recepe/Pages/List_3/id_17/txt"]
+margin_top = 95.0
+margin_right = 1290.0
+margin_bottom = 186.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "count: 0"
+align = 2
+
+[node name="id_18" type="Control" parent="Pages/Recepe/Pages/List_3"]
+margin_left = 330.0
+margin_right = 330.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="pic" type="HBoxContainer" parent="Pages/Recepe/Pages/List_3/id_18"]
+margin_right = 256.0
+margin_bottom = 48.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="ingr_1" type="TextureRect" parent="Pages/Recepe/Pages/List_3/id_18/pic"]
+margin_right = 48.0
+margin_bottom = 48.0
+texture = ExtResource( 5 )
+
+[node name="sp_plus" type="TextureRect" parent="Pages/Recepe/Pages/List_3/id_18/pic"]
+margin_left = 52.0
+margin_right = 100.0
+margin_bottom = 48.0
+texture = ExtResource( 34 )
+
+[node name="ingr_2" type="TextureRect" parent="Pages/Recepe/Pages/List_3/id_18/pic"]
+margin_left = 104.0
+margin_right = 152.0
+margin_bottom = 48.0
+texture = ExtResource( 19 )
+
+[node name="sp_res" type="TextureRect" parent="Pages/Recepe/Pages/List_3/id_18/pic"]
+margin_left = 156.0
+margin_right = 204.0
+margin_bottom = 48.0
+texture = ExtResource( 35 )
+
+[node name="food" type="TextureRect" parent="Pages/Recepe/Pages/List_3/id_18/pic"]
+margin_left = 208.0
+margin_right = 256.0
+margin_bottom = 48.0
+texture = ExtResource( 52 )
+
+[node name="txt" type="VBoxContainer" parent="Pages/Recepe/Pages/List_3/id_18"]
+margin_top = 51.0
+margin_right = 1275.0
+margin_bottom = 237.0
+rect_scale = Vector2( 0.2, 0.2 )
+
+[node name="name" type="Label" parent="Pages/Recepe/Pages/List_3/id_18/txt"]
+margin_right = 1300.0
+margin_bottom = 91.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Candy with hazelnuts"
+
+[node name="cnt" type="Label" parent="Pages/Recepe/Pages/List_3/id_18/txt"]
+margin_top = 95.0
+margin_right = 1300.0
+margin_bottom = 186.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "count: 0"
+align = 2
+
+[node name="id_19" type="Control" parent="Pages/Recepe/Pages/List_3"]
+margin_top = 101.0
+margin_bottom = 101.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="pic" type="HBoxContainer" parent="Pages/Recepe/Pages/List_3/id_19"]
+margin_right = 256.0
+margin_bottom = 48.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="ingr_1" type="TextureRect" parent="Pages/Recepe/Pages/List_3/id_19/pic"]
+margin_right = 48.0
+margin_bottom = 48.0
+texture = ExtResource( 21 )
+
+[node name="sp_plus" type="TextureRect" parent="Pages/Recepe/Pages/List_3/id_19/pic"]
+margin_left = 52.0
+margin_right = 100.0
+margin_bottom = 48.0
+texture = ExtResource( 34 )
+
+[node name="ingr_2" type="TextureRect" parent="Pages/Recepe/Pages/List_3/id_19/pic"]
+margin_left = 104.0
+margin_right = 152.0
+margin_bottom = 48.0
+texture = ExtResource( 20 )
+
+[node name="sp_res" type="TextureRect" parent="Pages/Recepe/Pages/List_3/id_19/pic"]
+margin_left = 156.0
+margin_right = 204.0
+margin_bottom = 48.0
+texture = ExtResource( 35 )
+
+[node name="food" type="TextureRect" parent="Pages/Recepe/Pages/List_3/id_19/pic"]
+margin_left = 208.0
+margin_right = 256.0
+margin_bottom = 48.0
+texture = ExtResource( 44 )
+
+[node name="txt" type="VBoxContainer" parent="Pages/Recepe/Pages/List_3/id_19"]
+margin_top = 51.0
+margin_right = 1275.0
+margin_bottom = 237.0
+rect_scale = Vector2( 0.2, 0.2 )
+
+[node name="name" type="Label" parent="Pages/Recepe/Pages/List_3/id_19/txt"]
+margin_right = 1160.0
+margin_bottom = 91.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Autumn jam lollipop"
+
+[node name="cnt" type="Label" parent="Pages/Recepe/Pages/List_3/id_19/txt"]
+margin_top = 95.0
+margin_right = 1275.0
+margin_bottom = 186.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "count: 0"
+align = 2
+
+[node name="empty" type="Control" parent="Pages/Recepe/Pages/List_3"]
+margin_left = 330.0
+margin_top = 101.0
+margin_right = 330.0
+margin_bottom = 101.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="empty2" type="Control" parent="Pages/Recepe/Pages/List_3"]
+margin_top = 202.0
+margin_bottom = 202.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="empty3" type="Control" parent="Pages/Recepe/Pages/List_3"]
+margin_left = 330.0
+margin_top = 202.0
+margin_right = 330.0
+margin_bottom = 202.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="empty4" type="Control" parent="Pages/Recepe/Pages/List_3"]
+margin_top = 303.0
+margin_bottom = 303.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="empty5" type="Control" parent="Pages/Recepe/Pages/List_3"]
+margin_left = 330.0
+margin_top = 303.0
+margin_right = 330.0
+margin_bottom = 303.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="rec_next" type="TextureButton" parent="Pages/Recepe"]
+margin_left = 30.0
+margin_top = 1799.0
+margin_right = 78.0
+margin_bottom = 1847.0
+rect_scale = Vector2( 5, 5 )
+texture_normal = ExtResource( 23 )
+texture_pressed = ExtResource( 23 )
+script = ExtResource( 55 )
+
+[node name="rec_prev" type="TextureButton" parent="Pages/Recepe"]
+margin_left = 3375.0
+margin_top = 1799.0
+margin_right = 3423.0
+margin_bottom = 1847.0
+rect_scale = Vector2( 5, 5 )
+texture_normal = ExtResource( 22 )
+texture_pressed = ExtResource( 22 )
+script = ExtResource( 56 )

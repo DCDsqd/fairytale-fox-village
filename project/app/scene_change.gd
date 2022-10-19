@@ -45,7 +45,7 @@ func _ready():
 	change("res://Node2D.tscn")
 	npc_loader()
 	
-	for i in range(1, 7):
+	for i in range(1, 21):
 		var cur_ingr_to_add = game_data.get_ingredient(i)
 		player.inv_add_ingredients(cur_ingr_to_add, 1)
 
