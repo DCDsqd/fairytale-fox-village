@@ -175,7 +175,7 @@ position = Vector2( 120, -114 )
 
 [node name="ob_hero" parent="." instance=ExtResource( 2 )]
 process_priority = 9
-position = Vector2( 458, 733 )
+position = Vector2( 384, 717 )
 
 [node name="leaf" type="Node2D" parent="."]
 position = Vector2( 408, 822 )

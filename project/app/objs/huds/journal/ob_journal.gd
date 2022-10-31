@@ -29,6 +29,7 @@ func quest_col() -> void:
 	
 	var lbl = get_node("Pages/Quests/Descr")
 	var list : VBoxContainer = get_node("Pages/Quests/List")
+	
 	for i in range(0,9):
 		if(game_data.get_quest(i).get_status() > 0):
 			var btn = Button.new()
