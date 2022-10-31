@@ -85,6 +85,11 @@ func _setup_time_control() -> void:
 # Adds an hour to C++ game class time property and prints updated time
 func add_hour() -> void:
 	var day_changed = game.add_hour()
+	
+	var creater = get_node("Node2D2/ob_customer_controller")
+	if creater != null:
+		creater.new_custommer()
+	
 	if day_changed == true:
 		game_data.update_quests_status_on_day_switch(game.current_day())
 		change("res://variator/sc_new_day.tscn")
