@@ -87,7 +87,7 @@ _global_script_class_icons={
 [application]
 
 config/name="GDNative Example"
-run/main_scene="res://scene_change.tscn"
+run/main_scene="res://menu/sc_menu.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -103,6 +103,11 @@ window/stretch/aspect="keep_width"
 [editor_plugins]
 
 enabled=PoolStringArray(  )
+
+[global]
+
+2d=false
+size=false
 
 [input]
 

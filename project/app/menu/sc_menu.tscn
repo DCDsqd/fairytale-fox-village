@@ -1,0 +1,115 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://fonts/main.tres" type="DynamicFont" id=1]
+[ext_resource path="res://sprite/ui/menu.png" type="Texture" id=2]
+[ext_resource path="res://menu/bt_start.gd" type="Script" id=3]
+[ext_resource path="res://menu/sc_menu.gd" type="Script" id=4]
+[ext_resource path="res://menu/bt_exit.gd" type="Script" id=5]
+
+[sub_resource type="StyleBoxTexture" id=1]
+
+[sub_resource type="StyleBoxTexture" id=2]
+
+[sub_resource type="StyleBoxTexture" id=3]
+
+[sub_resource type="StyleBoxTexture" id=4]
+
+[sub_resource type="StyleBoxTexture" id=5]
+
+[node name="sc_menu" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Control" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_right = 801.0
+margin_bottom = 450.0
+
+[node name="bkd" type="TextureRect" parent="Control"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -409.5
+margin_top = -450.0
+margin_right = 400.5
+margin_bottom = 9.0
+texture = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -10.5
+margin_top = -210.0
+margin_right = 296.5
+margin_bottom = 314.0
+rect_scale = Vector2( 0.4, 0.4 )
+
+[node name="bt_start" type="Button" parent="Control/VBoxContainer"]
+margin_left = 3.0
+margin_right = 303.0
+margin_bottom = 91.0
+size_flags_horizontal = 4
+size_flags_vertical = 2
+custom_colors/font_color_disabled = Color( 1, 0.847059, 0.662745, 1 )
+custom_colors/font_color_focus = Color( 1, 0.847059, 0.662745, 1 )
+custom_colors/font_color = Color( 1, 0.847059, 0.662745, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 0.882353, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.847059, 0.662745, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "start"
+script = ExtResource( 3 )
+
+[node name="emp" type="Control" parent="Control/VBoxContainer"]
+margin_left = 153.0
+margin_top = 105.0
+margin_right = 153.0
+margin_bottom = 207.0
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="bt_exit" type="Button" parent="Control/VBoxContainer"]
+margin_left = 43.0
+margin_top = 211.0
+margin_right = 263.0
+margin_bottom = 302.0
+size_flags_horizontal = 4
+size_flags_vertical = 2
+custom_colors/font_color_disabled = Color( 1, 0.847059, 0.662745, 1 )
+custom_colors/font_color_focus = Color( 1, 0.847059, 0.662745, 1 )
+custom_colors/font_color = Color( 1, 0.847059, 0.662745, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 0.882353, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.847059, 0.662745, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "exit"
+script = ExtResource( 5 )
+
+[node name="emp2" type="Control" parent="Control/VBoxContainer"]
+margin_left = 153.0
+margin_top = 316.0
+margin_right = 153.0
+margin_bottom = 418.0
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="emp3" type="Control" parent="Control/VBoxContainer"]
+margin_left = 153.0
+margin_top = 422.0
+margin_right = 153.0
+margin_bottom = 524.0
+size_flags_horizontal = 4
+size_flags_vertical = 3

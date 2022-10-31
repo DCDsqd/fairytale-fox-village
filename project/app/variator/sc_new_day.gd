@@ -24,9 +24,15 @@ func _ready():
 		spr.animation = "day_2"
 		spr.play()
 	else:
-		lbl.text = "The atmosphere in the village is amazing, I'm so glad I was able to help everyone here..."
-		spr.animation = "good"
+		var data : GameData = get_parent().get_data()
+		if data.amount_of_failed_quests() == 0:
+			lbl.text = "The atmosphere in the village is amazing, I'm so glad I was able to help everyone here..."
+			spr.animation = "good"
+		else:
+			lbl.text = "Here comes Halloween. \nToo bad we couldn't help all the villagers. How tired I am..."
+			spr.animation = "bad"
 		spr.play()
+	
 	lbl.percent_visible = 0
 	one_let = 1.0/float(lbl.text.length())
 	print(one_let)
@@ -40,4 +46,4 @@ func _process(delta):
 		if day != 4:
 			get_parent().change("res://Node2D.tscn")
 		else:
-			get_parent().change("res://Node2D.tscn")
+			get_tree().change_scene("res://menu/sc_menu.tscn")

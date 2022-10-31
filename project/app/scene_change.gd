@@ -64,7 +64,7 @@ func _setup_time_control() -> void:
 	var timer := Timer.new()
 
 	# Set timer interval in seconds
-	var HOUR_REAL_TIME := 2
+	var HOUR_REAL_TIME := 50
 	timer.set_wait_time(HOUR_REAL_TIME)
 	
 	# Set it as repeat
