@@ -16,9 +16,13 @@ func set_task(i : int, data : GameData, _descr : Label):
 	task_name = task.get_name();
 	task_descr = task.get_descr();
 	task_status = task.get_status();
-	self.theme = preload("res://materials/journal_btn.tres")
 	descr = _descr;
-	text = "Gotta start \nsomewhere, right?";
+	if (task_status == 1):
+		self.theme = preload("res://materials/journal_btn.tres")
+	else:
+		self.theme = preload("res://materials/compl_btn.tres")
+		task_descr += "\n(complete)"
+	text = task_name
 
 
 func _pressed():

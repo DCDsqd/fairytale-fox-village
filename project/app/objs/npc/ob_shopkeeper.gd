@@ -12,7 +12,7 @@ func _ready() -> void:
 
 func _process(delta) -> void:
 	if Input.is_action_just_released("inter"):
-		if position.distance_to(hero.position) < 50:
+		if position.distance_to(hero.position) < 100:
 			craft_ui.turner(true)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

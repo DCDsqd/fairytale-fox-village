@@ -120,6 +120,9 @@ func get_dialog(id, pos, game_data, game, player, hero) -> void:
 				break
 		if satisf:
 			dialog_main = quest_in_progress.get_end_dialog()
+			var tmp : Array = quest_in_progress.get_targets()
+			for i in tmp:
+				player.inv_add_food(i, -1)
 			quest_in_progress.set_completed()
 		else:
 			var catch_phrase : String = civ.get_catch_phrase()
@@ -135,7 +138,7 @@ func get_dialog(id, pos, game_data, game, player, hero) -> void:
 		dialog_main = Dialog.new()
 		dialog_main.add_phrase_to_conv(civ, catch_phrase, 1)
 	state = 'say'
-	hero.state = 'ui'
+	hero.state = 'dialog'
 	iter = -1
 	fiter = -1
 	say_dialog(id, pos, game_data, game, player, hero)

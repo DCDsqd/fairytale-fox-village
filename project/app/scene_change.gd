@@ -42,10 +42,10 @@ func _ready():
 	# Test
 	var g = player.get_game()
 	print(g.current_day())
-	change("res://Node2D.tscn")
+	change("res://variator/sc_new_day.tscn")
 	npc_loader()
 	
-	for i in range(1, 21):
+	for i in range(1, 10):
 		var cur_ingr_to_add = game_data.get_ingredient(i)
 		player.inv_add_ingredients(cur_ingr_to_add, 1)
 
@@ -64,9 +64,9 @@ func _setup_time_control() -> void:
 	var timer := Timer.new()
 
 	# Set timer interval in seconds
-	var HOUR_REAL_TIME := 50
+	var HOUR_REAL_TIME := 2
 	timer.set_wait_time(HOUR_REAL_TIME)
-
+	
 	# Set it as repeat
 	timer.set_one_shot(false)
 
@@ -76,6 +76,7 @@ func _setup_time_control() -> void:
 		print("ERROR: ", error_code)
 
 	# Add to the tree as child of the current node
+	timer.name = "timer"
 	add_child(timer)
 	
 	# Start the timer
@@ -86,7 +87,7 @@ func add_hour() -> void:
 	var day_changed = game.add_hour()
 	if day_changed == true:
 		game_data.update_quests_status_on_day_switch(game.current_day())
-		change("res://Node2D.tscn")
+		change("res://variator/sc_new_day.tscn")
 	print("Time has been updated! New time: ", str(game.current_time()) + ":00", ", day: ", str(game.current_day()))
 
 func change(res):

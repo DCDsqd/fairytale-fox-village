@@ -8,6 +8,7 @@ var id = 4
 onready var _main : Fox = Fox.new();
 
 func _ready() -> void:
+	z_index = position.y/5
 	get_node("sp_emot").visible = _main.get_quest(id, game_data, game.current_day())
 	pass
 

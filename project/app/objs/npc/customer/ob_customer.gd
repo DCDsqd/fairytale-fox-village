@@ -28,18 +28,27 @@ func check():
 		state = 'see'
 
 func food_sel():
-	var foods = player.inv_get_most_exp_food_available()
-	if foods != null:
-		sel = foods
-		state = "selected"
+	
+	#ebal v rot
+	var quests : Array = game_data.get_all_quests()
+	var items : Array
+	for i in range(quests.size()):
+		if(quests[i].get_status() == 1):
+			items.append(quests[i])
+	#pizdec
+	
+	sel = player.inv_get_most_exp_food_available(items)
+	#sel = null
+	
 	if sel == null:
 		state = "see"
 	else:
-		print('select')
+		#print(sel.get_name())
+		state = "selected"
 		get_node("sp_emot").visible = true
-		
 
-func sel():
+
+func seling():
 	if Input.is_action_just_released("inter"):
 		if position.distance_to(hero.position) < 50:
 			game.add_gold(sel.get_cost())
@@ -47,7 +56,6 @@ func sel():
 			control.cheacker()
 			get_node("sp_emot").visible = false
 			state = 'selled'
-			print('seller')
 
 
 func rotater(mv : bool, rot : bool):
@@ -86,7 +94,7 @@ func _process(delta) -> void:
 			cd = 100
 			food_sel()
 	elif state == "selected":
-		sel()
+		seling()
 		move(delta);
 	else:
 		move_out(delta)

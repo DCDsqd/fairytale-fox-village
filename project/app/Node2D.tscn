@@ -65,16 +65,16 @@ extents = Vector2( 288, 24 )
 extents = Vector2( 28.5, 358.5 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 336, 24 )
+extents = Vector2( 336, 27 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 28.5, 358.5 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 144, 6 )
+extents = Vector2( 144, 12 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 120, 6 )
+extents = Vector2( 120, 12 )
 
 [node name="Node2D2" type="Node2D"]
 pause_mode = 2
@@ -217,10 +217,10 @@ texture = ExtResource( 20 )
 script = ExtResource( 19 )
 
 [node name="ob_walls" parent="." instance=ExtResource( 21 )]
-position = Vector2( 96, 384 )
+position = Vector2( 96, 480 )
 
 [node name="ob_walls2" parent="." instance=ExtResource( 24 )]
-position = Vector2( 96, 672 )
+position = Vector2( 96, 768 )
 
 [node name="ob_door_sc" type="AnimatedSprite" parent="."]
 position = Vector2( 408, 480 )
@@ -239,7 +239,7 @@ position = Vector2( 76.5, 409.5 )
 shape = SubResource( 2 )
 
 [node name="ms_3" type="CollisionShape2D" parent="mask"]
-position = Vector2( 384, 792 )
+position = Vector2( 384, 789 )
 shape = SubResource( 3 )
 
 [node name="ms_4" type="CollisionShape2D" parent="mask"]

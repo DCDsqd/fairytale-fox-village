@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://fonts/main.tres" type="DynamicFont" id=1]
+[ext_resource path="res://variator/sp_variator.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://variator/sc_new_day.gd" type="Script" id=3]
+
+[sub_resource type="ShaderMaterial" id=1]
+
+[sub_resource type="Gradient" id=2]
+colors = PoolColorArray( 0, 0, 0, 1, 0, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+width = 800
+
+[node name="sc_new_day" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource( 1 )
+margin_right = 816.0
+margin_bottom = 456.0
+texture = SubResource( 3 )
+
+[node name="spr" type="AnimatedSprite" parent="."]
+position = Vector2( 400, 190 )
+frames = ExtResource( 2 )
+animation = "bad"
+
+[node name="Label" type="Label" parent="."]
+margin_left = 162.0
+margin_top = 336.0
+margin_right = 2547.0
+margin_bottom = 756.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color = Color( 1, 0.847059, 0.662745, 1 )
+custom_colors/font_outline_modulate = Color( 1, 0.847059, 0.662745, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "tests"
+autowrap = true
