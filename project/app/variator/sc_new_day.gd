@@ -9,27 +9,33 @@ var perc : float
 
 
 func _ready():
+	var data : GameData = get_parent().get_data()
 	day = get_parent().get_game().current_day();
 	timer.set_paused(true)
 	if (day == 1):
-		lbl.text = "My store opens today \nI'm so glad we finally made it..."
+		lbl.text = "Today is the big day for me! \nThe store I was working on for months is set to open today! \nI'm so nervous but excited at the same time!\nLet's just hope it goes smoothly..."
 		spr.animation = "start"
 		spr.play()
 	elif (day == 2):
-		lbl.text = "first day in my shop so wonderful..."
+		var q = data.amount_of_failed_quests()
+		if q == 3:
+			lbl.text = "Ok, first day didn't go exactly as I planned...\nI really hope that I can do better tommorow"
+		elif q == 1:
+			lbl.text = "Well, this day could've gone better but also a lot worse \nI'll try my hardest to step up even more tommorow!"
+		else:
+			lbl.text = "That was an ideal opening for my store! \nI really looking forward for tommorow!"
 		spr.animation = "day_1"
 		spr.play()
 	elif (day == 3):
-		lbl.text = "I hope we get ready for Halloween..."
+		lbl.text = "Uh, what a tough day! \nI just hope that I can help people prepare village for the Halloween..."
 		spr.animation = "day_2"
 		spr.play()
 	else:
-		var data : GameData = get_parent().get_data()
 		if data.amount_of_failed_quests() == 0:
-			lbl.text = "The atmosphere in the village is amazing, I'm so glad I was able to help everyone here..."
+			lbl.text = "The atmosphere in the village is amazing! I'm so glad I was able to help everyone!"
 			spr.animation = "good"
 		else:
-			lbl.text = "Here comes Halloween. \nToo bad we couldn't help all the villagers. How tired I am..."
+			lbl.text = "Here comes Halloween. \nToo bad my help wasn't enough to fully prepare for the celebration. \nLet's hope next year will be different."
 			spr.animation = "bad"
 		spr.play()
 	
