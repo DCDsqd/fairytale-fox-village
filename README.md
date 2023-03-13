@@ -9,3 +9,5 @@
 ![V4ne_HRzfpRPSbII8-N-10Xxz90e2oUNluhukVBbVxFspzFGQitZi2Lj1de3NaK4lNJEgHd1UscTJFau820fMhbW](https://user-images.githubusercontent.com/89082426/201318041-2c0e5aeb-b560-43a3-b264-384d78c64365.jpg)
 
 ![Pb45cOuhuwEvXG4TlXJnvgFX0xUMbc1wRuQoLVLOK67PIAsZUaIgbWD5t6-4P-Xk9Ae_0mjEs8hp1L6jQ7vrkLhx](https://user-images.githubusercontent.com/89082426/201318050-e04dd71a-4d0a-4c48-a172-80f23afb5584.jpg)
+
+See https://github.com/octo-org/octo-repo/releases/latest to try our game out!
