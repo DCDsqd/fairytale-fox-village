@@ -1,6 +1,6 @@
 # Fairytale Fox Village
 
-See [latest release](https://github.com/DCDsqd/fairytale-fox-village/releases/latest) to the game out!
+*See [latest release](https://github.com/DCDsqd/fairytale-fox-village/releases/latest) to try the game out!*
 
 **Fairytale Fox Village** is a small game we made for a game jam that covered autumn vibe theme. The action takes place in a tiny magic village inhabited by foxes. Player is going to control one of the residents of the village. Her name is Evi and she's had a life-dream to open her own sweet shop in her birthplace. This was her only aspiration and today it is finally happening! Your goal is to help her manage this new place and make right first steps since those may matter the most. A good indicator for whether is a new shop will be well-received by locals is the upcoming celebration of Halloween! Try to help as many villagers as possible by completing their quests, get ready for the main celebration and develop your shop! And remember, you gotta waste no time as there are only 3 days left 'till the Halloween starts! Good luck!
 
