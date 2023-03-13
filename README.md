@@ -10,4 +10,4 @@
 
 ![Pb45cOuhuwEvXG4TlXJnvgFX0xUMbc1wRuQoLVLOK67PIAsZUaIgbWD5t6-4P-Xk9Ae_0mjEs8hp1L6jQ7vrkLhx](https://user-images.githubusercontent.com/89082426/201318050-e04dd71a-4d0a-4c48-a172-80f23afb5584.jpg)
 
-See https://github.com/octo-org/octo-repo/releases/latest to try our game out!
+See [latest release](https://github.com/DCDsqd/fairytale-fox-village/releases/latest) to try our game out!
